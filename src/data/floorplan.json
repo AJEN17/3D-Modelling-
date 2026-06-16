@@ -1,0 +1,357 @@
+{
+  "room": {
+    "width": 8.4,
+    "depth": 12.0,
+    "height": 3.0,
+    "tileSize": 0.6,
+    "name": "GROUND FLR LAB Room"
+  },
+  "colors": {
+    "infra": "#00AEEF",
+    "core": "#8CC63F",
+    "coldAisle": "#009245",
+    "hotAisle": "#F1A19D",
+    "pillar": "#ED1C24",
+    "fap": "#FF5722"
+  },
+  "components": [
+    {
+      "id": "pac-1",
+      "name": "10 TR PAC 1",
+      "type": "infra",
+      "width": 1.31,
+      "depth": 0.86,
+      "height": 2.0,
+      "position": [
+        4.3,
+        0,
+        1.35
+      ]
+    },
+    {
+      "id": "pac-2",
+      "name": "10 TR PAC 2",
+      "type": "infra",
+      "width": 1.31,
+      "depth": 0.86,
+      "height": 2.0,
+      "position": [
+        6.4,
+        0,
+        1.35
+      ]
+    },
+    {
+      "id": "pac-3",
+      "name": "10 TR PAC 3",
+      "type": "infra",
+      "width": 1.31,
+      "depth": 0.86,
+      "height": 2.0,
+      "position": [
+        5.3,
+        0,
+        9.9
+      ]
+    },
+    {
+      "id": "pac-4",
+      "name": "10 TR PAC 4",
+      "type": "infra",
+      "width": 0.86,
+      "depth": 0.95,
+      "height": 2.0,
+      "position": [
+        3.9,
+        0,
+        9.9
+      ]
+    },
+    {
+      "id": "sub-lt-panel",
+      "name": "400 A SUB LT PANEL",
+      "type": "infra",
+      "width": 0.37,
+      "depth": 1.25,
+      "height": 2.0,
+      "position": [
+        1.2,
+        0,
+        1.8
+      ]
+    },
+    {
+      "id": "ups-db-2",
+      "name": "200A UPS DB 2",
+      "type": "infra",
+      "width": 0.37,
+      "depth": 1.15,
+      "height": 2.0,
+      "position": [
+        1.24,
+        0,
+        3.1
+      ]
+    },
+    {
+      "id": "ups-db-1",
+      "name": "200A UPS DB 1",
+      "type": "infra",
+      "width": 0.37,
+      "depth": 1.15,
+      "height": 2.0,
+      "position": [
+        1.25,
+        0,
+        4.3
+      ]
+    },
+    {
+      "id": "fap",
+      "name": "FAP",
+      "type": "fap",
+      "width": 0.12,
+      "depth": 0.40,
+      "height": 2.0,
+      "position": [
+        1.19,
+        0,
+        5.15
+      ]
+    },
+    {
+      "id": "smps-1",
+      "name": "2000 A SMPS 1",
+      "type": "infra",
+      "width": 0.6,
+      "depth": 0.6,
+      "height": 2.0,
+      "position": [
+        2.3,
+        0,
+        1.35
+      ]
+    },
+    {
+      "id": "smps-2",
+      "name": "2000 A SMPS 2",
+      "type": "infra",
+      "width": 0.6,
+      "depth": 0.6,
+      "height": 2.0,
+      "position": [
+        2.99,
+        0,
+        1.35
+      ]
+    },
+    {
+      "id": "ats-1-2",
+      "name": "ATS 1 & 2",
+      "type": "infra",
+      "width": 0.32,
+      "depth": 0.4,
+      "height": 2.0,
+      "position": [
+        7.5,
+        0,
+        2.9
+      ]
+    },
+    {
+      "id": "ats-3",
+      "name": "ATS 3",
+      "type": "infra",
+      "width": 0.35,
+      "depth": 0.4,
+      "height": 2.0,
+      "position": [
+        6.8,
+        0,
+        8.7
+      ]
+    },
+    {
+      "id": "pcrf02",
+      "name": "PCRF02",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        4.2,
+        0,
+        2.75
+      ]
+    },
+    {
+      "id": "fb-cache",
+      "name": "FACEBOOK CACHE",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        4.2,
+        0,
+        3.6
+      ]
+    },
+    {
+      "id": "google-cache",
+      "name": "GOOGLE CACHE",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        4.2,
+        0,
+        4.45
+      ]
+    },
+    {
+      "id": "akamai",
+      "name": "AKAMAI",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        4.2,
+        0,
+        5.3
+      ]
+    },
+    {
+      "id": "vgw01",
+      "name": "CISCO VGW01",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        6,
+        0,
+        2.7
+      ]
+    },
+    {
+      "id": "pcrf01",
+      "name": "PCRF01 / GNGR0",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        6,
+        0,
+        3.55
+      ]
+    },
+    {
+      "id": "gngr02",
+      "name": "GNGR02",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        6,
+        0,
+        4.4
+      ]
+    },
+    {
+      "id": "vgw02",
+      "name": "CISCO VGW02",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        6,
+        0,
+        5.25
+      ]
+    },
+    {
+      "id": "vgw01-exp-1",
+      "name": "CISCO VGW01 Expansion 1",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        6,
+        0,
+        6.1
+      ]
+    },
+    {
+      "id": "vgw01-exp-2",
+      "name": "CISCO VGW01 Expansion 2",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        6,
+        0,
+        7.05
+      ]
+    },
+    {
+      "id": "cisco-rack-8",
+      "name": "CISCO RACK 8",
+      "type": "core",
+      "width": 0.6,
+      "depth": 0.8,
+      "height": 2.0,
+      "position": [
+        6,
+        0,
+        7.9
+      ]
+    },
+    {
+      "id": "pillar-1",
+      "name": "PILLAR",
+      "type": "pillar",
+      "width": 0.29,
+      "depth": 0.56,
+      "height": 3.0,
+      "position": [
+        7.6,
+        0,
+        0.9
+      ]
+    },
+    {
+      "id": "pillar-2",
+      "name": "PILLAR2",
+      "type": "pillar",
+      "width": 0.4,
+      "depth": 0.140,
+      "height": 3.0,
+      "position": [
+        1.15,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "pillar-3",
+      "name": "PILLAR3",
+      "type": "pillar",
+      "width": 0.35,
+      "depth": 0.78,
+      "height": 3.0,
+      "position": [
+        7,
+        0,
+        6.5
+      ]
+    }
+  ]
+}
