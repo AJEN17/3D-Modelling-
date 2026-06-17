@@ -1,0 +1,47 @@
+[
+  {
+    "id": "lakha",
+    "name": "Lakha Building (Malad)",
+    "position": [
+      -5.7,
+      0,
+      -5
+    ]
+  },
+  {
+    "id": "suncity",
+    "name": "Sun City Complex (Powai)",
+    "position": [
+      -2.1,
+      0,
+      -2.5
+    ]
+  },
+  {
+    "id": "sundale",
+    "name": "Sundale Complex",
+    "position": [
+      -1.8,
+      0,
+      -2.1
+    ]
+  },
+  {
+    "id": "sahas",
+    "name": "Sahas Apartment (Prabhadevi)",
+    "position": [
+      -6.7,
+      0,
+      2.5
+    ]
+  },
+  {
+    "id": "idc",
+    "name": "IDC/NDC Datacenter (Airoli)",
+    "position": [
+      2.1,
+      0,
+      -5
+    ]
+  }
+]
