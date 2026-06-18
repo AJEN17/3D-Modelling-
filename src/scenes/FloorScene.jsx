@@ -3,10 +3,15 @@ import { OrbitControls, Environment, Text, Billboard } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import FloorGrid from '../components/FloorGrid';
 import Equipment from '../components/Equipment';
-import floorplanData from '../data/floorplan.json';
+import groundFloorPlan from '../data/groundFloor.json';
+import firstFloorPlan from '../data/firstFloorPlan.json';
+import { useLocation } from 'react-router-dom';
 
 export default function FloorScene() {
   const { camera } = useThree();
+  const location = useLocation();
+  const isFirstFloor = location.pathname.includes('sundale-ff');
+  const floorplanData = isFirstFloor ? firstFloorPlan : groundFloorPlan;
 
   React.useEffect(() => {
     // Restore angled isometric view for the floor
@@ -45,7 +50,7 @@ export default function FloorScene() {
 
       <Billboard position={[3.0, 1.0, 11.7]}>
         <Text fontSize={0.5} color="#111111" fontWeight="bold" outlineWidth={0.03} outlineColor="#ffffff">
-          SUNDALE GROUND FLOOR LAB ROOM
+          {floorplanData.room.name}
         </Text>
       </Billboard>
     </group>

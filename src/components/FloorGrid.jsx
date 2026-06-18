@@ -22,22 +22,33 @@ export default function FloorGrid({ roomData }) {
   const gridDivisionsX = Math.floor(width / tileSize);
   const gridDivisionsZ = Math.floor(depth / tileSize);
 
-  // EXACT reproduction of the hand-drawn figure
-  const wallLines = useMemo(() => [
-    // Outer Walls
-    [[1.5 * 0.6, 1.5 * 0.6], [13.0 * 0.6, 1.0 * 0.6]],   // Top (slants up)
-    [[1.5 * 0.6, 1.5 * 0.6], [2.40 * 0.6, 17.0 * 0.705]],  // Left (slants right)
-    [[13.0 * 0.6, 1.0 * 0.6], [11.5 * 0.6, 17.0 * 0.705]],// Right (slants left)
+  const wallLines = useMemo(() => {
+    if (roomData.floorType === 'first') {
+      return [
+        [[0.0, 10.8], [0.0, 2.4]],
+        [[0.0, 2.4], [4.2, 2.4]],
+        [[4.2, 2.4], [4.2, 1.2]],
+        [[4.2, 1.2], [14.4, 1.2]],
+        [[14.4, 1.2], [13.2, 10.2]],
+        [[13.2, 10.2], [0.0, 10.8]]
+      ];
+    }
+    return [
+      // Outer Walls
+      [[1.5 * 0.6, 1.5 * 0.6], [13.0 * 0.6, 1.0 * 0.6]],   // Top (slants up)
+      [[1.5 * 0.6, 1.5 * 0.6], [2.40 * 0.6, 17.0 * 0.705]],  // Left (slants right)
+      [[13.0 * 0.6, 1.0 * 0.6], [11.5 * 0.6, 17.0 * 0.705]],// Right (slants left)
 
-    // Bottom Walls
-    [[2.0 * 0.7, 17.0 * 0.7], [4.0 * 0.7, 17.0 * 0.7]], // Bottom Left
-    [[8.0 * 0.6, 17.0 * 0.7], [11.5 * 0.6, 17.0 * 0.70]],// Bottom Right
+      // Bottom Walls
+      [[2.0 * 0.7, 17.0 * 0.7], [4.0 * 0.7, 17.0 * 0.7]], // Bottom Left
+      [[8.0 * 0.6, 17.0 * 0.7], [11.5 * 0.6, 17.0 * 0.70]],// Bottom Right
 
 
-    // Inner "L" Shape exactly as drawn in the figure
-    [[5.0 * 0.6, 9.0 * 0.6], [5.60 * 1.0 * 0.6, 17.6 * 0.6]],  // Inner Vertical down to Y=15
-    [[5.0 * 0.64, 15.0 * 0.7], [11.7 * 0.6, 15.0 * 0.7]] // Inner Bottom Horizontal across to Right Wall
-  ], []);
+      // Inner "L" Shape exactly as drawn in the figure
+      [[5.0 * 0.6, 9.0 * 0.6], [5.60 * 1.0 * 0.6, 17.6 * 0.6]],  // Inner Vertical down to Y=15
+      [[5.0 * 0.64, 15.0 * 0.7], [11.7 * 0.6, 15.0 * 0.7]] // Inner Bottom Horizontal across to Right Wall
+    ];
+  }, [roomData.floorType]);
 
   return (
     <group position={[0, 0, 0]}>

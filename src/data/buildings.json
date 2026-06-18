@@ -19,10 +19,19 @@
   },
   {
     "id": "sundale",
-    "name": "Sundale Complex",
+    "name": "Sundale Ground Floor",
     "position": [
       -1.8,
       0,
+      -2.1
+    ]
+  },
+  {
+    "id": "sundale-ff",
+    "name": "Sundale First Floor",
+    "position": [
+      -1.8,
+      0.5,
       -2.1
     ]
   },

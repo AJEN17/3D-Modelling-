@@ -1,12 +1,16 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import floorplanData from '../data/floorplan.json';
+import groundFloorPlan from '../data/groundFloor.json';
+import firstFloorPlan from '../data/firstFloorPlan.json';
 
 export default function UIOverlay() {
   const location = useLocation();
   const navigate = useNavigate();
 
   const isFloorView = location.pathname.includes('/building/');
+  const isFirstFloor = location.pathname.includes('sundale-ff');
+  const floorplanData = isFirstFloor ? firstFloorPlan : groundFloorPlan;
+
 
   if (!isFloorView) {
     return (

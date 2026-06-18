@@ -15,6 +15,10 @@ export default function Equipment({ data }) {
   if (data.type === 'hotAisle') color = '#F1A19D';
   if (data.type === 'pillar') color = '#ED1C24';
   if (data.type === 'fap') color = '#FF5722';
+  if (data.type === 'tx') { color = '#FFFF00'; isRack = true; }
+  if (data.type === 'nld') { color = '#662D91'; isRack = true; }
+  if (data.type === 'vas') { color = '#F7931E'; isRack = true; }
+  if (data.type === 'structural') color = '#ED1C24';
 
   const isPAC = data.name.includes("PAC");
 
