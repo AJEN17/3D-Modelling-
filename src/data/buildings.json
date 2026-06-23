@@ -10,10 +10,19 @@
   },
   {
     "id": "suncity",
-    "name": "Sun City Complex (Powai)",
+    "name": "Sun City First Floor",
     "position": [
       -2.1,
       0,
+      -2.5
+    ]
+  },
+  {
+    "id": "suncity-sf",
+    "name": "Sun City Switch Room (SF)",
+    "position": [
+      -2.1,
+      0.5,
       -2.5
     ]
   },
@@ -32,6 +41,15 @@
     "position": [
       -1.8,
       0.5,
+      -2.1
+    ]
+  },
+  {
+    "id": "sundale-sf",
+    "name": "Sundale Second Floor",
+    "position": [
+      -1.8,
+      1.0,
       -2.1
     ]
   },

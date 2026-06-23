@@ -1,15 +1,16 @@
 import React, { useState, useRef } from 'react';
-import { Billboard, Html, OrbitControls, useTexture } from '@react-three/drei';
+import { Html, OrbitControls, useTexture } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { useNavigate } from 'react-router-dom';
 import * as THREE from 'three';
-import buildings from '../data/buildings.json';
-import useAppStore from '../store/useAppStore';
+import buildings from '../../data/buildings.json';
+import useAppStore from '../../store/useAppStore';
 
 function MapPin({ data }) {
   const navigate = useNavigate();
   const setActiveBuilding = useAppStore(state => state.setActiveBuilding);
+  const preloadBuildingData = useAppStore(state => state.preloadBuildingData);
   const [hovered, setHovered] = useState(false);
   const pinRef = useRef();
 
@@ -27,7 +28,7 @@ function MapPin({ data }) {
 
   // Sundale and Suncity are very close, so they get smaller hitboxes to prevent overlap.
   // The others get massive hitboxes so they are incredibly easy to click from the sky.
-  const isClose = data.id === 'suncity' || data.id === 'sundale';
+  const isClose = data.id.startsWith('suncity') || data.id.startsWith('sundale');
   const hitBoxRadius = isClose ? 0.6 : 2.0;
 
   return (
@@ -42,14 +43,21 @@ function MapPin({ data }) {
       <group
         ref={pinRef}
         onPointerDown={handlePointerDown}
-        onPointerOver={(e) => { e.stopPropagation(); setHovered(true); document.body.style.cursor = 'pointer'; }}
-        onPointerOut={(e) => { setHovered(false); document.body.style.cursor = 'auto'; }}
+        onPointerOver={(e) => { 
+          e.stopPropagation(); 
+          setHovered(true); 
+          document.body.style.cursor = 'pointer'; 
+          preloadBuildingData(data.id);
+        }}
+        onPointerOut={() => { setHovered(false); document.body.style.cursor = 'auto'; }}
       >
         {/* Invisible Hitbox: Swapped to a Sphere for flawless raycasting from top-down angles */}
-        <mesh position={[0, 0, 0]}>
-          <sphereGeometry args={[hitBoxRadius, 16, 16]} />
-          <meshBasicMaterial transparent opacity={0} depthWrite={false} />
-        </mesh>
+        {!isClose && (
+          <mesh position={[0, 0, 0]}>
+            <sphereGeometry args={[2.0, 16, 16]} />
+            <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+          </mesh>
+        )}
 
         {/* Red Sphere Top */}
         <mesh position={[0, 0, 0]}>
@@ -77,40 +85,42 @@ function MapPin({ data }) {
         </mesh>
 
         {/* High-Quality Professional Tooltip (Hidden until hover) */}
-        <Html position={[0, 0.8, 0]} center zIndexRange={[100, 0]}>
-          <div style={{
-            opacity: hovered ? 1 : 0,
-            visibility: hovered ? 'visible' : 'hidden',
-            background: '#ffffff',
-            color: '#1a1a1a',
-            padding: '8px 14px',
-            borderRadius: '6px',
-            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-            fontWeight: '600',
-            fontSize: '13px',
-            letterSpacing: '0.3px',
-            whiteSpace: 'nowrap',
-            pointerEvents: 'none',
-            boxShadow: '0 4px 14px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1)',
-            border: '1px solid #e1e4e8',
-            transition: 'all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)',
-            transform: hovered ? 'translateY(-10px) scale(1)' : 'translateY(0px) scale(0.9)',
-          }}>
-            {data.name}
-            {/* Tooltip Arrow */}
+        {!isClose && (
+          <Html position={[0, 0.8, 0]} center zIndexRange={[100, 0]}>
             <div style={{
-              position: 'absolute',
-              bottom: '-5px',
-              left: '50%',
-              transform: 'translateX(-50%) rotate(45deg)',
-              width: '10px',
-              height: '10px',
-              backgroundColor: '#ffffff',
-              borderRight: '1px solid #e1e4e8',
-              borderBottom: '1px solid #e1e4e8',
-            }} />
-          </div>
-        </Html>
+              opacity: hovered ? 1 : 0,
+              visibility: hovered ? 'visible' : 'hidden',
+              background: '#ffffff',
+              color: '#1a1a1a',
+              padding: '8px 14px',
+              borderRadius: '6px',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontWeight: '600',
+              fontSize: '13px',
+              letterSpacing: '0.3px',
+              whiteSpace: 'nowrap',
+              pointerEvents: 'none',
+              boxShadow: '0 4px 14px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1)',
+              border: '1px solid #e1e4e8',
+              transition: 'all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)',
+              transform: hovered ? 'translateY(-10px) scale(1)' : 'translateY(0px) scale(0.9)',
+            }}>
+              {data.name}
+              {/* Tooltip Arrow */}
+              <div style={{
+                position: 'absolute',
+                bottom: '-5px',
+                left: '50%',
+                transform: 'translateX(-50%) rotate(45deg)',
+                width: '10px',
+                height: '10px',
+                backgroundColor: '#ffffff',
+                borderRight: '1px solid #e1e4e8',
+                borderBottom: '1px solid #e1e4e8',
+              }} />
+            </div>
+          </Html>
+        )}
       </group>
     </group>
   );
@@ -124,12 +134,14 @@ export default function MapScene() {
   React.useEffect(() => {
     // Fix the thin white border edge-bleeding issue
     if (mapTexture) {
+      /* eslint-disable react-hooks/immutability */
       mapTexture.wrapS = THREE.ClampToEdgeWrapping;
       mapTexture.wrapT = THREE.ClampToEdgeWrapping;
       mapTexture.generateMipmaps = false;
       mapTexture.minFilter = THREE.LinearFilter;
       mapTexture.magFilter = THREE.LinearFilter;
       mapTexture.needsUpdate = true;
+      /* eslint-enable react-hooks/immutability */
     }
   }, [mapTexture]);
 

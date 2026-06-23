@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
-import MapScene from './scenes/MapScene';
-import FloorScene from './scenes/FloorScene';
+import MapScene from './canvas/scenes/MapScene';
+import FloorScene from './canvas/scenes/FloorScene';
 import UIOverlay from './ui/UIOverlay';
 
 function SceneManager() {

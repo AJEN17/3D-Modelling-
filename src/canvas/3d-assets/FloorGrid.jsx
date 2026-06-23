@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import * as THREE from 'three';
 
-function WallSegment({ p1, p2, thickness = 0.10, color = "#000000" }) {
+function WallSegment({ p1, p2, thickness = 0.15, color = "#111111" }) {
   const distance = Math.hypot(p2[0] - p1[0], p2[1] - p1[1]);
   const angle = Math.atan2(p2[1] - p1[1], p2[0] - p1[0]);
   const midX = (p1[0] + p2[0]) / 2;
@@ -17,12 +17,15 @@ function WallSegment({ p1, p2, thickness = 0.10, color = "#000000" }) {
 
 // Door symbols removed as requested
 
-export default function FloorGrid({ roomData }) {
+export default function FloorGrid({ roomData, walls }) {
   const { width, depth, tileSize } = roomData;
   const gridDivisionsX = Math.floor(width / tileSize);
   const gridDivisionsZ = Math.floor(depth / tileSize);
 
   const wallLines = useMemo(() => {
+    if (walls && walls.length > 0) {
+      return walls;
+    }
     if (roomData.floorType === 'first') {
       return [
         [[0.0, 10.8], [0.0, 2.4]],
@@ -48,7 +51,7 @@ export default function FloorGrid({ roomData }) {
       [[5.0 * 0.6, 9.0 * 0.6], [5.60 * 1.0 * 0.6, 17.6 * 0.6]],  // Inner Vertical down to Y=15
       [[5.0 * 0.64, 15.0 * 0.7], [11.7 * 0.6, 15.0 * 0.7]] // Inner Bottom Horizontal across to Right Wall
     ];
-  }, [roomData.floorType]);
+  }, [roomData.floorType, walls]);
 
   return (
     <group position={[0, 0, 0]}>
@@ -74,9 +77,28 @@ export default function FloorGrid({ roomData }) {
       ))}
 
       {/* Building Borders - Blueprint Lines */}
-      {wallLines.map((line, index) => (
-        <WallSegment key={`wall-${index}`} p1={line[0]} p2={line[1]} thickness={0.15} color="#111111" />
-      ))}
+      {(() => {
+        const segments = [];
+        wallLines.forEach((wall, index) => {
+          if (Array.isArray(wall)) {
+            segments.push(<WallSegment key={`wall-${index}`} p1={wall[0]} p2={wall[1]} thickness={0.15} color="#111111" />);
+          } else if (wall && wall.type === 'line' && wall.start && wall.end) {
+            segments.push(<WallSegment key={`wall-${index}`} p1={wall.start} p2={wall.end} thickness={0.15} color="#111111" />);
+          } else if (wall && wall.type === 'bezier' && wall.controlPoints) {
+            const curve = new THREE.CubicBezierCurve3(
+              new THREE.Vector3(wall.controlPoints[0][0], 0, wall.controlPoints[0][1]),
+              new THREE.Vector3(wall.controlPoints[1][0], 0, wall.controlPoints[1][1]),
+              new THREE.Vector3(wall.controlPoints[2][0], 0, wall.controlPoints[2][1]),
+              new THREE.Vector3(wall.controlPoints[3][0], 0, wall.controlPoints[3][1])
+            );
+            const points = curve.getPoints(10);
+            for (let i = 0; i < points.length - 1; i++) {
+              segments.push(<WallSegment key={`wall-${index}-${i}`} p1={[points[i].x, points[i].z]} p2={[points[i+1].x, points[i+1].z]} thickness={0.15} color="#111111" />);
+            }
+          }
+        });
+        return segments;
+      })()}
     </group>
   );
 }

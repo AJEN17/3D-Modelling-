@@ -1,0 +1,1532 @@
+{
+    "room": {
+        "width": 15.2,
+        "depth": 12.3,
+        "height": 3,
+        "tileSize": 0.6,
+        "name": "Suncity Second Floor",
+        "floorType": "second"
+    },
+    "colors": {
+        "infra": "#00AEEF",
+        "core": "#8CC63F",
+        "coldAisle": "#009245",
+        "hotAisle": "#F1A19D",
+        "pillar": "#ED1C24",
+        "structural": "#ED1C24",
+        "nld": "#662D91",
+        "tx": "#FFFF00",
+        "vas": "#F7931E",
+        "fap": "#FF5722",
+        "rack": "#EEEEEE",
+        "black_pillar": "#222222"
+    },
+    "walls": [
+        {
+            "type": "line",
+            "start": [
+                2.394,
+                3.559
+            ],
+            "end": [
+                1.467,
+                3.559
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                1.467,
+                3.559
+            ],
+            "end": [
+                1.467,
+                3.3449999999999998
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                1.467,
+                3.3449999999999998
+            ],
+            "end": [
+                2.394,
+                3.3449999999999998
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    2.095,
+                    4.473
+                ],
+                [
+                    2.314,
+                    3.1820000000000004
+                ],
+                [
+                    2.693,
+                    2.0220000000000002
+                ],
+                [
+                    3.072,
+                    0.8619999999999999
+                ]
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                3.09,
+                0.8459999999999999
+            ],
+            "end": [
+                16.26,
+                2.061
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    16.716,
+                    2.2199999999999998
+                ],
+                [
+                    16.6,
+                    2.8819999999999997
+                ],
+                [
+                    16.158,
+                    5.066
+                ],
+                [
+                    16.01,
+                    6.726
+                ]
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    16.01,
+                    6.726
+                ],
+                [
+                    15.863000000000001,
+                    8.386000000000001
+                ],
+                [
+                    15.847,
+                    10.284
+                ],
+                [
+                    15.831000000000001,
+                    12.181000000000001
+                ]
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                15.865999999999998,
+                12.181000000000001
+            ],
+            "end": [
+                2.16,
+                13.129
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    2.196,
+                    13.112
+                ],
+                [
+                    2.1430000000000002,
+                    13.012
+                ],
+                [
+                    2.09,
+                    12.912
+                ],
+                [
+                    2.016,
+                    12.495000000000001
+                ]
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    2.016,
+                    12.495000000000001
+                ],
+                [
+                    1.943,
+                    12.079
+                ],
+                [
+                    1.799,
+                    11.253
+                ],
+                [
+                    1.755,
+                    10.613
+                ]
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    1.755,
+                    10.613
+                ],
+                [
+                    1.7120000000000002,
+                    9.973
+                ],
+                [
+                    1.734,
+                    9.313
+                ],
+                [
+                    1.755,
+                    8.654
+                ]
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    1.758,
+                    8.605
+                ],
+                [
+                    1.8170000000000002,
+                    7.495000000000001
+                ],
+                [
+                    1.876,
+                    5.763
+                ],
+                [
+                    2.095,
+                    4.473
+                ]
+            ]
+        }
+    ],
+    "components": [
+        {
+            "id": "delta-dcps-5000-a",
+            "name": "Delta DCPS 5000 A",
+            "type": "infra",
+            "width": 0.75,
+            "depth": 2.26,
+            "height": 2,
+            "position": [
+                2.53,
+                0,
+                10.03
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "127-tr-pac-4",
+            "name": "12.7 TR PAC 4",
+            "type": "tx",
+            "width": 2.21,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                9.89,
+                0,
+                1.97
+            ],
+            "rotation": -0.0961
+        },
+        {
+            "id": "unknown",
+            "name": "PILLAR",
+            "type": "pillar",
+            "width": 0.68,
+            "depth": 0.43,
+            "height": 2,
+            "position": [
+                16.66,
+                0,
+                2.13
+            ],
+            "rotation": -0.1836
+        },
+        {
+            "id": "gmsc-3237",
+            "name": "PILLAR",
+            "type": "pillar",
+            "width": 0.67,
+            "depth": 0.43,
+            "height": 2,
+            "position": [
+                15.7,
+                0,
+                7.13
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "97-mgw28-24",
+            "name": "97 MGW28, 24",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                12.58
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "98-trc1110-bsc62",
+            "name": "98 TRC11,10 BSC62",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                12.01
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "94-msc24-gmgw32-trc4",
+            "name": "94 MSC24 GMGW32 TRC4",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                8.01
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "95-trc15",
+            "name": "95 TRC15",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                7.44
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "92-mgw-191822-93-gmsc37-msc17-gmg28-msc16",
+            "name": "92 MGW 19,18,2,2 93 GMSC37 MSC17 GMG28 MSC16",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                6.85
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "91-hlr4-mgw3mss15",
+            "name": "91 HLR4 MGW3MSS15",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                6.28
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "91-hlr4-mgw3mss15-2",
+            "name": "91 HLR4 MGW3MSS15",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                5.74
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "96-msc24-gmsc32-trc4",
+            "name": "90",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                5.15
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "96-msc24-gmsc32-trc4-2",
+            "name": "96 MSC24, GMSC32 TRC4",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                2.64,
+                0,
+                4.58
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "lan-switch",
+            "name": "LAN SWITCH",
+            "type": "tx",
+            "width": 1.08,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                4.54,
+                0,
+                1.75
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "mgw-24-offlodaing-plan-msc-24-cp",
+            "name": "MGW-24 Offlodaing plan MSC 24 CP",
+            "type": "rack",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                5.33,
+                0,
+                5.15
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "mgw-24",
+            "name": "MGW  24",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                5.91,
+                0,
+                5.72
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "msc-24-odf",
+            "name": "MSC 24 ODF",
+            "type": "rack",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                5.33,
+                0,
+                6.29
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "nms-rdr-server",
+            "name": "NMS RDR server",
+            "type": "rack",
+            "width": 1.37,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                5.73,
+                0,
+                7.44
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "tx-rack",
+            "name": "TX RACK",
+            "type": "rack",
+            "width": 1.12,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                5.6,
+                0,
+                7.96
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "bgf-server",
+            "name": "BGF Server",
+            "type": "rack",
+            "width": 1.37,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                5.73,
+                0,
+                8.52
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "cgnat-rack-1",
+            "name": "CGNAT RACK 1",
+            "type": "rack",
+            "width": 1.37,
+            "depth": 0.81,
+            "height": 2,
+            "position": [
+                5.51,
+                0,
+                9.23
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "127-tr-pac-3",
+            "name": "12.7 TR PAC 3",
+            "type": "tx",
+            "width": 2.21,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                5.69,
+                0,
+                12.44
+            ],
+            "rotation": -3.0612
+        },
+        {
+            "id": "dc-pdu",
+            "name": "DC PDU",
+            "type": "infra",
+            "width": 0.66,
+            "depth": 0.52,
+            "height": 2,
+            "position": [
+                8.27,
+                0,
+                12.23
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ofc-rack-2",
+            "name": "12.7 TR PAC 1",
+            "type": "tx",
+            "width": 2.21,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                12.83,
+                0,
+                11.91
+            ],
+            "rotation": -3.0613
+        },
+        {
+            "id": "odf-fms",
+            "name": "ODF & FMS",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.51,
+                0,
+                5.17
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf-msc-18-odf-mgw39",
+            "name": "ODF  MSC 18 ODF  MGW39",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.51,
+                0,
+                5.74
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf-mgw39",
+            "name": "ODF  MGW39",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.51,
+                0,
+                6.31
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "mgw-2857",
+            "name": "MGW 28/57`",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.49,
+                0,
+                8.57
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "msc-28-cp",
+            "name": "MSC 28 CP",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                8.06,
+                0,
+                8.57
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "msc-28-cp-2",
+            "name": "MSC 28 CP",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.49,
+                0,
+                9.15
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf",
+            "name": "ODF",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                8.08,
+                0,
+                9.15
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "geoprobe-tektronix",
+            "name": "GEOPROBE tektronix",
+            "type": "tx",
+            "width": 1.15,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                9.95,
+                0,
+                10.87
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf-rack-msc-1617",
+            "name": "ODF Rack MSc 16&17",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                9.64,
+                0,
+                4.58
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf-rack-msc-15",
+            "name": "ODF Rack MSC 15",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                9.64,
+                0,
+                6.29
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "sdh-rack-9",
+            "name": "SDH RACK 9",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                11.8,
+                0,
+                7.44
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "600x800",
+            "name": "600X800",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                12.37,
+                0,
+                7.44
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "fms-rack-trc",
+            "name": "FMS Rack TRC",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                11.8,
+                0,
+                8.01
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "fms-rack-trc-2",
+            "name": "FMS Rack TRC",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                11.8,
+                0,
+                8.58
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmsc-32-cp",
+            "name": "GMSC 32 CP",
+            "type": "core",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                2.87
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmsc-32-apt",
+            "name": "GMSC 32 APT",
+            "type": "core",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                14.53,
+                0,
+                2.87
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmsc-32-apt-2",
+            "name": "GMSC 32 APT",
+            "type": "core",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                3.44
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmsc-32-apt-3",
+            "name": "GMSC 32 APT",
+            "type": "core",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                14.53,
+                0,
+                3.44
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmsc-32-apt-4",
+            "name": "GMSC 32 APT",
+            "type": "core",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                4.01
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "mgw-32",
+            "name": "MGW 32",
+            "type": "core",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                4.58
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gcs-37",
+            "name": "GCS 37",
+            "type": "core",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                14.53,
+                0,
+                4.58
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf-rack-gmsc-3237",
+            "name": "ODF Rack GMSc 32&37",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                14.53,
+                0,
+                6.29
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "sdh-rack-1",
+            "name": "SDH RACK 1",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                8.01
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "sdh-rack-2",
+            "name": "SDH RACK 2",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                8.58
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "sdh-rack-3",
+            "name": "SDH RACK 3",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                9.15
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "sdh-rack-4",
+            "name": "SDH RACK 4",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                14.53,
+                0,
+                9.15
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "sdh-rack-4-2",
+            "name": "SDH RACK 4",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                9.72
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ofc-rack-1",
+            "name": "OFC Rack 1",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                14.53,
+                0,
+                9.72
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ofc-rack-1-2",
+            "name": "OFC Rack 1",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                10.29
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ofc-rack-2-2",
+            "name": "OFC Rack 2",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                10.87
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "juniper-data-rack-mpbn",
+            "name": "Juniper Data Rack MPBN",
+            "type": "rack",
+            "width": 1.37,
+            "depth": 0.61,
+            "height": 2,
+            "position": [
+                12.21,
+                0,
+                9.74
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "juniper-data-rack-mpbn-2",
+            "name": "Juniper Data Rack MPBN",
+            "type": "rack",
+            "width": 1.37,
+            "depth": 0.61,
+            "height": 2,
+            "position": [
+                12.21,
+                0,
+                10.36
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-2",
+            "name": "EPABX",
+            "type": "tx",
+            "width": 0.54,
+            "depth": 0.44,
+            "height": 2,
+            "position": [
+                3.16,
+                0,
+                1.29
+            ],
+            "rotation": -1.7489
+        },
+        {
+            "id": "unknown-3",
+            "name": "EPABX",
+            "type": "tx",
+            "width": 0.25,
+            "depth": 0.49,
+            "height": 2,
+            "position": [
+                3.15,
+                0,
+                1.31
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "mgw",
+            "name": "MGW",
+            "type": "rack",
+            "width": 1.48,
+            "depth": 0.68,
+            "height": 2,
+            "position": [
+                2.72,
+                0,
+                3.46
+            ],
+            "rotation": -1.7934
+        },
+        {
+            "id": "gcs-37-2",
+            "name": "GCS 37",
+            "type": "core",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.97,
+                0,
+                5.17
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmgw-37",
+            "name": "GMGW 37",
+            "type": "core",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                13.95,
+                0,
+                5.74
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-4",
+            "name": "",
+            "type": "core",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                14.54,
+                0,
+                5.74
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "osn-gmgw39",
+            "name": "OSN GMGW39",
+            "type": "tx",
+            "width": 0.55,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                9.64,
+                0,
+                10.29
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "optic",
+            "name": "Optic",
+            "type": "tx",
+            "width": 0.53,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                10.2,
+                0,
+                10.29
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "cgnat-rack-2",
+            "name": "CGNAT RACK 2",
+            "type": "rack",
+            "width": 1.37,
+            "depth": 0.82,
+            "height": 2,
+            "position": [
+                5.51,
+                0,
+                10.04
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "cgnat-rack-3",
+            "name": "CGNAT RACK 3",
+            "type": "rack",
+            "width": 1.37,
+            "depth": 0.81,
+            "height": 2,
+            "position": [
+                5.51,
+                0,
+                10.86
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf-2",
+            "name": "ODF",
+            "type": "tx",
+            "width": 0.57,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                8.04,
+                0,
+                9.72
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "dcdb-4a",
+            "name": "DCDB 4A",
+            "type": "infra",
+            "width": 1.01,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.7,
+                0,
+                10.31
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmss",
+            "name": "GMSS",
+            "type": "tx",
+            "width": 0.58,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                8.04,
+                0,
+                7.45
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "gmgw",
+            "name": "GMGW",
+            "type": "tx",
+            "width": 1.13,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.78,
+                0,
+                8.01
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "dc-pdu-2",
+            "name": "DC PDU",
+            "type": "infra",
+            "width": 0.77,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                9.77,
+                0,
+                7.47
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "huwaei-optic",
+            "name": "Huwaei Optic",
+            "type": "tx",
+            "width": 0.58,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                9.66,
+                0,
+                9.74
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ericsson-router",
+            "name": "ERICSSON ROUTER",
+            "type": "rack",
+            "width": 1.21,
+            "depth": 0.85,
+            "height": 2,
+            "position": [
+                9.97,
+                0,
+                8.18
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ericsson-router-2",
+            "name": "ERICSSON ROUTER",
+            "type": "rack",
+            "width": 1.21,
+            "depth": 0.83,
+            "height": 2,
+            "position": [
+                9.97,
+                0,
+                9.04
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-5",
+            "name": "ATS",
+            "type": "infra",
+            "width": 0.47,
+            "depth": 0.33,
+            "height": 2,
+            "position": [
+                2.09,
+                0,
+                11.5
+            ],
+            "rotation": -2.989
+        },
+        {
+            "id": "ats",
+            "name": "ATS",
+            "type": "infra",
+            "width": 0.49,
+            "depth": 0.29,
+            "height": 2,
+            "position": [
+                15.58,
+                0,
+                11.28
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-6",
+            "name": "ATS",
+            "type": "infra",
+            "width": 0.44,
+            "depth": 0.4,
+            "height": 2,
+            "position": [
+                11.81,
+                0,
+                1.91
+            ],
+            "rotation": -1.7006
+        },
+        {
+            "id": "unknown-7",
+            "name": "ATS",
+            "type": "infra",
+            "width": 0.46,
+            "depth": 0.36,
+            "height": 2,
+            "position": [
+                3.01,
+                0,
+                1.87
+            ],
+            "rotation": -0.2522
+        },
+        {
+            "id": "10tr-pac-5",
+            "name": "10TR PAC 5",
+            "type": "tx",
+            "width": 1.31,
+            "depth": 0.82,
+            "height": 2,
+            "position": [
+                6.1,
+                0,
+                1.65
+            ],
+            "rotation": -0.105
+        },
+        {
+            "id": "dcdb-3a",
+            "name": "12.7 TR PAC 2",
+            "type": "tx",
+            "width": 2.21,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                10.36,
+                0,
+                12.11
+            ],
+            "rotation": -3.0612
+        },
+        {
+            "id": "dcdb-3a-2",
+            "name": "DCDB 3A",
+            "type": "infra",
+            "width": 1.02,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.71,
+                0,
+                10.88
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-8",
+            "name": "10 TR PAC 6",
+            "type": "tx",
+            "width": 1.68,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                7.77,
+                0,
+                1.79
+            ],
+            "rotation": -0.0849
+        },
+        {
+            "id": "unknown-9",
+            "name": "Alarm Controller",
+            "type": "infra",
+            "width": 0.5,
+            "depth": 0.35,
+            "height": 2,
+            "position": [
+                16.38,
+                0,
+                2.66
+            ],
+            "rotation": -0.1754
+        },
+        {
+            "id": "unknown-10",
+            "name": "ACS",
+            "type": "tx",
+            "width": 0.47,
+            "depth": 0.33,
+            "height": 2,
+            "position": [
+                2.79,
+                0,
+                2.37
+            ],
+            "rotation": -1.8094
+        },
+        {
+            "id": "unknown-11",
+            "name": "ACS",
+            "type": "tx",
+            "width": 0.17,
+            "depth": 0.3,
+            "height": 2,
+            "position": [
+                2.79,
+                0,
+                2.39
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "600x800-6",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                12.03,
+                0,
+                6.87
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "600x800-7",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                12.05,
+                0,
+                6.32
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "600x800-8",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                12.06,
+                0,
+                5.78
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "600x800-9",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                12.08,
+                0,
+                5.22
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "600x800-10",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                12.05,
+                0,
+                4.72
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "600x800-11",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                12.06,
+                0,
+                4.16
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-25",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                9.87,
+                0,
+                5.17
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-26",
+            "name": "600X800",
+            "type": "core",
+            "width": 1.01,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                9.87,
+                0,
+                5.73
+            ],
+            "rotation": -0.0
+        }
+    ]
+}
