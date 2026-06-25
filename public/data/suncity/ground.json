@@ -1,0 +1,630 @@
+{
+    "room": {
+        "width": 17.5,
+        "depth": 6.0,
+        "height": 3,
+        "tileSize": 0.6,
+        "name": "SUNCITY GROUND FLOOR NEW SWITCH ROOM",
+        "floorType": "ground"
+    },
+    "colors": {
+        "infra": "#00AEEF",
+        "core": "#8CC63F",
+        "coldAisle": "#009245",
+        "hotAisle": "#F1A19D",
+        "pillar": "#ED1C24",
+        "structural": "#ED1C24",
+        "nld": "#662D91",
+        "tx": "#FFFF00",
+        "vas": "#F7931E",
+        "fap": "#FF5722",
+        "rack": "#EEEEEE",
+        "black_pillar": "#222222"
+    },
+    "walls": [
+        {
+            "type": "line",
+            "start": [
+                0.964,
+                1.706
+            ],
+            "end": [
+                1.5030000000000001,
+                4.4799999999999995
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                1.887,
+                4.635
+            ],
+            "end": [
+                6.1259999999999994,
+                4.241
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                6.727,
+                4.136
+            ],
+            "end": [
+                7.943,
+                4.136
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                9.526,
+                4.142
+            ],
+            "end": [
+                11.283,
+                4.141
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                11.825,
+                4.28
+            ],
+            "end": [
+                15.621,
+                4.927
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                15.844,
+                4.802
+            ],
+            "end": [
+                16.205000000000002,
+                1.677
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    16.205000000000002,
+                    1.677
+                ],
+                [
+                    14.872,
+                    1.555
+                ],
+                [
+                    11.246,
+                    0.9969999999999999
+                ],
+                [
+                    8.704,
+                    1.008
+                ]
+            ]
+        },
+        {
+            "type": "bezier",
+            "controlPoints": [
+                [
+                    8.704,
+                    1.008
+                ],
+                [
+                    6.162,
+                    1.019
+                ],
+                [
+                    3.558,
+                    1.382
+                ],
+                [
+                    0.953,
+                    1.7439999999999998
+                ]
+            ]
+        }
+    ],
+    "components": [
+        {
+            "id": "pillar",
+            "name": "PILLAR",
+            "type": "pillar",
+            "width": 0.59,
+            "depth": 0.31,
+            "height": 2,
+            "position": [
+                6.42,
+                0,
+                4.2
+            ],
+            "rotation": -2.9756
+        },
+        {
+            "id": "pillar-2",
+            "name": "PILLAR",
+            "type": "pillar",
+            "width": 0.59,
+            "depth": 0.31,
+            "height": 2,
+            "position": [
+                1.59,
+                0,
+                4.62
+            ],
+            "rotation": -2.9485
+        },
+        {
+            "id": "pillar-3",
+            "name": "PILLAR",
+            "type": "pillar",
+            "width": 0.59,
+            "depth": 0.31,
+            "height": 2,
+            "position": [
+                11.58,
+                0,
+                4.18
+            ],
+            "rotation": -0.1376
+        },
+        {
+            "id": "pillar-4",
+            "name": "PILLAR",
+            "type": "pillar",
+            "width": 0.59,
+            "depth": 0.31,
+            "height": 2,
+            "position": [
+                15.93,
+                0,
+                4.97
+            ],
+            "rotation": -0.0508
+        },
+        {
+            "id": "10-tr-pac-4",
+            "name": "10 TR PAC 4",
+            "type": "infra",
+            "width": 0.78,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                1.94,
+                0,
+                3.74
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "10-tr-pac-5",
+            "name": "10 TR PAC 5",
+            "type": "infra",
+            "width": 0.78,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                1.94,
+                0,
+                2.97
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "10-tr-pac-6",
+            "name": "10 TR PAC 6",
+            "type": "infra",
+            "width": 0.78,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                1.93,
+                0,
+                2.2
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "10-tr-pac-3",
+            "name": "10 TR PAC 3",
+            "type": "infra",
+            "width": 0.78,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                15.37,
+                0,
+                4.23
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "pac-1-10-tr-pac-2",
+            "name": "10 TR PAC 2",
+            "type": "infra",
+            "width": 0.78,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                15.38,
+                0,
+                3.48
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "10-tr",
+            "name": "10 TR PAC 1",
+            "type": "infra",
+            "width": 0.78,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                15.37,
+                0,
+                2.75
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "odf",
+            "name": "ODF",
+            "type": "tx",
+            "width": 0.5,
+            "depth": 0.29,
+            "height": 2,
+            "position": [
+                13.92,
+                0,
+                2.02
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "transmissio-psx-n-rack-rack",
+            "name": "Transmission rack",
+            "type": "tx",
+            "width": 0.72,
+            "depth": 0.65,
+            "height": 2,
+            "position": [
+                10.7,
+                0,
+                2.02
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ims-rack-4",
+            "name": "IMS rack 4",
+            "type": "rack",
+            "width": 0.67,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                3.61,
+                0,
+                3.5
+            ],
+            "rotation": -0.0,
+            "imageUrl": "/images/suncity-ground-ims-4.jpg"
+        },
+        {
+            "id": "ims-rack-3",
+            "name": "IMS rack 3",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                4.34,
+                0,
+                3.51
+            ],
+            "rotation": -0.0,
+            "imageUrl": "/images/suncity-ground-ims-3.jpg"
+        },
+        {
+            "id": "nokia-ccr2",
+            "name": "NOKIA CCR2",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                10.71,
+                0,
+                3.46
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "cisco-sr3",
+            "name": "CISCO SR3",
+            "type": "rack",
+            "width": 0.73,
+            "depth": 0.79,
+            "height": 2,
+            "position": [
+                9.98,
+                0,
+                3.46
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "nokia-ccr1",
+            "name": "NOKIA CCR1",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                11.45,
+                0,
+                3.47
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ups-pdu",
+            "name": "UPS PDU",
+            "type": "infra",
+            "width": 0.99,
+            "depth": 0.17,
+            "height": 2,
+            "position": [
+                4.93,
+                0,
+                1.31
+            ],
+            "rotation": -3.0083
+        },
+        {
+            "id": "dc-pdu",
+            "name": "DC PDU",
+            "type": "infra",
+            "width": 1.19,
+            "depth": 0.28,
+            "height": 2,
+            "position": [
+                7.38,
+                0,
+                1.19
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "dc-pdu-2",
+            "name": "DC PDU",
+            "type": "infra",
+            "width": 1.84,
+            "depth": 0.28,
+            "height": 2,
+            "position": [
+                9.18,
+                0,
+                1.19
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ups-pdu-2",
+            "name": "UPS PDU",
+            "type": "infra",
+            "width": 0.99,
+            "depth": 0.17,
+            "height": 2,
+            "position": [
+                6.06,
+                0,
+                1.2
+            ],
+            "rotation": -3.0131
+        },
+        {
+            "id": "unknown",
+            "name": "7500",
+            "type": "tx",
+            "width": 0.52,
+            "depth": 0.29,
+            "height": 2,
+            "position": [
+                8.21,
+                0,
+                2.2
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ims-rack-2",
+            "name": "IMS rack 2",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                5.1,
+                0,
+                3.51
+            ],
+            "rotation": -0.0,
+            "imageUrl": "/images/suncity-ground-ims-2.jpg"
+        },
+        {
+            "id": "ims-rack-1",
+            "name": "IMS rack 1",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                5.82,
+                0,
+                3.51
+            ],
+            "rotation": -0.0,
+            "imageUrl": "/images/suncity-ground-ims-1.jpg"
+        },
+        {
+            "id": "eci-nms",
+            "name": "ECI NMS",
+            "type": "rack",
+            "width": 0.73,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                12.18,
+                0,
+                3.46
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "nokia-rack-sar02",
+            "name": "NOKIA RACK SAR02",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                12.91,
+                0,
+                3.46
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "nokia-rack-sar01",
+            "name": "NOKIA RACK SAR01",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                13.65,
+                0,
+                3.46
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-2",
+            "name": "ATS",
+            "type": "infra",
+            "width": 0.39,
+            "depth": 0.17,
+            "height": 2,
+            "position": [
+                1.7,
+                0,
+                4.26
+            ],
+            "rotation": -2.9652
+        },
+        {
+            "id": "unknown-3",
+            "name": "ATS",
+            "type": "infra",
+            "width": 0.26,
+            "depth": 0.17,
+            "height": 2,
+            "position": [
+                13.4,
+                0,
+                1.52
+            ],
+            "rotation": -1.7086
+        },
+        {
+            "id": "unknown-4",
+            "name": "ATS",
+            "type": "infra",
+            "width": 0.26,
+            "depth": 0.15,
+            "height": 2,
+            "position": [
+                13.1,
+                0,
+                1.47
+            ],
+            "rotation": -1.7813
+        },
+        {
+            "id": "unknown-5",
+            "name": "",
+            "type": "infra",
+            "width": 0.49,
+            "depth": 0.19,
+            "height": 2,
+            "position": [
+                14.27,
+                0,
+                3.46
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "unknown-6",
+            "name": "",
+            "type": "infra",
+            "width": 0.49,
+            "depth": 0.19,
+            "height": 2,
+            "position": [
+                14.45,
+                0,
+                1.97
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "facebook-2",
+            "name": "Facebook 2",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                6.69,
+                0,
+                3.53
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "facebook-1",
+            "name": "Facebook 1",
+            "type": "rack",
+            "width": 0.72,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                7.42,
+                0,
+                3.53
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "ribbon",
+            "name": "Ribbon PSX RAck",
+            "type": "core",
+            "width": 0.53,
+            "depth": 0.77,
+            "height": 2,
+            "position": [
+                11.31,
+                0,
+                1.97
+            ],
+            "rotation": -0.0
+        }
+    ]
+}
