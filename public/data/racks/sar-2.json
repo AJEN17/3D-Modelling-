@@ -1,0 +1,13 @@
+{
+  "id": "sar-2",
+  "name": "NOKIA SAR2 TRANSMISSION",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    { "startU": 37, "sizeU": 6, "type": "blank", "name": "Blank panel" },
+    { "startU": 35, "sizeU": 2, "type": "patch_panel", "name": "INTERNAL FMS", "color": "#8FA1B7" },
+    { "startU": 21, "sizeU": 14, "type": "blank", "name": "Blank panel" },
+    { "startU": 7, "sizeU": 14, "type": "switch", "name": "NOKIA 7750 SR-12\nMBMUMLAKSAR02NSR12", "color": "#B4B4B4" },
+    { "startU": 1, "sizeU": 6, "type": "blank", "name": "Blank panel" }
+  ]
+}

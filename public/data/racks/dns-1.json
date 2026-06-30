@@ -1,0 +1,59 @@
+{
+  "id": "dns-1",
+  "name": "MUMLAK4FR1R9 DNS-1 CORE",
+  "owner": "Nokia",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 39,
+      "sizeU": 4,
+      "type": "patch_panel",
+      "name": "DCDB"
+    },
+    {
+      "startU": 19,
+      "sizeU": 20,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 17,
+      "sizeU": 2,
+      "type": "compute",
+      "name": "HP G6\nMUMMLDEGDSS02",
+      "color": "#92D050"
+    },
+    {
+      "startU": 14,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 12,
+      "sizeU": 2,
+      "type": "compute",
+      "name": "MUMMLDDEGDDA02",
+      "color": "#92D050"
+    },
+    {
+      "startU": 9,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 7,
+      "sizeU": 2,
+      "type": "compute",
+      "name": "HP G6\nMUMMLDEGDPS02",
+      "color": "#92D050"
+    },
+    {
+      "startU": 1,
+      "sizeU": 6,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

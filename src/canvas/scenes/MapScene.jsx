@@ -29,7 +29,6 @@ function MapPin({ data }) {
   // Sundale and Suncity are very close, so they get smaller hitboxes to prevent overlap.
   // The others get massive hitboxes so they are incredibly easy to click from the sky.
   const isClose = data.id.startsWith('suncity') || data.id.startsWith('sundale');
-  const hitBoxRadius = isClose ? 0.6 : 2.0;
 
   return (
     <group position={data.position}>
@@ -84,43 +83,49 @@ function MapPin({ data }) {
           <meshStandardMaterial color={hovered ? '#e0e0e0' : '#b0b0b0'} roughness={0.3} metalness={0.8} />
         </mesh>
 
-        {/* High-Quality Professional Tooltip (Hidden until hover) */}
-        {!isClose && (
-          <Html position={[0, 0.8, 0]} center zIndexRange={[100, 0]}>
+        {/* Premium Glassmorphism Tooltip (Hidden until hover) */}
+        <Html position={[0, 0.8, 0]} center zIndexRange={[100, 0]}>
+          <div style={{
+            opacity: hovered ? 1 : 0,
+            visibility: hovered ? 'visible' : 'hidden',
+            background: 'rgba(255, 255, 255, 0.65)',
+            backdropFilter: 'blur(16px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+            color: '#1a1a1a',
+            padding: '10px 18px',
+            borderRadius: '12px',
+            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+            fontWeight: '600',
+            fontSize: '14px',
+            letterSpacing: '-0.2px',
+            whiteSpace: 'nowrap',
+            pointerEvents: 'none',
+            boxShadow: '0 12px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06)',
+            border: '1px solid rgba(255, 255, 255, 0.9)',
+            transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            transform: hovered ? 'translateY(-12px) scale(1)' : 'translateY(5px) scale(0.85)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
+          }}>
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981', boxShadow: '0 0 8px rgba(16, 185, 129, 0.6)' }} />
+            {data.name}
+            {/* Subtle Pointer Triangle */}
             <div style={{
-              opacity: hovered ? 1 : 0,
-              visibility: hovered ? 'visible' : 'hidden',
-              background: '#ffffff',
-              color: '#1a1a1a',
-              padding: '8px 14px',
-              borderRadius: '6px',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-              fontWeight: '600',
-              fontSize: '13px',
-              letterSpacing: '0.3px',
-              whiteSpace: 'nowrap',
-              pointerEvents: 'none',
-              boxShadow: '0 4px 14px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1)',
-              border: '1px solid #e1e4e8',
-              transition: 'all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)',
-              transform: hovered ? 'translateY(-10px) scale(1)' : 'translateY(0px) scale(0.9)',
-            }}>
-              {data.name}
-              {/* Tooltip Arrow */}
-              <div style={{
-                position: 'absolute',
-                bottom: '-5px',
-                left: '50%',
-                transform: 'translateX(-50%) rotate(45deg)',
-                width: '10px',
-                height: '10px',
-                backgroundColor: '#ffffff',
-                borderRight: '1px solid #e1e4e8',
-                borderBottom: '1px solid #e1e4e8',
-              }} />
-            </div>
-          </Html>
-        )}
+              position: 'absolute',
+              bottom: '-6px',
+              left: '50%',
+              transform: 'translateX(-50%) rotate(45deg)',
+              width: '12px',
+              height: '12px',
+              background: 'rgba(255, 255, 255, 0.65)',
+              backdropFilter: 'blur(16px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+              borderRight: '1px solid rgba(255, 255, 255, 0.9)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.9)',
+            }} />
+          </div>
+        </Html>
       </group>
     </group>
   );
@@ -146,8 +151,8 @@ export default function MapScene() {
   }, [mapTexture]);
 
   React.useEffect(() => {
-    // Set camera to top-down view
-    camera.position.set(0, 35, 0.1);
+    // Set camera to a slightly angled isometric view so pins are easier to click
+    camera.position.set(0, 26, 16);
   }, [camera]);
 
   return (

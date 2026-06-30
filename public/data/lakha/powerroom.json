@@ -1,0 +1,450 @@
+{
+    "room": {
+        "width": 15.0,
+        "depth": 9.0,
+        "height": 3,
+        "tileSize": 0.6,
+        "name": "POWER ROOM",
+        "floorType": "ground"
+    },
+    "colors": {
+        "infra": "#0072bc",
+        "core": "#8CC63F",
+        "coldAisle": "#009245",
+        "hotAisle": "#F1A19D",
+        "pillar": "#ED1C24",
+        "structural": "#ED1C24",
+        "nld": "#662D91",
+        "tx": "#FFFF00",
+        "vas": "#f26522",
+        "fap": "#FF5722",
+        "rack": "#EEEEEE",
+        "black_pillar": "#222222"
+    },
+    "legend": [
+        { "label": "AC & SRC", "color": "#0072bc" },
+        { "label": "UPS O/P Panel", "color": "#ED1C24" },
+        { "label": "LT Panel-1", "color": "#F1A19D" },
+        { "label": "LI BATTERY", "color": "#222222" },
+        { "label": "DC PDU", "color": "#662D91" },
+        { "label": "Transformer Incomer Panel", "color": "#f26522" },
+        { "label": "Vertiv SMPS", "color": "#FFFF00" }
+    ],
+    "walls": [
+        {
+            "type": "line",
+            "start": [
+                -0.1,
+                -0.1
+            ],
+            "end": [
+                14.3,
+                -0.1
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                14.3,
+                -0.1
+            ],
+            "end": [
+                14.3,
+                3.7
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                14.3,
+                3.7
+            ],
+            "end": [
+                6.9,
+                3.7
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                4.6,
+                3.7
+            ],
+            "end": [
+                2.9,
+                3.7
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                2.9,
+                3.7
+            ],
+            "end": [
+                2.9,
+                7.9
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                2.9,
+                7.9
+            ],
+            "end": [
+                -0.1,
+                7.9
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                -0.1,
+                7.9
+            ],
+            "end": [
+                -0.1,
+                -0.1
+            ]
+        }
+    ],
+    "components": [
+        {
+            "id": "ups-1",
+            "name": "UPS Output Panel 1",
+            "type": "pillar",
+            "width": 0.45,
+            "depth": 1.0,
+            "height": 2,
+            "position": [
+                0.225,
+                0,
+                0.8
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "ups-2",
+            "name": "UPS Output Panel 2",
+            "type": "pillar",
+            "width": 0.45,
+            "depth": 1.0,
+            "height": 2,
+            "position": [
+                0.225,
+                0,
+                2.0
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "lt-panel-1",
+            "name": "LT Panel-1",
+            "type": "hotAisle",
+            "width": 5.8,
+            "depth": 1.0,
+            "height": 2,
+            "position": [
+                5.43,
+                0,
+                0.8
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "smps-1",
+            "name": "Vertiv SMPS-1",
+            "type": "tx",
+            "width": 2.2,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                10.1,
+                0,
+                0.635
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "smps-2",
+            "name": "Vertiv SMPS-2",
+            "type": "tx",
+            "width": 2.2,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                12.3,
+                0,
+                0.635
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "flakt-ac",
+            "name": "FlaktGroup AC",
+            "type": "infra",
+            "width": 0.8,
+            "depth": 0.67,
+            "height": 2,
+            "position": [
+                13.8,
+                0,
+                1.635
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "transformer",
+            "name": "Transformer Incomer Panel",
+            "type": "vas",
+            "width": 4.0,
+            "depth": 1.05,
+            "height": 2,
+            "position": [
+                11.4,
+                0,
+                2.125
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-7",
+            "name": "Li Battery 7",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                0.9,
+                0,
+                2.7
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-6",
+            "name": "Li Battery 6",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                0.9,
+                0,
+                3.3000000000000003
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-5",
+            "name": "Li Battery 5",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                0.9,
+                0,
+                3.9000000000000004
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-4",
+            "name": "Li Battery 4",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                0.9,
+                0,
+                4.5
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-3",
+            "name": "Li Battery 3",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                0.9,
+                0,
+                5.1
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-8",
+            "name": "Li Battery 8",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                2.1,
+                0,
+                2.7
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-9",
+            "name": "Li Battery 9",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                2.1,
+                0,
+                3.3000000000000003
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-10",
+            "name": "Li Battery 10",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                2.1,
+                0,
+                3.9000000000000004
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-11",
+            "name": "Li Battery 11",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                2.1,
+                0,
+                4.5
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-12",
+            "name": "Li Battery 12",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                2.1,
+                0,
+                5.1
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "vertiv-src-1",
+            "name": "Vertiv SRC 1",
+            "type": "infra",
+            "width": 0.8,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                3.6,
+                0,
+                3.3
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "flakt-pac",
+            "name": "FlaktGroup PAC",
+            "type": "infra",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                5.4,
+                0,
+                2.7
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-2",
+            "name": "Li Battery 2",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                7.3,
+                0,
+                3.3
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bat-1",
+            "name": "Li Battery 1",
+            "type": "black_pillar",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                7.9,
+                0,
+                3.3
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "vertiv-src-2",
+            "name": "Vertiv SRC 2",
+            "type": "infra",
+            "width": 0.8,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                8.6,
+                0,
+                3.3
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "dc-pdu-2",
+            "name": "DC PDU 2",
+            "type": "nld",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                0.3,
+                0,
+                6.3
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "dc-pdu-1",
+            "name": "DC PDU 1",
+            "type": "nld",
+            "width": 0.6,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                0.3,
+                0,
+                6.9
+            ],
+            "rotation": 0
+        }
+    ]
+}

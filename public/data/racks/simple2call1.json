@@ -1,0 +1,8 @@
+{
+  "id": "simple2call1",
+  "name": "MUMLAK3FR1R1 SIMPLE2CALL ENTERPRISES",
+  "totalU": 42,
+  "units": [
+    { "startU": 1, "sizeU": 42, "type": "empty", "name": "EMPTY FOR SIMPLE2CALL Expansion" }
+  ]
+}

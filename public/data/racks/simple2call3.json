@@ -1,0 +1,20 @@
+{
+  "id": "simple2call3",
+  "name": "MUMLAK3FR1R3 SIMPLE2CALL ENTERPRISES",
+  "totalU": 42,
+  "units": [
+    { "startU": 41, "sizeU": 2, "type": "switch", "name": "EMERSON NETWORK POWER", "color": "#FFC000" },
+    { "startU": 40, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 39, "sizeU": 1, "type": "switch", "name": "TELECT ALARM SYS", "color": "#FFC000" },
+    { "startU": 38, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 37, "sizeU": 1, "type": "switch", "name": "CISCO C2960 PRI IDEA", "color": "#FFFF00" },
+    { "startU": 36, "sizeU": 1, "type": "switch", "name": "CISCO C2960 STNDBY", "color": "#FFFF00" },
+    { "startU": 35, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 34, "sizeU": 1, "type": "compute", "name": "TEJAS TJ1260", "color": "#92D050" },
+    { "startU": 30, "sizeU": 4, "type": "blank", "name": "Blank panel" },
+    { "startU": 20, "sizeU": 10, "type": "compute", "name": "EXCEL CSP ID2 NODE4", "color": "#92D050" },
+    { "startU": 11, "sizeU": 9, "type": "compute", "name": "CANTATA EXCEL CSP ID2 NODE3", "color": "#92D050" },
+    { "startU": 2, "sizeU": 9, "type": "compute", "name": "EXS LUCENT TECH ID2 NODE2", "color": "#92D050" },
+    { "startU": 1, "sizeU": 1, "type": "blank", "name": "Blank panel" }
+  ]
+}

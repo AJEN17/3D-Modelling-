@@ -1,0 +1,18 @@
+{
+  "id": "son-1",
+  "name": "MUM-GUJ SON1",
+  "totalU": 42,
+  "units": [
+    { "startU": 23, "sizeU": 20, "type": "blank", "name": "Blank panel" },
+    { "startU": 22, "sizeU": 1, "type": "compute", "name": "SERVER 07", "color": "#00B050" },
+    { "startU": 21, "sizeU": 1, "type": "compute", "name": "SERVER 06", "color": "#00B050" },
+    { "startU": 20, "sizeU": 1, "type": "compute", "name": "SERVER 05", "color": "#00B050" },
+    { "startU": 19, "sizeU": 1, "type": "compute", "name": "SERVER 04", "color": "#00B050" },
+    { "startU": 18, "sizeU": 1, "type": "compute", "name": "SERVER 03", "color": "#00B050" },
+    { "startU": 17, "sizeU": 1, "type": "compute", "name": "SERVER 02", "color": "#00B050" },
+    { "startU": 16, "sizeU": 1, "type": "compute", "name": "SERVER 01", "color": "#00B050" },
+    { "startU": 3, "sizeU": 13, "type": "blank", "name": "Blank panel" },
+    { "startU": 2, "sizeU": 1, "type": "switch", "name": "PSM", "color": "#FFC000" },
+    { "startU": 1, "sizeU": 1, "type": "switch", "name": "PSM", "color": "#FFC000" }
+  ]
+}

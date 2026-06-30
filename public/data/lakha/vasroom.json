@@ -1,0 +1,954 @@
+{
+    "room": {
+        "width": 14,
+        "depth": 8.5,
+        "height": 3,
+        "tileSize": 0.6,
+        "name": "VAS ROOM",
+        "floorType": "vas"
+    },
+    "colors": {
+        "infra": "#00AEEF",
+        "core": "#8CC63F",
+        "coldAisle": "#009245",
+        "hotAisle": "#F1A19D",
+        "pillar": "#ED1C24",
+        "structural": "#ED1C24",
+        "nld": "#662D91",
+        "tx": "#FFFF00",
+        "vas": "#F7931E",
+        "pac": "#00FFFF",
+        "workstation": "#F7931E"
+    },
+    "walls": [
+        {
+            "type": "line",
+            "start": [
+                0.2,
+                0.1
+            ],
+            "end": [
+                13.85,
+                0.1
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                13.85,
+                0.1
+            ],
+            "end": [
+                13.85,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                13.85,
+                6.3
+            ],
+            "end": [
+                12.45,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                12.45,
+                6.3
+            ],
+            "end": [
+                12.45,
+                7.85
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                12.45,
+                7.85
+            ],
+            "end": [
+                9.95,
+                7.85
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                9.95,
+                7.85
+            ],
+            "end": [
+                9.95,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                9.95,
+                6.3
+            ],
+            "end": [
+                0.2,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                0.2,
+                6.3
+            ],
+            "end": [
+                0.2,
+                0.1
+            ]
+        }
+    ],
+    "components": [
+        {
+            "id": "comp-0",
+            "name": "PAC-1",
+            "type": "coldAisle",
+            "width": 0.568295835388787,
+            "depth": 0.4725162567551612,
+            "height": 2,
+            "position": [
+                2.2182398283406077,
+                0,
+                0.9990558633222524
+            ],
+            "rotation": 0,
+            "color": "#00B050"
+        },
+        {
+            "id": "comp-1",
+            "name": "PAC-3",
+            "type": "coldAisle",
+            "width": 0.5641662171846487,
+            "depth": 0.46853616600920955,
+            "height": 2,
+            "position": [
+                2.2242374214143137,
+                0,
+                4.31327723313584
+            ],
+            "rotation": 0,
+            "color": "#00B050"
+        },
+        {
+            "id": "comp-2",
+            "name": "PAC-4",
+            "type": "coldAisle",
+            "width": 0.6015290151500271,
+            "depth": 0.43956147462538137,
+            "height": 2,
+            "position": [
+                12.237847892330754,
+                0,
+                1.0378216653942873
+            ],
+            "rotation": 0,
+            "color": "#00B050"
+        },
+        {
+            "id": "comp-3",
+            "name": "PAC-6",
+            "type": "coldAisle",
+            "width": 0.6145068721990273,
+            "depth": 0.47952125533610984,
+            "height": 2,
+            "position": [
+                12.21975654596729,
+                0,
+                4.265118232280008
+            ],
+            "rotation": 0,
+            "color": "#00B050"
+        },
+        {
+            "id": "comp-4",
+            "name": "PAC-5",
+            "type": "coldAisle",
+            "width": 0.6048715964763441,
+            "depth": 0.4661482087318227,
+            "height": 2,
+            "position": [
+                12.235979767435092,
+                0,
+                2.683111597389825
+            ],
+            "rotation": 0,
+            "color": "#00B050"
+        },
+        {
+            "id": "comp-5",
+            "name": "DC PDU-7A",
+            "type": "infra",
+            "width": 0.46851978279822526,
+            "depth": 0.31369499159202896,
+            "height": 2,
+            "position": [
+                2.1730710227904178,
+                0,
+                2.957546919448484
+            ],
+            "rotation": 0,
+            "color": "#0070C0"
+        },
+        {
+            "id": "comp-6",
+            "name": "UPS PDU 5",
+            "type": "vas",
+            "width": 0.43505106207278776,
+            "depth": 1.0814541078053692,
+            "height": 2,
+            "position": [
+                1.843085783280571,
+                0,
+                1.8540667601333838
+            ],
+            "rotation": 0,
+            "color": "#ED7D31"
+        },
+        {
+            "id": "comp-7",
+            "name": "UPS PDU 6",
+            "type": "vas",
+            "width": 1.9346644679150393,
+            "depth": 0.24017457265286335,
+            "height": 2,
+            "position": [
+                3.8574984206291694,
+                0,
+                5.2731476337776755
+            ],
+            "rotation": 0,
+            "color": "#ED7D31"
+        },
+        {
+            "id": "comp-8",
+            "name": "Horizontal Beam",
+            "type": "hotAisle",
+            "color": "#666666",
+            "width": 11,
+            "depth": 0.2,
+            "height": 0.5,
+            "position": [
+                6.9,
+                2.5,
+                1.67
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "comp-9",
+            "name": "Vertical Beam",
+            "type": "hotAisle",
+            "color": "#666666",
+            "width": 0.25,
+            "depth": 5.9,
+            "height": 0.5,
+            "position": [
+                7.02,
+                1.5,
+                3.3
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "comp-10",
+            "name": "PAC-2",
+            "type": "coldAisle",
+            "width": 0.5747853640176545,
+            "depth": 0.42427757634826374,
+            "height": 2,
+            "position": [
+                7.993916107302078,
+                0,
+                1.0312942582688158
+            ],
+            "rotation": 0,
+            "color": "#00B050"
+        },
+        {
+            "id": "comp-11",
+            "name": "EPDU1",
+            "type": "tx",
+            "width": 0.5026177129528628,
+            "depth": 0.20791990170044156,
+            "height": 2,
+            "position": [
+                3.6228550625393003,
+                0,
+                4.754032443474453
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/epdu-1.json"
+        },
+        {
+            "id": "comp-12",
+            "name": "EPDU2",
+            "type": "tx",
+            "width": 0.5006511709409524,
+            "depth": 0.20791990170044156,
+            "height": 2,
+            "position": [
+                4.14120391137871,
+                0,
+                4.754032443474453
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-13",
+            "name": "EPDU4",
+            "type": "tx",
+            "width": 0.49396510813176736,
+            "depth": 0.20791990170044156,
+            "height": 2,
+            "position": [
+                5.062669418406776,
+                0,
+                4.754032443474453
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-14",
+            "name": "DC PDU 8A",
+            "type": "infra",
+            "width": 0.4758347549844265,
+            "depth": 0.3771534379544539,
+            "height": 2,
+            "position": [
+                2.1747622669237914,
+                0,
+                3.3161848217238794
+            ],
+            "rotation": 0,
+            "color": "#0070C0"
+        },
+        {
+            "id": "comp-15",
+            "name": "SGSN",
+            "type": "tx",
+            "width": 0.5026174129006791,
+            "depth": 0.2017107269283148,
+            "height": 2,
+            "position": [
+                6.5111359290170725,
+                0,
+                2.5883058066702014
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-16",
+            "name": "ONE-97",
+            "type": "hotAisle",
+            "width": 0.5026177129528628,
+            "depth": 0.42809830799208265,
+            "height": 2,
+            "position": [
+                3.6228550625393003,
+                0,
+                2.0328443518822046
+            ],
+            "rotation": 0,
+            "color": "#E6B8B7"
+        },
+        {
+            "id": "comp-17",
+            "name": "SDH-27",
+            "type": "pac",
+            "width": 0.48137971933903495,
+            "depth": 0.21970081483616372,
+            "height": 2,
+            "position": [
+                6.0395877195288525,
+                0,
+                2.060147959022783
+            ],
+            "rotation": 0,
+            "color": "#00B0F0"
+        },
+        {
+            "id": "comp-18",
+            "name": "TX RACK",
+            "type": "pac",
+            "width": 0.47095830689508145,
+            "depth": 0.21970081483616372,
+            "height": 2,
+            "position": [
+                6.506514525283863,
+                0,
+                2.060147959022783
+            ],
+            "rotation": 0,
+            "color": "#00B0F0"
+        },
+        {
+            "id": "comp-25",
+            "name": "TX MU",
+            "type": "pac",
+            "width": 0.471941277848853,
+            "depth": 0.18594972304664095,
+            "height": 2,
+            "position": [
+                8.43075698065058,
+                0,
+                4.9445992078246555
+            ],
+            "rotation": 0,
+            "color": "#00B0F0",
+            "rackDataUrl": "/data/racks/tx-mu.json"
+        },
+        {
+            "id": "comp-26",
+            "name": "DNS-1",
+            "type": "tx",
+            "width": 0.5026174129006791,
+            "depth": 0.46630756783395555,
+            "height": 2,
+            "position": [
+                9.39941664546875,
+                0,
+                4.883226276541211
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/dns-1.json"
+        },
+        {
+            "id": "comp-27",
+            "name": "DNS-2",
+            "type": "tx",
+            "width": 0.4833468614553127,
+            "depth": 0.47570052369229093,
+            "height": 2,
+            "position": [
+                9.881976169994058,
+                0,
+                4.876141841334656
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/dns-2.json"
+        },
+        {
+            "id": "comp-28",
+            "name": "MPBN ROUTER- 1",
+            "type": "tx",
+            "width": 0.48059238240902996,
+            "depth": 0.48652625391705845,
+            "height": 2,
+            "position": [
+                10.371811959973869,
+                0,
+                4.790808443098973
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/mpbn-router-1.json"
+        },
+        {
+            "id": "comp-29",
+            "name": "MPBN ROUTER- 2",
+            "type": "tx",
+            "width": 0.471941277848853,
+            "depth": 0.4734714396661159,
+            "height": 2,
+            "position": [
+                10.849062961265316,
+                0,
+                4.801315940970395
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/mpbn-router-2.json"
+        },
+        {
+            "id": "comp-32",
+            "name": "EXTRIM SWITCH",
+            "type": "server",
+            "width": 0.5026180130050464,
+            "depth": 0.4454519311932425,
+            "height": 2,
+            "position": [
+                7.955275987190727,
+                0,
+                3.3368016626368537
+            ],
+            "rotation": 0,
+            "color": "#E6B8B7",
+            "rackDataUrl": "/data/racks/extrim-switch-32.json"
+        },
+        {
+            "id": "comp-33",
+            "name": "EXTRIM SWITCH",
+            "type": "hotAisle",
+            "width": 0.4805935826177647,
+            "depth": 0.4454519311932425,
+            "height": 2,
+            "position": [
+                8.446291282304628,
+                0,
+                3.3368016626368537
+            ],
+            "rotation": 0,
+            "color": "#E6B8B7"
+        },
+        {
+            "id": "comp-34",
+            "name": "SDP-14",
+            "type": "hotAisle",
+            "width": 0.49396510813176736,
+            "depth": 0.4454519311932425,
+            "height": 2,
+            "position": [
+                9.876470212423328,
+                0,
+                3.3368016626368537
+            ],
+            "rotation": 0,
+            "color": "#E6B8B7"
+        },
+        {
+            "id": "comp-35",
+            "name": "SDP-12",
+            "type": "hotAisle",
+            "width": 0.5026174129006791,
+            "depth": 0.4454519311932425,
+            "height": 2,
+            "position": [
+                10.362176084146821,
+                0,
+                3.3368016626368537
+            ],
+            "rotation": 0,
+            "color": "#E6B8B7"
+        },
+        {
+            "id": "comp-36",
+            "name": "SDP-11",
+            "type": "hotAisle",
+            "width": 0.4739084199651307,
+            "depth": 0.4454519311932425,
+            "height": 2,
+            "position": [
+                10.849259195393453,
+                0,
+                3.3368016626368537
+            ],
+            "rotation": 0,
+            "color": "#E6B8B7"
+        },
+        {
+            "id": "comp-37",
+            "name": "SGSN",
+            "type": "tx",
+            "width": 0.5026174129006791,
+            "depth": 0.18674603270638396,
+            "height": 2,
+            "position": [
+                10.362176084146821,
+                0,
+                1.9121682142393552
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-38",
+            "name": "GGSN",
+            "type": "tx",
+            "width": 0.49396510813176736,
+            "depth": 0.18579036394450812,
+            "height": 2,
+            "position": [
+                10.839230851310132,
+                0,
+                1.9116903798584173
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-39",
+            "name": "SWITCH - BD",
+            "type": "tx",
+            "width": 0.48688567690976353,
+            "depth": 0.4175908101206597,
+            "height": 2,
+            "position": [
+                8.91017045802989,
+                0,
+                1.0341600499271406
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-40",
+            "name": "SWITCH - BD",
+            "type": "tx",
+            "width": 0.49711205543431786,
+            "depth": 0.43032739201825776,
+            "height": 2,
+            "position": [
+                9.402169324201932,
+                0,
+                1.0405283408759396
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-41",
+            "name": "DC PDU-6",
+            "type": "infra",
+            "width": 1.0590757395645833,
+            "depth": 0.31533473845086524,
+            "height": 2,
+            "position": [
+                1.0325661464461926,
+                0,
+                0.6576673692254327
+            ],
+            "rotation": 0,
+            "color": "#0070C0"
+        },
+        {
+            "id": "comp-42",
+            "name": "DC PDU-7",
+            "type": "infra",
+            "width": 1.03699264897539,
+            "depth": 0.31818425410333184,
+            "height": 2,
+            "position": [
+                1.018496324487695,
+                0,
+                1.2870073150814725
+            ],
+            "rotation": 0,
+            "color": "#0070C0"
+        },
+        {
+            "id": "comp-43",
+            "name": "EPDU CCN11",
+            "type": "tx",
+            "width": 0.47685703277426156,
+            "depth": 0.20951203516900643,
+            "height": 2,
+            "position": [
+                4.091355041893402,
+                0,
+                4.15685971540503
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/epdu-ccn11.json"
+        },
+        {
+            "id": "comp-44",
+            "name": "CCN-11",
+            "type": "hotAisle",
+            "width": 0.4929821371779958,
+            "depth": 0.2141290764725683,
+            "height": 2,
+            "position": [
+                9.89642908357808,
+                0,
+                4.159168236056812
+            ],
+            "rotation": 0,
+            "color": "#E6B8B7",
+            "rackDataUrl": "/data/racks/ccn-11.json"
+        },
+        {
+            "id": "comp-45",
+            "name": "SGSN",
+            "type": "tx",
+            "width": 0.4855096375953569,
+            "depth": 0.15092521599281894,
+            "height": 2,
+            "position": [
+                10.835003116041927,
+                0,
+                2.0778195716518275
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-46",
+            "name": "CISCO RACK-1",
+            "type": "tx",
+            "width": 0.6390871470869884,
+            "depth": 0.5182081066334602,
+            "height": 2,
+            "position": [
+                6.407112037661995,
+                0,
+                3.3731797503569623
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/cisco-rack-1.json"
+        },
+        {
+            "id": "comp-47",
+            "name": "CISCO RACK-2",
+            "type": "tx",
+            "width": 0.645969744076491,
+            "depth": 0.5145462482408529,
+            "height": 2,
+            "position": [
+                5.755931287311344,
+                0,
+                3.368686004944985
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/cisco-rack-2.json"
+        },
+        {
+            "id": "comp-48",
+            "name": "CISCO RACK-3",
+            "type": "tx",
+            "width": 0.6322045500974859,
+            "depth": 0.5145462482408529,
+            "height": 2,
+            "position": [
+                5.118810682236267,
+                0,
+                3.3605230909358923
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/cisco-rack-3.json"
+        },
+        {
+            "id": "comp-49",
+            "name": "CISCO RACK-4",
+            "type": "tx",
+            "width": 0.6457729098439898,
+            "depth": 0.5182081066334602,
+            "height": 2,
+            "position": [
+                4.479428283800527,
+                0,
+                3.3731797503569623
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/cisco-rack-4.json"
+        },
+        {
+            "id": "comp-50",
+            "name": "CISCO RACK-5",
+            "type": "tx",
+            "width": 0.645969744076491,
+            "depth": 0.5145462482408529,
+            "height": 2,
+            "position": [
+                3.819005626140011,
+                0,
+                3.3605230909358923
+            ],
+            "rotation": 0,
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/cisco-rack-5.json"
+        },
+        {
+            "id": "comp-51",
+            "name": "CISCO RACK-6",
+            "type": "tx",
+            "width": 0.6394802154476236,
+            "depth": 0.5350836525282215,
+            "height": 2,
+            "position": [
+                5.467162265935928,
+                0,
+                2.4582364702435564
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-52",
+            "name": "CISCO RACK-7",
+            "type": "tx",
+            "width": 0.6392833812151223,
+            "depth": 0.5180487475313273,
+            "height": 2,
+            "position": [
+                4.82443728617387,
+                0,
+                2.4688236476660457
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-53",
+            "name": "IT RACK",
+            "type": "coldAisle",
+            "width": 0.5026174129006791,
+            "depth": 0.3819293525092275,
+            "height": 2,
+            "position": [
+                12.287697361920427,
+                0,
+                5.6090353237453865
+            ],
+            "rotation": 0,
+            "color": "#76923C"
+        },
+        {
+            "id": "comp-54",
+            "name": "SDH Rack 32",
+            "type": "pac",
+            "width": 0.47803713801271797,
+            "depth": 0.1856310048423753,
+            "height": 2,
+            "position": [
+                11.799532862603773,
+                0,
+                5.6404781378085875
+            ],
+            "rotation": 0,
+            "color": "#00B0F0"
+        },
+        {
+            "id": "comp-55",
+            "name": "Facebook RACK-1",
+            "type": "tx",
+            "width": 0.6322045500974859,
+            "depth": 0.5202773457065812,
+            "height": 2,
+            "position": [
+                8.001585441117218,
+                0,
+                2.3729829944844
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-56",
+            "name": "Facebook RACK-2",
+            "type": "tx",
+            "width": 0.638497244493852,
+            "depth": 0.5347649343239558,
+            "height": 2,
+            "position": [
+                8.660926710707711,
+                0,
+                2.365898559277846
+            ],
+            "rotation": 0,
+            "color": "#FFFF00"
+        },
+        {
+            "id": "comp-59",
+            "name": "FM 200",
+            "type": "structural",
+            "width": 0.2823791100715355,
+            "depth": 0.21205935154852604,
+            "height": 2,
+            "position": [
+                13.157445424489248,
+                0,
+                1.611352887641199
+            ],
+            "rotation": 0,
+            "color": "#FF0000"
+        },
+        {
+            "id": "comp-60",
+            "name": "FM 200",
+            "type": "structural",
+            "width": 0.2985027142143514,
+            "depth": 0.202347677485925,
+            "height": 2,
+            "position": [
+                13.14957925644161,
+                0,
+                1.812506586488431
+            ],
+            "rotation": 0,
+            "color": "#FF0000"
+        },
+        {
+            "id": "comp-61",
+            "name": "FM 200",
+            "type": "structural",
+            "width": 0.29162071732921613,
+            "depth": 0.2209747159513841,
+            "height": 2,
+            "position": [
+                13.145155287045268,
+                0,
+                2.041520920557324
+            ],
+            "rotation": 0,
+            "color": "#FF0000"
+        },
+        {
+            "id": "comp-63",
+            "name": "FM 200",
+            "type": "structural",
+            "width": 0.2890639726719857,
+            "depth": 0.19040740524806998,
+            "height": 2,
+            "position": [
+                1.2875322639765867,
+                0,
+                1.8181584902540142
+            ],
+            "rotation": 0,
+            "color": "#FF0000"
+        },
+        {
+            "id": "comp-64",
+            "name": "FM 200",
+            "type": "structural",
+            "width": 0.28945734108480453,
+            "depth": 0.1830841743137768,
+            "height": 2,
+            "position": [
+                1.317421962254959,
+                0,
+                2.02257564973852
+            ],
+            "rotation": 0,
+            "color": "#FF0000"
+        },
+        {
+            "id": "comp-65",
+            "name": "FM 200",
+            "type": "hotAisle",
+            "width": 0.20267909901345843,
+            "depth": 0.37347603233237037,
+            "height": 2,
+            "position": [
+                1.026538848206301,
+                0,
+                1.9117780759496825
+            ],
+            "rotation": 0,
+            "color": "#FF0000"
+        }
+    ]
+}

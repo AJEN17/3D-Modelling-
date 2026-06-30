@@ -1,9 +1,31 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Text, Billboard } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import useAppStore from '../../store/useAppStore';
 
 export default function Equipment({ data }) {
+  const groupRef = useRef();
   const meshRef = useRef();
   const [hovered, setHover] = useState(false);
+  const setActiveImageModal = useAppStore(state => state.setActiveImageModal);
+  const setActiveRackModal = useAppStore(state => state.setActiveRackModal);
+  
+  useEffect(() => {
+    const group = groupRef.current;
+    return () => {
+      if (group) {
+        group.traverse((child) => {
+          if (child.isMesh) {
+            if (child.geometry) child.geometry.dispose();
+            if (child.material) {
+              if (Array.isArray(child.material)) child.material.forEach(m => m.dispose());
+              else child.material.dispose();
+            }
+          }
+        });
+      }
+    };
+  }, []);
 
   // Parse color mapping
   let color = '#ffffff';
@@ -20,9 +42,21 @@ export default function Equipment({ data }) {
   if (data.type === 'structural') color = '#ED1C24';
   if (data.type === 'cylinder') color = '#FF0000'; // Fixed to Red
   if (data.type === 'workstation') color = '#F7931E'; // Fixed to Orange
-  if (data.type === 'facebook') color = '#ED1C24'; // Added facebook/IT Rack
+  if (data.type === 'rack') { color = '#EEEEEE'; isRack = true; }
+  if (data.type === 'black_pillar') color = '#222222';
+  if (data.type === 'dark_blue') color = '#1D3B8E';
+  if (data.type === 'facebook') color = '#ED1C24';
+  
+  if (data.color) color = data.color;
 
   const isPAC = data.name && data.name.includes("PAC");
+  const isClickable = !!data.imageUrl;
+  const showAllLabels = useAppStore(state => state.showAllLabels);
+
+  if (isPAC) {
+    color = '#009245'; // Force all PACs to be the original dark green color
+    isRack = false;    // PACs should not render as racks
+  }
 
   // Handle single float rotation from JSON (Y-axis) or fallback to array
   const rot = typeof data.rotation === 'number' ? [0, data.rotation, 0] : (data.rotation || [0, 0, 0]);
@@ -30,16 +64,83 @@ export default function Equipment({ data }) {
   // Pre-calculate server blade glow state so it doesn't flicker on every render (React purity rule)
   const [serverBlades] = useState(() => Array.from({ length: 10 }).map(() => Math.random() > 0.7));
 
+  const handlePointerOver = (e) => {
+    e.stopPropagation();
+    if (isClickable || data.rackDataUrl) {
+      setHover(true);
+      document.body.style.cursor = 'pointer';
+    }
+  };
+
+  const handlePointerOut = (e) => {
+    setHover(false);
+    document.body.style.cursor = 'auto';
+  };
+
+  const handleClick = (e) => {
+    e.stopPropagation();
+    if (data.rackDataUrl) {
+      fetch(data.rackDataUrl)
+        .then(res => res.json())
+        .then(rackData => setActiveRackModal(rackData))
+        .catch(err => console.error("Failed to fetch rack data:", err));
+    } else if (isClickable) {
+      setActiveImageModal(data.imageUrl);
+    }
+  };
+
+  useEffect(() => {
+    return () => { document.body.style.cursor = 'auto'; };
+  }, [hovered, isClickable]);
+
+  const textRef = useRef();
+
+  useFrame((state) => {
+    if (!textRef.current || !groupRef.current) return;
+    
+    // Calculate distance from camera to this component's world position
+    const dist = state.camera.position.distanceTo(groupRef.current.position);
+    
+    // Adjust these values to control when the text fades in
+    const maxDist = 20; // Starts fading in when closer than 20 units
+    const minDist = 12; // Fully visible when 12 units or closer
+    
+    let targetOpacity = 0;
+    if (hovered || showAllLabels) {
+      targetOpacity = 1; // Always show clearly if user is actively hovering or "Show All" is toggled
+    } else if (dist < minDist) {
+      targetOpacity = 1;
+    } else if (dist < maxDist) {
+      targetOpacity = 1 - ((dist - minDist) / (maxDist - minDist));
+    }
+    
+    // Smooth interpolation for the fade effect
+    const currentOpacity = textRef.current.fillOpacity ?? 1;
+    const newOpacity = currentOpacity + (targetOpacity - currentOpacity) * 0.1;
+    
+    // Mutate Troika text properties directly (avoids expensive React re-renders)
+    textRef.current.fillOpacity = newOpacity;
+    textRef.current.outlineOpacity = newOpacity;
+
+    // Scale animation for pop effect on hover
+    const targetScale = hovered ? 1.3 : 1.0;
+    const currentScale = textRef.current.scale.x;
+    const newScale = currentScale + (targetScale - currentScale) * 0.15;
+    textRef.current.scale.set(newScale, newScale, newScale);
+  });
+
   return (
     <group 
+      ref={groupRef}
       position={[data.position[0], data.height / 2, data.position[2]]}
       rotation={rot}
     >
       {/* Main Block */}
       <mesh
         ref={meshRef}
-        onPointerOver={(e) => { e.stopPropagation(); setHover(true); }}
-        onPointerOut={() => setHover(false)}
+        onPointerOver={handlePointerOver}
+        onPointerOut={handlePointerOut}
+        onClick={handleClick}
         castShadow
         receiveShadow
       >
@@ -49,7 +150,8 @@ export default function Equipment({ data }) {
           <boxGeometry args={[data.width, data.height, data.depth]} />
         )}
         <meshStandardMaterial 
-          color={hovered ? '#ffffaa' : color} 
+          color={hovered ? '#ffffff' : color} 
+          emissive={hovered ? '#444444' : '#000000'}
           transparent={!isPAC && !isRack && data.type !== 'cylinder'} 
           opacity={0.9}
           roughness={0.4}
@@ -92,14 +194,15 @@ export default function Equipment({ data }) {
       )}
 
       {/* Label Text - Lifted slightly and Billboarded to face camera always */}
-      <Billboard position={[0, data.height / 2 + 0.4, 0]}>
+      <Billboard position={[0, data.height / 2 + (hovered ? 0.9 : 0.4), 0]}>
         <Text
-          fontSize={0.18}
-          color={hovered ? "#00AEEF" : "black"}
+          ref={textRef}
+          fontSize={hovered ? 0.35 : 0.18}
+          color={hovered ? "#ffffff" : "#111111"}
           anchorX="center"
           anchorY="middle"
-          outlineWidth={0.02}
-          outlineColor="white"
+          outlineWidth={hovered ? 0.05 : 0.02}
+          outlineColor={hovered ? "#000000" : "#ffffff"}
         >
           {data.name}
         </Text>

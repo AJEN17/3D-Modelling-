@@ -2,73 +2,108 @@
   {
     "id": "lakha",
     "name": "Lakha Building (Malad)",
-    "position": [
-      -5.7,
-      0,
-      -5
-    ]
+    "position": [-5.7, 0, -5],
+    "diagram": {
+      "floors": [
+        {
+          "level": "L4",
+          "rooms": [
+            { "id": "lakha-vas", "name": "VAS Room", "align": "center", "width": "100%" }
+          ]
+        },
+        {
+          "level": "L3",
+          "rooms": [
+            { "id": "lakha-data", "name": "Data Room", "align": "center", "width": "100%" }
+          ]
+        },
+        {
+          "level": "L2",
+          "rooms": [
+            { "id": "lakha-switch", "name": "Switch Room", "align": "center", "width": "100%" }
+          ]
+        },
+        {
+          "level": "L1",
+          "rooms": [
+            { "id": "lakha-power", "name": "Power Room", "align": "center", "width": "50%" },
+            { "id": "lakha-power-bms", "name": "Power & BMS Room", "align": "center", "width": "50%" }
+          ]
+        },
+        {
+          "level": "L0",
+          "rooms": [
+            { "id": "lakha-gf", "name": "Utility Area", "align": "center", "width": "100%" }
+          ]
+        },
+        {
+          "level": "B1",
+          "rooms": [
+            { "id": "lakha-basement", "name": "Battery Room", "align": "center", "width": "100%" }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "suncity",
-    "name": "Sun City First Floor",
-    "position": [
-      -2.1,
-      0,
-      -2.5
-    ]
-  },
-  {
-    "id": "suncity-sf",
-    "name": "Sun City Switch Room (SF)",
-    "position": [
-      -2.1,
-      0.5,
-      -2.5
-    ]
+    "name": "Sun City Complex",
+    "position": [-2.1, 0, -2.5],
+    "diagram": {
+      "floors": [
+        {
+          "level": "L2",
+          "rooms": [
+            { "id": "suncity-trc", "name": "TRC Room", "align": "left", "width": "50%" },
+            { "id": "suncity-sf", "name": "Switch Room", "align": "right", "width": "50%" }
+          ]
+        },
+        {
+          "level": "L1",
+          "rooms": [
+            { "id": "suncity-ff", "name": "First Floor", "align": "center", "width": "100%" }
+          ]
+        },
+        {
+          "level": "L0",
+          "rooms": [
+            { "id": "suncity-gf", "name": "Ground Floor", "align": "center", "width": "100%" }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "sundale",
-    "name": "Sundale Ground Floor",
-    "position": [
-      -1.8,
-      0,
-      -2.1
-    ]
-  },
-  {
-    "id": "sundale-ff",
-    "name": "Sundale First Floor",
-    "position": [
-      -1.8,
-      0.5,
-      -2.1
-    ]
-  },
-  {
-    "id": "sundale-sf",
-    "name": "Sundale Second Floor",
-    "position": [
-      -1.8,
-      1.0,
-      -2.1
-    ]
+    "name": "Sundale Datacenter",
+    "position": [-1.8, 0, -2.1],
+    "diagram": {
+      "floors": [
+        {
+          "level": "L2",
+          "rooms": [{ "id": "sundale-sf", "name": "Second Floor", "align": "center", "width": "100%" }]
+        },
+        {
+          "level": "L1",
+          "rooms": [{ "id": "sundale-ff", "name": "First Floor", "align": "center", "width": "100%" }]
+        },
+        {
+          "level": "L0",
+          "rooms": [{ "id": "sundale-gf", "name": "Ground Floor", "align": "center", "width": "100%" }]
+        }
+      ]
+    }
   },
   {
     "id": "sahas",
     "name": "Sahas Apartment (Prabhadevi)",
-    "position": [
-      -6.7,
-      0,
-      2.5
-    ]
+    "position": [-6.7, 0, 2.5],
+    "diagram": { "floors": [] }
   },
   {
     "id": "idc",
     "name": "IDC/NDC Datacenter (Airoli)",
-    "position": [
-      2.1,
-      0,
-      -5
-    ]
+    "position": [2.1, 0, -5],
+    "diagram": { "floors": [] }
   }
 ]

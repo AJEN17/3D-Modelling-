@@ -3,18 +3,22 @@ import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import MapScene from './canvas/scenes/MapScene';
 import FloorScene from './canvas/scenes/FloorScene';
+import RackDemoScene from './canvas/scenes/RackDemoScene';
 import UIOverlay from './ui/UIOverlay';
+import ErrorBoundary from './ui/ErrorBoundary';
 
 function SceneManager() {
   const location = useLocation();
 
-  if (location.pathname === '/') {
+  if (location.pathname === '/rack-demo') {
+    return <RackDemoScene />;
+  }
+
+  if (location.pathname === '/' || location.pathname.startsWith('/building/')) {
     return <MapScene />;
   }
   
-  if (location.pathname.startsWith('/building/')) {
-    // For now, any building points to the single floor scene. 
-    // Later we can dynamically load the floor plan based on location.pathname
+  if (location.pathname.startsWith('/floor/')) {
     return <FloorScene />;
   }
 
@@ -23,19 +27,21 @@ function SceneManager() {
 
 function App() {
   return (
-    <Router>
-      <div style={{ width: '100vw', height: '100vh', backgroundColor: '#CECECE', position: 'relative' }}>
-        {/* UI Layer */}
-        <UIOverlay />
-        
-        {/* Persistent 3D Layer */}
-        <Canvas shadows camera={{ position: [20, 25, 20], fov: 35 }}>
-          <Suspense fallback={null}>
-            <SceneManager />
-          </Suspense>
-        </Canvas>
-      </div>
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <div style={{ width: '100vw', height: '100vh', backgroundColor: '#CECECE', position: 'relative' }}>
+          {/* UI Layer */}
+          <UIOverlay />
+          
+          {/* Persistent 3D Layer */}
+          <Canvas shadows camera={{ position: [20, 25, 20], fov: 35 }}>
+            <Suspense fallback={null}>
+              <SceneManager />
+            </Suspense>
+          </Canvas>
+        </div>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

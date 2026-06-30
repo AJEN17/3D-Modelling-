@@ -1,0 +1,25 @@
+{
+  "id": "fms-1",
+  "name": "MUMLAK3FR1R5 FMS TRANSMISSION",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    { "startU": 41, "sizeU": 2, "type": "patch_panel", "name": "DCDB" },
+    { "startU": 40, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 38, "sizeU": 2, "type": "patch_panel", "name": "KRONE" },
+    { "startU": 36, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 35, "sizeU": 1, "type": "switch", "name": "ECI BG30\nMUMB_SLDSL_T01_C_W_2001", "color": "#00aeef" },
+    { "startU": 34, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 32, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 30, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 28, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 26, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 24, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 22, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 20, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 18, "sizeU": 2, "type": "patch_panel", "name": "FMS\n3RD FLOOR TO 2ND FLOOR", "color": "#8faadc" },
+    { "startU": 16, "sizeU": 2, "type": "patch_panel", "name": "FMS\n2ND FLOOR TO 1ST FLOOR", "color": "#8faadc" },
+    { "startU": 14, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 1, "sizeU": 13, "type": "blank", "name": "Blank panel" }
+  ]
+}

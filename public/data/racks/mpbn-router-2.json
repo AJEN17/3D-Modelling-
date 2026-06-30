@@ -1,0 +1,27 @@
+{
+  "id": "mpbn-router-2",
+  "name": "MUMLAK4FR1R12 MPBN CORE",
+  "owner": "Ericssion",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 18,
+      "sizeU": 25,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 4,
+      "sizeU": 14,
+      "type": "router",
+      "name": "ERICSSION\nSMARTEDGE 1200H\nMUMMLDESR02",
+      "color": "#FCE4D6"
+    },
+    {
+      "startU": 1,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

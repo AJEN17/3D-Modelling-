@@ -1,0 +1,25 @@
+{
+  "id": "vgw-rack1-core",
+  "name": "VGW RACK1 CORE",
+  "owner": "anish mansuri",
+  "totalU": 42,
+  "units": [
+    { "startU": 42, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 41, "sizeU": 1, "type": "switch", "name": "MUMLAKLEAF01", "color": "#FFFF00" },
+    { "startU": 40, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 39, "sizeU": 1, "type": "switch", "name": "MUMLAKLEAF02", "color": "#FFFF00" },
+    { "startU": 38, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 36, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW01", "color": "#8CC63F" },
+    { "startU": 34, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW02", "color": "#8CC63F" },
+    { "startU": 32, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW03", "color": "#8CC63F" },
+    { "startU": 30, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW04", "color": "#8CC63F" },
+    { "startU": 28, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW05", "color": "#8CC63F" },
+    { "startU": 26, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW06", "color": "#8CC63F" },
+    { "startU": 24, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW07", "color": "#8CC63F" },
+    { "startU": 22, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW08", "color": "#8CC63F" },
+    { "startU": 20, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKCTRL01", "color": "#8CC63F" },
+    { "startU": 18, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKCTRL02", "color": "#8CC63F" },
+    { "startU": 16, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKCTRL03", "color": "#8CC63F" },
+    { "startU": 1, "sizeU": 15, "type": "blank", "name": "Blank panel" }
+  ]
+}

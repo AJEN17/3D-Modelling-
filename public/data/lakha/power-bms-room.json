@@ -1,0 +1,384 @@
+{
+    "room": {
+        "width": 12.5,
+        "depth": 9,
+        "height": 3,
+        "tileSize": 0.6,
+        "name": "POWER ROOM-2 & BMS ROOM",
+        "floorType": "ground"
+    },
+    "hideLegend": true,
+    "colors": {
+        "infra": "#00AEEF",
+        "core": "#8CC63F",
+        "coldAisle": "#009245",
+        "hotAisle": "#F1A19D",
+        "pillar": "#ED1C24",
+        "structural": "#ED1C24",
+        "nld": "#662D91",
+        "tx": "#FFFF00",
+        "vas": "#F7931E",
+        "fap": "#FF5722",
+        "rack": "#EEEEEE",
+        "black_pillar": "#222222",
+        "dark_blue": "#1D3B8E"
+    },
+    "walls": [
+        {
+            "type": "line",
+            "start": [
+                0,
+                0
+            ],
+            "end": [
+                10.14,
+                0
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                10.14,
+                0
+            ],
+            "end": [
+                10.14,
+                8.91
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                10.14,
+                8.91
+            ],
+            "end": [
+                3.3,
+                8.91
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                3.3,
+                8.91
+            ],
+            "end": [
+                3.3,
+                3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                3.3,
+                3
+            ],
+            "end": [
+                0,
+                3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                0,
+                3
+            ],
+            "end": [
+                0,
+                0
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                3.3,
+                3
+            ],
+            "end": [
+                10.14,
+                3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                3.3,
+                5.8
+            ],
+            "end": [
+                10.14,
+                5.8
+            ]
+        }
+    ],
+    "components": [
+        {
+            "id": "main-lt-panel-2",
+            "name": "Main LT Panel-2",
+            "type": "vas",
+            "width": 7.2,
+            "depth": 1.4,
+            "height": 2,
+            "position": [
+                5.4,
+                0,
+                1.1
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "300kvar-apfc",
+            "name": "300KVAR APFC",
+            "type": "tx",
+            "width": 3.2,
+            "depth": 0.6,
+            "height": 2,
+            "position": [
+                6.9,
+                0,
+                2.5
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "3-tr-src-src",
+            "name": "3 TR SRC",
+            "type": "infra",
+            "width": 1.5,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                5.75,
+                0,
+                3.35
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "3-tr-src",
+            "name": "3 TR SRC",
+            "type": "infra",
+            "width": 0.9,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                7.55,
+                0,
+                3.35
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "sub-lt-panel",
+            "name": "SUB LT PANEL",
+            "type": "hotAisle",
+            "width": 1,
+            "depth": 1.3,
+            "height": 2,
+            "position": [
+                9.64,
+                0,
+                3.75
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "ups-output-panel",
+            "name": "UPS OUTPUT PANEL",
+            "type": "hotAisle",
+            "width": 1,
+            "depth": 1.2,
+            "height": 2,
+            "position": [
+                9.64,
+                0,
+                5.1
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "fm-200",
+            "name": "FM 200",
+            "type": "cylinder",
+            "width": 1.2,
+            "depth": 0.7,
+            "height": 2,
+            "position": [
+                4,
+                0,
+                3.95
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "75-kva-inv",
+            "name": "7.5 KVA INV",
+            "type": "core",
+            "width": 0.9,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                3.85,
+                0,
+                4.65
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "inv-bb",
+            "name": "INV BB",
+            "type": "dark_blue",
+            "width": 1,
+            "depth": 0.7,
+            "height": 2,
+            "position": [
+                3.7,
+                0,
+                5.35
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "nxr-ups-1",
+            "name": "NXR UPS-1",
+            "type": "infra",
+            "width": 1.6,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                5.6,
+                0,
+                5.1
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "nxr-ups-2",
+            "name": "NXR UPS-2",
+            "type": "infra",
+            "width": 1.6,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                7.2,
+                0,
+                5.1
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "black-bar",
+            "name": "Rack Row",
+            "type": "black_pillar",
+            "width": 3.8,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                6.4,
+                0,
+                6.15
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "fire-panel",
+            "name": "Fire Panel",
+            "type": "black_pillar",
+            "width": 0.8,
+            "depth": 0.7,
+            "height": 2,
+            "position": [
+                8.8,
+                0,
+                6.25
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "camera-pc1",
+            "name": "Camera PC1",
+            "type": "black_pillar",
+            "width": 0.8,
+            "depth": 0.9,
+            "height": 2,
+            "position": [
+                5.4,
+                0,
+                7.05
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "camera-pc2",
+            "name": "Camera PC2",
+            "type": "black_pillar",
+            "width": 0.8,
+            "depth": 0.9,
+            "height": 2,
+            "position": [
+                6.25,
+                0,
+                7.05
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "camera-pc3",
+            "name": "Camera PC3",
+            "type": "black_pillar",
+            "width": 0.8,
+            "depth": 0.9,
+            "height": 2,
+            "position": [
+                7.1,
+                0,
+                7.05
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "camera-pc4",
+            "name": "Camera PC4",
+            "type": "black_pillar",
+            "width": 0.8,
+            "depth": 0.9,
+            "height": 2,
+            "position": [
+                7.95,
+                0,
+                7.05
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "camera-dvr-rack",
+            "name": "Camera DVR Rack",
+            "type": "black_pillar",
+            "width": 1.1,
+            "depth": 1,
+            "height": 2,
+            "position": [
+                8.95,
+                0,
+                8.3
+            ],
+            "rotation": 0
+        },
+        {
+            "id": "bms-room",
+            "name": "BMS Room",
+            "type": "rack",
+            "width": 3.8,
+            "depth": 0.8,
+            "height": 2,
+            "position": [
+                6.4,
+                0,
+                8.2
+            ],
+            "rotation": 0
+        }
+    ]
+}

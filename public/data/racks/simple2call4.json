@@ -1,0 +1,18 @@
+{
+  "id": "simple2call4",
+  "name": "MUMLAK3FR1R4 SIMPLE2CALL ENTERPRISES",
+  "totalU": 42,
+  "units": [
+    { "startU": 41, "sizeU": 2, "type": "switch", "name": "AMTEX", "color": "#FFB500" },
+    { "startU": 40, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 39, "sizeU": 1, "type": "switch", "name": "TELECT ALARM SYS", "color": "#FFB500" },
+    { "startU": 38, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 37, "sizeU": 1, "type": "switch", "name": "CISCO C2960 PRI IDEA", "color": "#FFFF00" },
+    { "startU": 36, "sizeU": 1, "type": "switch", "name": "CISCO C2960 STNDBY", "color": "#FFFF00" },
+    { "startU": 30, "sizeU": 6, "type": "blank", "name": "Blank panel" },
+    { "startU": 20, "sizeU": 10, "type": "compute", "name": "EXCEL SWITCHING ID2 NODE5", "color": "#92D050" },
+    { "startU": 11, "sizeU": 9, "type": "compute", "name": "EXCEL CSP ID2 NODE1", "color": "#92D050" },
+    { "startU": 2, "sizeU": 9, "type": "compute", "name": "EXCEL SWITCHING ID2 NODE0", "color": "#92D050" },
+    { "startU": 1, "sizeU": 1, "type": "blank", "name": "Blank panel" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "cen-transmission",
+  "name": "MUMLAK3FR3R7 - CEN TRANSMISSION",
+  "owner": "durgesh pingle",
+  "totalU": 42,
+  "units": [
+    { "startU": 38, "sizeU": 5, "type": "blank", "name": "Blank panel" },
+    { "startU": 36, "sizeU": 2, "type": "dcdb", "name": "DCDB", "color": "#CCCCCC" },
+    { "startU": 34, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 33, "sizeU": 1, "type": "switch", "name": "CISCO 4948E\nMUMLAKDCN03C4948", "color": "#FFFF00" },
+    { "startU": 31, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 30, "sizeU": 1, "type": "switch", "name": "CISCO 4948E\nMUMLAKDCN04C4948", "color": "#FFFF00" },
+    { "startU": 1, "sizeU": 29, "type": "blank", "name": "Blank panel" }
+  ]
+}

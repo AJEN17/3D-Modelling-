@@ -1,0 +1,215 @@
+{
+    "hideLegend": true,
+    "room": {
+        "width": 12.1,
+        "depth": 6.1,
+        "height": 3,
+        "tileSize": 0.6,
+        "name": "GRD FLOOR UTILITY AREA",
+        "floorType": "ground"
+    },
+    "colors": {
+        "infra": "#00AEEF",
+        "core": "#8CC63F",
+        "coldAisle": "#009245",
+        "hotAisle": "#F1A19D",
+        "pillar": "#ED1C24",
+        "structural": "#ED1C24",
+        "nld": "#662D91",
+        "tx": "#FFFF00",
+        "vas": "#F7931E",
+        "fap": "#FF5722",
+        "rack": "#EEEEEE",
+        "black_pillar": "#222222"
+    },
+    "walls": [
+        {
+            "type": "line",
+            "start": [
+                0.01,
+                0.02
+            ],
+            "end": [
+                12.09,
+                0.02
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                12.09,
+                0.02
+            ],
+            "end": [
+                12.09,
+                6.15
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                0.88,
+                6.15
+            ],
+            "end": [
+                12.09,
+                6.15
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                0.01,
+                0.02
+            ],
+            "end": [
+                0.88,
+                6.15
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                2.62,
+                0.81
+            ],
+            "end": [
+                9.51,
+                0.81
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                9.51,
+                0.81
+            ],
+            "end": [
+                9.51,
+                4.6
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                2.62,
+                4.6
+            ],
+            "end": [
+                9.51,
+                4.6
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                2.62,
+                0.81
+            ],
+            "end": [
+                2.62,
+                4.6
+            ]
+        }
+    ],
+    "components": [
+        {
+            "id": "910kva-dg-set-2",
+            "name": "910KVA DG SET-2",
+            "type": "tx",
+            "width": 0.86,
+            "depth": 2.03,
+            "height": 2,
+            "position": [
+                1.31,
+                0,
+                1.56
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "910kva-dg-set-1",
+            "name": "910KVA DG SET-1",
+            "type": "tx",
+            "width": 0.86,
+            "depth": 2.03,
+            "height": 2,
+            "position": [
+                1.31,
+                0,
+                3.85
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "dg-sync-panel",
+            "name": "DG Sync. Panel",
+            "type": "pillar",
+            "width": 2.6,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                3.0,
+                0,
+                5.3
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "adani-sub-station",
+            "name": "ADANI SUB-STATION",
+            "type": "infra",
+            "width": 1.7,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                6.05,
+                0,
+                5.3
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "990kva-transformer",
+            "name": "990KVA TRANSFORMER",
+            "type": "facebook",
+            "width": 1.7,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                8.6,
+                0,
+                5.3
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "back-gate-2",
+            "name": "BACK GATE-2",
+            "type": "vas",
+            "width": 1.7,
+            "depth": 0.2,
+            "height": 2,
+            "position": [
+                2.2,
+                0,
+                0.1
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "main-gate-1",
+            "name": "MAIN GATE-1",
+            "type": "vas",
+            "width": 1.7,
+            "depth": 0.2,
+            "height": 2,
+            "position": [
+                10.0,
+                0,
+                0.1
+            ],
+            "rotation": 0.0
+        }
+    ]
+}

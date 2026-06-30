@@ -1,0 +1,50 @@
+{
+  "id": "ccn-11",
+  "name": "MUMLAK4FR2R12 CNN11 IN/VAS",
+  "owner": "Ericssion",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 32,
+      "sizeU": 11,
+      "type": "router",
+      "name": "ERICSSION\nFRAM 01",
+      "color": "#A6A6A6"
+    },
+    {
+      "startU": 29,
+      "sizeU": 3,
+      "type": "fan_module",
+      "name": "FAN MODULE",
+      "color": "#3b5998"
+    },
+    {
+      "startU": 18,
+      "sizeU": 11,
+      "type": "router",
+      "name": "ERICSSION\nFRAM 01",
+      "color": "#A6A6A6"
+    },
+    {
+      "startU": 15,
+      "sizeU": 3,
+      "type": "fan_module",
+      "name": "FAN MODULE",
+      "color": "#3b5998"
+    },
+    {
+      "startU": 4,
+      "sizeU": 11,
+      "type": "router",
+      "name": "ERICSSION\nFRAM 01",
+      "color": "#A6A6A6"
+    },
+    {
+      "startU": 1,
+      "sizeU": 3,
+      "type": "fan_module",
+      "name": "FAN MODULE",
+      "color": "#3b5998"
+    }
+  ]
+}

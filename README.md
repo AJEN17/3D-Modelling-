@@ -15,3 +15,5 @@ A React 3D Web Application built with Vite and Three.js (`@react-three/fiber`) t
 
 ## Customizing the Floor Plan
 To move a server or change the layout, simply edit the `[X, Y, Z]` position array in `src/data/floorplan.json`. The 3D scene will automatically update via Hot Module Replacement.
+
+

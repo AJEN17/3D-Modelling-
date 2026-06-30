@@ -1,0 +1,820 @@
+{
+    "room": {
+        "width": 14.2,
+        "depth": 8.2,
+        "height": 3,
+        "tileSize": 0.6,
+        "name": "Data Floor",
+        "floorType": "first"
+    },
+    "colors": {
+        "infra": "#0072bc",
+        "core": "#fff200",
+        "coldAisle": "#009245",
+        "hotAisle": "#f69679",
+        "pillar": "#ED1C24",
+        "structural": "#ED1C24",
+        "nld": "#662D91",
+        "tx": "#00aeef",
+        "vas": "#f26522",
+        "workstation": "#F7931E",
+        "pac": "#00FFFF"
+    },
+    "legend": [
+        {
+            "label": "DC PDU",
+            "color": "#0072bc"
+        },
+        {
+            "label": "UPS PDU",
+            "color": "#f26522"
+        },
+        {
+            "label": "PAC",
+            "color": "#009245"
+        },
+        {
+            "label": "CORE",
+            "color": "#fff200"
+        },
+        {
+            "label": "TRANSMISSION",
+            "color": "#00aeef"
+        },
+        {
+            "label": "BSS",
+            "color": "#f69679"
+        }
+    ],
+    "walls": [
+        {
+            "type": "line",
+            "start": [
+                0.2,
+                0.1
+            ],
+            "end": [
+                13.85,
+                0.1
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                13.85,
+                0.1
+            ],
+            "end": [
+                13.85,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                13.85,
+                6.3
+            ],
+            "end": [
+                12.45,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                12.45,
+                6.3
+            ],
+            "end": [
+                12.45,
+                7.85
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                12.45,
+                7.85
+            ],
+            "end": [
+                9.95,
+                7.85
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                9.95,
+                7.85
+            ],
+            "end": [
+                9.95,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                9.95,
+                6.3
+            ],
+            "end": [
+                1.85,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                1.85,
+                6.3
+            ],
+            "end": [
+                1.85,
+                7.28
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                1.85,
+                7.28
+            ],
+            "end": [
+                1.1,
+                7.28
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                1.1,
+                7.28
+            ],
+            "end": [
+                1.1,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                1.1,
+                6.3
+            ],
+            "end": [
+                0.2,
+                6.3
+            ]
+        },
+        {
+            "type": "line",
+            "start": [
+                0.2,
+                6.3
+            ],
+            "end": [
+                0.2,
+                0.1
+            ]
+        }
+    ],
+    "components": [
+        {
+            "id": "dc-pdu-3",
+            "name": "DC PDU",
+            "type": "infra",
+            "width": 0.3,
+            "depth": 0.35,
+            "height": 2,
+            "position": [
+                1.2,
+                0,
+                7.1
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "dc-pdu",
+            "name": "DC PDU",
+            "type": "infra",
+            "width": 0.3,
+            "depth": 0.35,
+            "height": 2,
+            "position": [
+                1.2,
+                0,
+                6.75
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "dc-pdu-3",
+            "name": "UCS-1",
+            "type": "infra",
+            "width": 0.3,
+            "depth": 0.35,
+            "height": 2,
+            "position": [
+                10.2,
+                0,
+                7.1
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "dc-pdu",
+            "name": "UCS-2",
+            "type": "infra",
+            "width": 0.3,
+            "depth": 0.35,
+            "height": 2,
+            "position": [
+                10.2,
+                0,
+                6.75
+            ],
+            "rotation": -0.0
+        },
+        {
+            "id": "comp-129",
+            "name": "NOKIA SAR 02",
+            "type": "infra",
+            "width": 0.55,
+            "depth": 0.51,
+            "height": 2,
+            "position": [
+                4.71,
+                0,
+                3.22
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/sar-2.json"
+        },
+        {
+            "id": "comp-130",
+            "name": "NOKIA SAR 01",
+            "type": "infra",
+            "width": 0.54,
+            "depth": 0.51,
+            "height": 2,
+            "position": [
+                5.27,
+                0,
+                3.21
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/sar-1.json"
+        },
+        {
+            "id": "comp-131",
+            "name": "FMS Transmission 3",
+            "type": "infra",
+            "width": 0.49,
+            "depth": 0.21,
+            "height": 2,
+            "position": [
+                9.07,
+                0,
+                5.4
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/fms-3.json"
+        },
+        {
+            "id": "comp-133",
+            "name": "UPS PDU-2",
+            "type": "workstation",
+            "width": 2.15,
+            "depth": 0.35,
+            "height": 2,
+            "position": [
+                1.58,
+                0,
+                1.19
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-134",
+            "name": "UPS PDU-1",
+            "type": "workstation",
+            "width": 2.38,
+            "depth": 0.35,
+            "height": 2,
+            "position": [
+                12.11,
+                0,
+                1.17
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-145",
+            "name": "ViServer Core",
+            "type": "infra",
+            "width": 0.5928489426945316,
+            "depth": 0.4574599288240341,
+            "height": 2,
+            "position": [
+                7.687634467846864,
+                0,
+                4.058171167139866
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/viserver-core.json"
+        },
+        {
+            "id": "comp-146",
+            "name": "CEN TRANSMISSION",
+            "type": "infra",
+            "width": 0.609491693084852,
+            "depth": 0.4694618450209647,
+            "height": 2,
+            "position": [
+                8.306805884732519,
+                0,
+                4.066125668036505
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/cen-transmission.json"
+        },
+        {
+            "id": "comp-137",
+            "name": "OSS RACK 1",
+            "type": "tx",
+            "width": 0.466841249722785,
+            "depth": 0.3666097544821283,
+            "height": 2,
+            "position": [
+                7.656557255280129,
+                0,
+                3.2671060080733456
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/oss-1.json"
+        },
+        {
+            "id": "comp-138",
+            "name": "OSS RACK-2 ",
+            "type": "tx",
+            "width": 0.47295459583196886,
+            "depth": 0.39870756570295346,
+            "height": 2,
+            "position": [
+                8.143097410191967,
+                0,
+                3.2651522523317666
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/oss-2.json"
+        },
+        {
+            "id": "comp-139",
+            "name": "FMS Transmission 1",
+            "type": "infra",
+            "width": 0.46,
+            "depth": 0.42,
+            "height": 2,
+            "position": [
+                7.64,
+                0,
+                5.51
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/fms-1.json"
+        },
+        {
+            "id": "comp-140",
+            "name": "FMS Transmission 2",
+            "type": "infra",
+            "width": 0.48,
+            "depth": 0.19,
+            "height": 2,
+            "position": [
+                8.13,
+                0,
+                5.39
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/fms-2.json"
+        },
+        {
+            "id": "comp-141",
+            "name": "PAC - 5",
+            "type": "coldAisle",
+            "width": 0.68,
+            "depth": 0.41,
+            "height": 2,
+            "position": [
+                11.87,
+                0,
+                3.25
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-147",
+            "name": "VGW RACK1 CORE",
+            "type": "tx",
+            "width": 0.5848678024706058,
+            "depth": 0.45634367949462223,
+            "height": 2,
+            "position": [
+                8.904325090097695,
+                0,
+                4.059147938538953
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/vgw-rack1-core.json"
+        },
+        {
+            "id": "comp-152",
+            "name": "CISCO VGW 2",
+            "type": "tx",
+            "width": 0.5848662477030296,
+            "depth": 0.46988049175534546,
+            "height": 2,
+            "position": [
+                10.10377826336035,
+                0,
+                3.224262646745542
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/vgw-2.json"
+        },
+        {
+            "id": "comp-153",
+            "name": "PAC - 6",
+            "type": "coldAisle",
+            "width": 0.65,
+            "depth": 0.42,
+            "height": 2,
+            "position": [
+                11.87,
+                0,
+                4.36
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-154",
+            "name": "PAC - 1",
+            "type": "coldAisle",
+            "width": 0.69,
+            "depth": 0.4,
+            "height": 2,
+            "position": [
+                2.28,
+                0,
+                2.88
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-155",
+            "name": "PAC - 2",
+            "type": "coldAisle",
+            "width": 0.68,
+            "depth": 0.42,
+            "height": 2,
+            "position": [
+                2.26,
+                0,
+                4.6
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-156",
+            "name": "UPS-1 BB-2",
+            "type": "workstation",
+            "width": 0.91,
+            "depth": 0.21,
+            "height": 2,
+            "position": [
+                11.655,
+                0,
+                6.31
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-156",
+            "name": "UPS-1 BB-1",
+            "type": "workstation",
+            "width": 0.91,
+            "depth": 0.21,
+            "height": 2,
+            "position": [
+                11.655,
+                0,
+                6.91
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-158",
+            "name": "DATA ARCHIVAL 1",
+            "type": "tx",
+            "width": 0.62,
+            "depth": 0.51,
+            "height": 2,
+            "position": [
+                5.23,
+                0,
+                4.41
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-159",
+            "name": "DATA ARCHIVAL 2",
+            "type": "tx",
+            "width": 0.6,
+            "depth": 0.51,
+            "height": 2,
+            "position": [
+                4.62,
+                0,
+                4.41
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-160",
+            "name": "DATA ARCHIVAL 3",
+            "type": "tx",
+            "width": 0.63,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                5.68,
+                0,
+                1.15
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-161",
+            "name": "DATA ARCHIVAL 4",
+            "type": "tx",
+            "width": 0.62,
+            "depth": 0.56,
+            "height": 2,
+            "position": [
+                6.3,
+                0,
+                1.15
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-162",
+            "name": "DATA ARCHIVAL 5",
+            "type": "tx",
+            "width": 0.62,
+            "depth": 0.54,
+            "height": 2,
+            "position": [
+                7.73,
+                0,
+                1.15
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-187",
+            "name": "PAC - 4",
+            "type": "coldAisle",
+            "width": 0.68,
+            "depth": 0.41,
+            "height": 2,
+            "position": [
+                11.84,
+                0,
+                2.52
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-188",
+            "name": "PAC - 1",
+            "type": "coldAisle",
+            "width": 0.69,
+            "depth": 0.41,
+            "height": 2,
+            "position": [
+                2.26,
+                0,
+                2.45
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-216",
+            "name": "FM 200",
+            "type": "cylinder",
+            "width": 0.29,
+            "depth": 0.22,
+            "height": 2.4,
+            "position": [
+                12.74,
+                0,
+                1.77
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-217",
+            "name": "FM 200",
+            "type": "cylinder",
+            "width": 0.29,
+            "depth": 0.22,
+            "height": 2.4,
+            "position": [
+                12.73,
+                0,
+                1.99
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-218",
+            "name": "FM 200",
+            "type": "cylinder",
+            "width": 0.29,
+            "depth": 0.23,
+            "height": 2.4,
+            "position": [
+                12.73,
+                0,
+                2.22
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-220",
+            "name": "FM 200",
+            "type": "cylinder",
+            "width": 0.29,
+            "depth": 0.22,
+            "height": 2.4,
+            "position": [
+                1.17,
+                0,
+                1.77
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-221",
+            "name": "FM 200",
+            "type": "cylinder",
+            "width": 0.28,
+            "depth": 0.21,
+            "height": 2.4,
+            "position": [
+                1.17,
+                0,
+                1.98
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-222",
+            "name": "FM 200",
+            "type": "cylinder",
+            "width": 0.28,
+            "depth": 0.23,
+            "height": 2.4,
+            "position": [
+                1.17,
+                0,
+                2.21
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-227",
+            "name": "Simple2Call 2",
+            "rackDataUrl": "/data/racks/simple2call2.json",
+            "type": "structural",
+            "width": 0.45,
+            "depth": 0.49,
+            "height": 2,
+            "position": [
+                5.28,
+                0,
+                5.52
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-228",
+            "name": "Simple2Call 3",
+            "type": "structural",
+            "rackDataUrl": "/data/racks/simple2call3.json",
+            "width": 0.46,
+            "depth": 0.48,
+            "height": 2,
+            "position": [
+                4.83,
+                0,
+                5.53
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-229",
+            "name": "Simple2Call 4",
+            "type": "structural",
+            "rackDataUrl": "/data/racks/simple2call4.json",
+            "width": 0.44,
+            "depth": 0.48,
+            "height": 2,
+            "position": [
+                4.37,
+                0,
+                5.53
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-230",
+            "name": "Simple2Call 1",
+            "rackDataUrl": "/data/racks/simple2call1.json",
+            "type": "structural",
+            "width": 0.45,
+            "depth": 0.49,
+            "height": 2,
+            "position": [
+                5.74,
+                0,
+                5.52
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "comp-231",
+            "name": "NOKIA SON-1",
+            "type": "infra",
+            "width": 0.45,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                3.5,
+                0,
+                3.22
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/son-1.json"
+        },
+        {
+            "id": "comp-232",
+            "name": "Nokia SON-2",
+            "type": "infra",
+            "width": 0.45,
+            "depth": 0.5,
+            "height": 2,
+            "position": [
+                4.1,
+                0,
+                3.22
+            ],
+            "rotation": 0.0,
+            "rackDataUrl": "/data/racks/son-2.json"
+        },
+        {
+            "id": "beam-horizontal",
+            "name": "Horizontal Beam",
+            "type": "structural",
+            "color": "#666666",
+            "width": 11,
+            "depth": 0.2,
+            "height": 0.5,
+            "position": [
+                6.9,
+                2.5,
+                1.67
+            ],
+            "rotation": 0.0
+        },
+        {
+            "id": "beam-vertical",
+            "name": "Vertical Beam",
+            "type": "structural",
+            "color": "#666666",
+            "width": 0.25,
+            "depth": 5.9,
+            "height": 0.5,
+            "position": [
+                7.02,
+                1.5,
+                3.3
+            ],
+            "rotation": 0.0
+        }
+    ]
+}

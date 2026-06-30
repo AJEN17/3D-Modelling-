@@ -1,0 +1,104 @@
+{
+  "id": "tx-mu",
+  "name": "MUMLAK4FR1R7 FMS TRANSMISSION",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 41,
+      "sizeU": 2,
+      "type": "patch_panel",
+      "name": "DCDB"
+    },
+    {
+      "startU": 40,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 39,
+      "sizeU": 1,
+      "type": "switch",
+      "name": "ECI NPT1020"
+    },
+    {
+      "startU": 38,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 37,
+      "sizeU": 1,
+      "type": "switch",
+      "name": "ECI NPT1020"
+    },
+    {
+      "startU": 30,
+      "sizeU": 7,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 28,
+      "sizeU": 2,
+      "type": "patch_panel",
+      "name": "FMS"
+    },
+    {
+      "startU": 26,
+      "sizeU": 2,
+      "type": "patch_panel",
+      "name": "FMS"
+    },
+    {
+      "startU": 24,
+      "sizeU": 2,
+      "type": "patch_panel",
+      "name": "FMS"
+    },
+    {
+      "startU": 23,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 21,
+      "sizeU": 2,
+      "type": "patch_panel",
+      "name": "FMS"
+    },
+    {
+      "startU": 20,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 18,
+      "sizeU": 2,
+      "type": "patch_panel",
+      "name": "FMS 3RD FLOOR TO 2ND FLOOR"
+    },
+    {
+      "startU": 7,
+      "sizeU": 11,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 5,
+      "sizeU": 2,
+      "type": "patch_panel",
+      "name": "FMS"
+    },
+    {
+      "startU": 1,
+      "sizeU": 4,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "fms-3",
+  "name": "MUMLAK3FR1R8 FMS TRANSMISSION",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    { "startU": 8, "sizeU": 35, "type": "blank", "name": "Blank panel" },
+    { "startU": 6, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 4, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 3, "sizeU": 1, "type": "switch", "name": "EXTREME NETWORK SWITCH", "color": "#7030a0" },
+    { "startU": 2, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 1, "sizeU": 1, "type": "switch", "name": "EXTREME NETWORK SWITCH", "color": "#7030a0" }
+  ]
+}

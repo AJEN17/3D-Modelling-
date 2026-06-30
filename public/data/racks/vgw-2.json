@@ -1,0 +1,30 @@
+{
+  "id": "cisco-vgw-2",
+  "name": "MUMLAK3FR3R9 CISCO VGW CORE",
+  "owner": "Anish Mansuri",
+  "totalU": 42,
+  "units": [
+    { "startU": 42, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 41, "sizeU": 1, "type": "switch", "name": "MUMLAKLEAF03", "color": "#FFFF00" },
+    { "startU": 40, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 39, "sizeU": 1, "type": "switch", "name": "MUMLAKLEAF04", "color": "#FFFF00" },
+    { "startU": 38, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 36, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW09", "color": "#92D050" },
+    { "startU": 34, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW10", "color": "#92D050" },
+    { "startU": 32, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW11", "color": "#92D050" },
+    { "startU": 30, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW12", "color": "#92D050" },
+    { "startU": 28, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW13", "color": "#92D050" },
+    { "startU": 26, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUMLAKVSEAGW14", "color": "#92D050" },
+    { "startU": 18, "sizeU": 8, "type": "blank", "name": "Blank panel" },
+    { "startU": 16, "sizeU": 2, "type": "switch", "name": "NCS 55A2 MOD HD S\nMUMLAKGNGIRTR02", "color": "#C55A11" },
+    { "startU": 15, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 13, "sizeU": 2, "type": "compute", "name": "UCS C240 M5\nMUM LAKBULD01", "color": "#92D050" },
+    { "startU": 10, "sizeU": 3, "type": "blank", "name": "Blank panel" },
+    { "startU": 9, "sizeU": 1, "type": "switch", "name": "CISCO 2960 XR\nMUMLAKOAMSW01", "color": "#FFFF00" },
+    { "startU": 8, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 7, "sizeU": 1, "type": "switch", "name": "CISCO 2960 XR\nMUMLAKOAMSW02", "color": "#FFFF00" },
+    { "startU": 6, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 5, "sizeU": 1, "type": "switch", "name": "CISCO C3850 NM BLANK\nMUMLAK3850SW01", "color": "#FFFF00" },
+    { "startU": 1, "sizeU": 4, "type": "blank", "name": "Blank panel" }
+  ]
+}

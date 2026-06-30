@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 function WallSegment({ p1, p2, thickness = 0.15, color = "#111111" }) {
@@ -18,9 +18,27 @@ function WallSegment({ p1, p2, thickness = 0.15, color = "#111111" }) {
 // Door symbols removed as requested
 
 export default function FloorGrid({ roomData, walls }) {
+  const groupRef = useRef();
   const { width, depth, tileSize } = roomData;
   const gridDivisionsX = Math.floor(width / tileSize);
   const gridDivisionsZ = Math.floor(depth / tileSize);
+
+  useEffect(() => {
+    const group = groupRef.current;
+    return () => {
+      if (group) {
+        group.traverse((child) => {
+          if (child.isMesh) {
+            if (child.geometry) child.geometry.dispose();
+            if (child.material) {
+              if (Array.isArray(child.material)) child.material.forEach(m => m.dispose());
+              else child.material.dispose();
+            }
+          }
+        });
+      }
+    };
+  }, []);
 
   const wallLines = useMemo(() => {
     if (walls && walls.length > 0) {
@@ -54,7 +72,7 @@ export default function FloorGrid({ roomData, walls }) {
   }, [roomData.floorType, walls]);
 
   return (
-    <group position={[0, 0, 0]}>
+    <group ref={groupRef} position={[0, 0, 0]}>
       {/* Base Floor Plane */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[width / 2, -0.01, depth / 2]}>
         <planeGeometry args={[width, depth]} />

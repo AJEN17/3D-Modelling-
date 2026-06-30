@@ -1,0 +1,9 @@
+{
+  "id": "oss-2",
+  "name": "MUMLAK3FR4R8",
+  "owner": "Vinod Gautam Kumar",
+  "totalU": 32,
+  "units": [
+    { "startU": 1, "sizeU": 32, "type": "empty", "name": "OSS\nRACK\nUNDER\nOFFLOADING" }
+  ]
+}

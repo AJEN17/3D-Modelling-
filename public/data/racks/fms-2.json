@@ -1,0 +1,16 @@
+{
+  "id": "fms-2",
+  "name": "MUMLAK3FR1R6 FMS TRANSMISSION",
+  "owner": "",
+  "totalU": 42,
+  "units": [
+    { "startU": 41, "sizeU": 2, "type": "patch_panel", "name": "DCDB" },
+    { "startU": 32, "sizeU": 9, "type": "blank", "name": "Blank panel" },
+    { "startU": 30, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 26, "sizeU": 4, "type": "blank", "name": "Blank panel" },
+    { "startU": 24, "sizeU": 2, "type": "patch_panel", "name": "FMS", "color": "#8faadc" },
+    { "startU": 7, "sizeU": 17, "type": "blank", "name": "Blank panel" },
+    { "startU": 3, "sizeU": 4, "type": "router", "name": "MUMB_LAK_T01_C_X_HO16003", "color": "#a5a5a5" },
+    { "startU": 1, "sizeU": 2, "type": "blank", "name": "Blank panel" }
+  ]
+}

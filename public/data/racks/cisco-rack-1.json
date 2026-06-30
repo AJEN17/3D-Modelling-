@@ -1,0 +1,21 @@
+{
+  "id": "cisco-rack-1",
+  "name": "MUMLAK4FR3R1 CISCO CUPS1 CORE",
+  "owner": "Cisco",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 38,
+      "sizeU": 5,
+      "type": "dcdb",
+      "name": "DCDB",
+      "color": "#ffffff"
+    },
+    {
+      "startU": 1,
+      "sizeU": 37,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

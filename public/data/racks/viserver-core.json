@@ -1,0 +1,15 @@
+{
+  "id": "viserver-core",
+  "name": "MUMLAK3FR3R6 - ViServ CORE",
+  "owner": "deepa rai",
+  "totalU": 42,
+  "units": [
+    { "startU": 41, "sizeU": 2, "type": "dcdb", "name": "DCDB", "color": "#CCCCCC" },
+    { "startU": 31, "sizeU": 10, "type": "blank", "name": "Blank panel" },
+    { "startU": 30, "sizeU": 1, "type": "switch", "name": "CISCO 4948E\nMUMLAKENT01C4948", "color": "#FFFF00" },
+    { "startU": 7, "sizeU": 23, "type": "blank", "name": "Blank panel" },
+    { "startU": 5, "sizeU": 2, "type": "compute", "name": "HP SERVER", "color": "#FF0000" },
+    { "startU": 3, "sizeU": 2, "type": "compute", "name": "HP SERVER", "color": "#FF0000" },
+    { "startU": 1, "sizeU": 2, "type": "blank", "name": "Blank panel" }
+  ]
+}

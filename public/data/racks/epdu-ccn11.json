@@ -1,0 +1,34 @@
+{
+  "id": "epdu-ccn11",
+  "name": "MUMLAK4FR2R2 EPDU2 IN/VAS",
+  "owner": "Ericssion",
+  "totalU": 32,
+  "units": [
+    {
+      "startU": 19,
+      "sizeU": 14,
+      "type": "epdu",
+      "name": "Ericssion\nEPDU\nPOWER OFF",
+      "color": "#808080"
+    },
+    {
+      "startU": 16,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 2,
+      "sizeU": 14,
+      "type": "epdu",
+      "name": "Ericssion\nEPDU\nPOWER OFF",
+      "color": "#808080"
+    },
+    {
+      "startU": 1,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

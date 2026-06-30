@@ -1,0 +1,16 @@
+{
+  "id": "simple2call2",
+  "name": "MUMLAK3FR1R2 SIMPLE2CALL ENTERPRISES",
+  "totalU": 42,
+  "units": [
+    { "startU": 42, "sizeU": 1, "type": "switch", "name": "Anatel Switch", "color": "#FFFF00" },
+    { "startU": 41, "sizeU": 1, "type": "switch", "name": "Anatel Switch", "color": "#FFFF00" },
+    { "startU": 37, "sizeU": 4, "type": "blank", "name": "Blank panel" },
+    { "startU": 35, "sizeU": 2, "type": "empty", "name": "Blank panel", "uLabel": "35U" },
+    { "startU": 26, "sizeU": 9, "type": "blank", "name": "Blank panel" },
+    { "startU": 25, "sizeU": 1, "type": "compute", "name": "DELL MLDB1", "color": "#8CC63F" },
+    { "startU": 24, "sizeU": 1, "type": "blank", "name": "Blank panel" },
+    { "startU": 23, "sizeU": 1, "type": "compute", "name": "DELL MLDB2", "color": "#8CC63F" },
+    { "startU": 1, "sizeU": 22, "type": "blank", "name": "Blank panel" }
+  ]
+}

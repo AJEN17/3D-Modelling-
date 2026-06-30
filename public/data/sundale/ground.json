@@ -4,7 +4,7 @@
     "depth": 12.0,
     "height": 3.0,
     "tileSize": 0.6,
-    "name": "GROUND FLR LAB Room"
+    "name": "GROUND FLOOR LAB Room"
   },
   "colors": {
     "infra": "#00AEEF",
@@ -14,6 +14,7 @@
     "pillar": "#ED1C24",
     "fap": "#FF5722"
   },
+  "walls": [],
   "components": [
     {
       "id": "pac-1",
