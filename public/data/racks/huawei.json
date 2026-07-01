@@ -1,0 +1,53 @@
+{
+  "id": "huawei",
+  "name": "Huawei Alarm Transmission",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 42,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 34,
+      "sizeU": 8,
+      "type": "dcdb",
+      "color": "#FFC000",
+      "name": "Power equipment"
+    },
+    {
+      "startU": 33,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 21,
+      "sizeU": 12,
+      "type": "dcdb",
+      "color": "#FFC000",
+      "name": "Power equipment"
+    },
+    {
+      "startU": 20,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 5,
+      "sizeU": 15,
+      "type": "dcdb",
+      "color": "#FFC000",
+      "name": "Power equipment"
+    },
+    {
+      "startU": 1,
+      "sizeU": 4,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

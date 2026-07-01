@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { RoundedBox, Text3D, Center } from '@react-three/drei';
+import { RoundedBox, Text, Center } from '@react-three/drei';
 import { U_HEIGHT, INNER_WIDTH } from './constants';
-export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS' }) {
+
+export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS', color = '#5A6F82' }) {
   const height = sizeU * U_HEIGHT;
   const laserRefs = useRef([]);
+
   useFrame((state) => {
     const t = state.clock.elapsedTime;
     // Slow glowing pulse for the fiber optic connections in the FMS
@@ -14,16 +16,19 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS' }) {
       ref.emissiveIntensity = 0.5 + pulse * 1.5;
     });
   });
+
   // Calculate fiber port spacing so it fits neatly inside the chassis
   const numPorts = 24;
   const portSpacing = (INNER_WIDTH * 0.8) / numPorts;
   const startX = -INNER_WIDTH * 0.4 + portSpacing / 2;
+
   return (
     <group position={[0, 0, 0.002]}>
-      {/* Slate Blue-Grey Outer Chassis */}
+      {/* Outer Chassis */}
       <RoundedBox args={[INNER_WIDTH * 0.98, height * 0.96, 0.008]} radius={0.002} smoothness={4}>
-        <meshPhysicalMaterial color="#5A6F82" roughness={0.5} metalness={0.6} clearcoat={0.2} />
+        <meshPhysicalMaterial color={color} roughness={0.5} metalness={0.6} clearcoat={0.2} />
       </RoundedBox>
+
       {/* Mounting Ears */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.002]}>
@@ -39,7 +44,14 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS' }) {
           ))}
         </group>
       ))}
-      {/* Sliding Drawer Seams */}
+
+      {/* Front Panel details */}
+      {/* Horizontal Groove for aesthetic */}
+      <mesh position={[0, height * 0.35, 0.004]}>
+        <boxGeometry args={[INNER_WIDTH * 0.8, 0.002, 0.001]} />
+        <meshStandardMaterial color="#111" />
+      </mesh>
+
       <mesh position={[0, height * 0.4, 0.004]}>
         <boxGeometry args={[INNER_WIDTH * 0.9, 0.002, 0.002]} />
         <meshStandardMaterial color="#222" />
@@ -48,20 +60,25 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS' }) {
         <boxGeometry args={[INNER_WIDTH * 0.9, 0.002, 0.002]} />
         <meshStandardMaterial color="#222" />
       </mesh>
+
       {/* Label on the drawer front */}
-      <group position={[0, height * 0.15, 0.004]}>
-        <Center position={[0, 0, 0]}>
-          <Text3D
-            font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
-            size={0.01}
-            height={0.001}
-            lineHeight={1.2}
-          >
-            {label}
-            <meshStandardMaterial color="#fff" />
-          </Text3D>
-        </Center>
+      <group position={[0, height * 0.15, 0.006]}>
+        <Text
+          position={[0, 0, 0]}
+          fontSize={sizeU === 1 ? 0.024 : 0.03}
+          color="#ffffff"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={INNER_WIDTH * 0.8}
+          textAlign="center"
+          fontWeight="bold"
+          outlineWidth={0.001}
+          outlineColor="#000000"
+        >
+          {label}
+        </Text>
       </group>
+
       {/* Fiber Routing Spools (Yellow/Orange) visible through cutouts */}
       {/* Moved UP to avoid overlapping the ports */}
       {[-1, 1].map(side => (
@@ -83,6 +100,7 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS' }) {
           </mesh>
         </group>
       ))}
+
       {/* High-Density Duplex LC Fiber Ports Array */}
       {/* Recessed panel for ports (Moved slightly down for better spacing) */}
       <group position={[0, -height * 0.28, 0.004]}>
@@ -98,24 +116,28 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS' }) {
               <meshStandardMaterial color="#222" />
             </mesh>
             {/* Left/Right Fiber cavities */}
-            {[-1, 1].map((pSide, pIdx) => (
-              <group key={`cavity-${pIdx}`} position={[pSide * 0.003, 0, 0.001]}>
-                <mesh>
-                  <boxGeometry args={[0.004, 0.004, 0.001]} />
-                  <meshBasicMaterial color="#000" />
-                </mesh>
-                <mesh position={[0, 0, 0.001]}>
-                  <boxGeometry args={[0.002, 0.002, 0.001]} />
-                  <meshStandardMaterial 
-                    ref={el => laserRefs.current[i * 2 + pIdx] = el}
-                    color="#ff0000" 
-                    emissive="#ff0000" 
-                    emissiveIntensity={1} 
-                    toneMapped={false}
-                  />
-                </mesh>
-              </group>
-            ))}
+            {[-1, 1].map((pSide, pIdx) => {
+              const isGreen = (i % 3 === 0 && pIdx === 0);
+              const laserColor = isGreen ? "#00ff00" : "#ff0000";
+              return (
+                <group key={`cavity-${pIdx}`} position={[pSide * 0.003, 0, 0.001]}>
+                  <mesh>
+                    <boxGeometry args={[0.004, 0.004, 0.001]} />
+                    <meshBasicMaterial color="#000" />
+                  </mesh>
+                  <mesh position={[0, 0, 0.001]}>
+                    <boxGeometry args={[0.002, 0.002, 0.001]} />
+                    <meshStandardMaterial 
+                      ref={el => laserRefs.current[i * 2 + pIdx] = el}
+                      color={laserColor} 
+                      emissive={laserColor} 
+                      emissiveIntensity={1} 
+                      toneMapped={false}
+                    />
+                  </mesh>
+                </group>
+              );
+            })}
           </group>
         ))}
       </group>

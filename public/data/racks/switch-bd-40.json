@@ -1,0 +1,72 @@
+{
+  "id": "switch-bd-40",
+  "name": "MUMLAK4FR6R10 PACO MPBN CORE",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 39,
+      "sizeU": 4,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 36,
+      "sizeU": 3,
+      "type": "compute",
+      "color": "#92D050",
+      "name": "SUN ORACLE SPARC ENT M3000\nMUMMLDERAD01"
+    },
+    {
+      "startU": 33,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 30,
+      "sizeU": 3,
+      "type": "compute",
+      "color": "#92D050",
+      "name": "GSS Server"
+    },
+    {
+      "startU": 28,
+      "sizeU": 2,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 27,
+      "sizeU": 1,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "RARITAN SWITCH"
+    },
+    {
+      "startU": 26,
+      "sizeU": 1,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "RARITAN SWITCH"
+    },
+    {
+      "startU": 24,
+      "sizeU": 2,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 6,
+      "sizeU": 18,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "BlackDiamond 8810\nMUMMLDELS01"
+    },
+    {
+      "startU": 1,
+      "sizeU": 5,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

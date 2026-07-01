@@ -1,15 +1,52 @@
 {
   "id": "extrim-switch-32",
   "name": "MUMLAK4FR3R8 MPBN-A IN/VAS",
-  "owner": "Extrim",
   "totalU": 42,
   "units": [
-    { "startU": 32, "sizeU": 11, "type": "blank", "name": "Blank panel" },
-    { "startU": 31, "sizeU": 1, "type": "switch", "color": "#FFFF00", "name": "HPE5901AF SWITCH MUMMALIS05I5901" },
-    { "startU": 29, "sizeU": 2, "type": "blank", "name": "Blank panel" },
-    { "startU": 28, "sizeU": 1, "type": "switch", "color": "#FFFF00", "name": "HPE5901AF SWITCH MUMMALIS05I5901" },
-    { "startU": 10, "sizeU": 18, "type": "blank", "name": "Blank panel" },
-    { "startU": 8, "sizeU": 2, "type": "server", "color": "#A6A6A6", "name": "ROUTER6672 SRMAL01" },
-    { "startU": 1, "sizeU": 7, "type": "blank", "name": "Blank panel" }
+    {
+      "startU": 32,
+      "sizeU": 11,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 31,
+      "sizeU": 1,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "HPE5901AF SWITCH MUMMALIS05I5901"
+    },
+    {
+      "startU": 29,
+      "sizeU": 2,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 28,
+      "sizeU": 1,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "HPE5901AF SWITCH MUMMALIS05I5901"
+    },
+    {
+      "startU": 10,
+      "sizeU": 18,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 8,
+      "sizeU": 2,
+      "type": "server",
+      "color": "#A6A6A6",
+      "name": "ROUTER6672 SRMAL01"
+    },
+    {
+      "startU": 1,
+      "sizeU": 7,
+      "type": "blank",
+      "name": "Blank panel"
+    }
   ]
 }

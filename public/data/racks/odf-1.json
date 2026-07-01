@@ -1,0 +1,34 @@
+{
+  "id": "odf-1",
+  "name": "ODF-1",
+  "owner": "Anish Mansuri",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 19,
+      "sizeU": 24,
+      "type": "patch_panel",
+      "color": "#808080",
+      "name": "ODF"
+    },
+    {
+      "startU": 16,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 2,
+      "sizeU": 14,
+      "type": "patch_panel",
+      "color": "#808080",
+      "name": "ODF"
+    },
+    {
+      "startU": 1,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

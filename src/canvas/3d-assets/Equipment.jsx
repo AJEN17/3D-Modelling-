@@ -29,20 +29,20 @@ export default function Equipment({ data }) {
 
   // Parse color mapping
   let color = '#ffffff';
-  let isRack = false;
+  let isRack = !!data.rackDataUrl; // Only render server blade visuals if a rack configuration is attached
   if (data.type === 'infra') color = '#00AEEF';
-  if (data.type === 'core') { color = '#8CC63F'; isRack = true; }
+  if (data.type === 'core') color = '#8CC63F'; 
   if (data.type === 'coldAisle') color = '#009245';
   if (data.type === 'hotAisle') color = '#F1A19D';
   if (data.type === 'pillar') color = '#ED1C24';
   if (data.type === 'fap') color = '#FF5722';
-  if (data.type === 'tx') { color = '#FFFF00'; isRack = true; }
-  if (data.type === 'nld') { color = '#662D91'; isRack = true; }
-  if (data.type === 'vas') { color = '#F7931E'; isRack = true; }
+  if (data.type === 'tx') color = '#FFFF00'; 
+  if (data.type === 'nld') color = '#662D91'; 
+  if (data.type === 'vas') color = '#F7931E'; 
   if (data.type === 'structural') color = '#ED1C24';
   if (data.type === 'cylinder') color = '#FF0000'; // Fixed to Red
   if (data.type === 'workstation') color = '#F7931E'; // Fixed to Orange
-  if (data.type === 'rack') { color = '#EEEEEE'; isRack = true; }
+  if (data.type === 'rack') color = '#EEEEEE'; 
   if (data.type === 'black_pillar') color = '#222222';
   if (data.type === 'dark_blue') color = '#1D3B8E';
   if (data.type === 'facebook') color = '#ED1C24';

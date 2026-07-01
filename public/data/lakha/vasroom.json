@@ -370,7 +370,7 @@
         {
             "id": "comp-17",
             "name": "SDH-27",
-            "type": "pac",
+            "type": "tx",
             "width": 0.48137971933903495,
             "depth": 0.21970081483616372,
             "height": 2,
@@ -380,12 +380,13 @@
                 2.060147959022783
             ],
             "rotation": 0,
-            "color": "#00B0F0"
+            "color": "#00B0F0",
+            "rackDataUrl": "/data/racks/sdh-27.json"
         },
         {
             "id": "comp-18",
-            "name": "TX RACK",
-            "type": "pac",
+            "name": "SDH-28",
+            "type": "tx",
             "width": 0.47095830689508145,
             "depth": 0.21970081483616372,
             "height": 2,
@@ -395,7 +396,8 @@
                 2.060147959022783
             ],
             "rotation": 0,
-            "color": "#00B0F0"
+            "color": "#00B0F0",
+            "rackDataUrl": "/data/racks/sdh-28.json"
         },
         {
             "id": "comp-25",
@@ -447,7 +449,7 @@
         },
         {
             "id": "comp-28",
-            "name": "MPBN ROUTER- 1",
+            "name": "MPBN RACK 1",
             "type": "tx",
             "width": 0.48059238240902996,
             "depth": 0.48652625391705845,
@@ -463,7 +465,7 @@
         },
         {
             "id": "comp-29",
-            "name": "MPBN ROUTER- 2",
+            "name": "MPBN RACK 2",
             "type": "tx",
             "width": 0.471941277848853,
             "depth": 0.4734714396661159,
@@ -480,7 +482,7 @@
         {
             "id": "comp-32",
             "name": "EXTRIM SWITCH",
-            "type": "server",
+            "type": "tx",
             "width": 0.5026180130050464,
             "depth": 0.4454519311932425,
             "height": 2,
@@ -596,7 +598,8 @@
                 1.0341600499271406
             ],
             "rotation": 0,
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/switch-bd-39.json"
         },
         {
             "id": "comp-40",
@@ -611,7 +614,8 @@
                 1.0405283408759396
             ],
             "rotation": 0,
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/switch-bd-40.json"
         },
         {
             "id": "comp-41",
@@ -692,7 +696,7 @@
         },
         {
             "id": "comp-46",
-            "name": "CISCO RACK-1",
+            "name": "RACK-1",
             "type": "tx",
             "width": 0.6390871470869884,
             "depth": 0.5182081066334602,
@@ -708,7 +712,7 @@
         },
         {
             "id": "comp-47",
-            "name": "CISCO RACK-2",
+            "name": "RACK-2",
             "type": "tx",
             "width": 0.645969744076491,
             "depth": 0.5145462482408529,
@@ -724,7 +728,7 @@
         },
         {
             "id": "comp-48",
-            "name": "CISCO RACK-3",
+            "name": "RACK-3",
             "type": "tx",
             "width": 0.6322045500974859,
             "depth": 0.5145462482408529,
@@ -740,7 +744,7 @@
         },
         {
             "id": "comp-49",
-            "name": "CISCO RACK-4",
+            "name": "RACK-4",
             "type": "tx",
             "width": 0.6457729098439898,
             "depth": 0.5182081066334602,
@@ -756,7 +760,7 @@
         },
         {
             "id": "comp-50",
-            "name": "CISCO RACK-5",
+            "name": "RACK-5",
             "type": "tx",
             "width": 0.645969744076491,
             "depth": 0.5145462482408529,
@@ -772,7 +776,7 @@
         },
         {
             "id": "comp-51",
-            "name": "CISCO RACK-6",
+            "name": "RACK-6",
             "type": "tx",
             "width": 0.6394802154476236,
             "depth": 0.5350836525282215,
@@ -783,11 +787,12 @@
                 2.4582364702435564
             ],
             "rotation": 0,
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/cisco-rack-6.json"
         },
         {
             "id": "comp-52",
-            "name": "CISCO RACK-7",
+            "name": "RACK-7",
             "type": "tx",
             "width": 0.6392833812151223,
             "depth": 0.5180487475313273,
@@ -798,7 +803,8 @@
                 2.4688236476660457
             ],
             "rotation": 0,
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/cisco-rack-7.json"
         },
         {
             "id": "comp-53",
@@ -832,7 +838,7 @@
         },
         {
             "id": "comp-55",
-            "name": "Facebook RACK-1",
+            "name": "RACK-1",
             "type": "tx",
             "width": 0.6322045500974859,
             "depth": 0.5202773457065812,
@@ -843,11 +849,12 @@
                 2.3729829944844
             ],
             "rotation": 0,
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/facebook-rack-1.json"
         },
         {
             "id": "comp-56",
-            "name": "Facebook RACK-2",
+            "name": "RACK-2",
             "type": "tx",
             "width": 0.638497244493852,
             "depth": 0.5347649343239558,
@@ -858,7 +865,8 @@
                 2.365898559277846
             ],
             "rotation": 0,
-            "color": "#FFFF00"
+            "color": "#FFFF00",
+            "rackDataUrl": "/data/racks/facebook-rack-2.json"
         },
         {
             "id": "comp-59",

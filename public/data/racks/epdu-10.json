@@ -1,0 +1,12 @@
+{
+  "id": "epdu-10",
+  "name": "MUMLAK2FR1R8 EPDU10 CORE",
+  "owner": "Anish Mansuri",
+  "totalU": 32,
+  "units": [
+    { "startU": 19, "sizeU": 14, "type": "compute", "color": "#808080", "name": "Ericssion EPDU 10" },
+    { "startU": 16, "sizeU": 3, "type": "blank", "name": "Blank panel" },
+    { "startU": 2, "sizeU": 14, "type": "compute", "color": "#808080", "name": "Ericssion EPDU 10" },
+    { "startU": 1, "sizeU": 1, "type": "blank", "name": "Blank panel" }
+  ]
+}

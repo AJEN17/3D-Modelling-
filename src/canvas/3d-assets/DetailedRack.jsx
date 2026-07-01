@@ -16,6 +16,8 @@ import EciBg30 from './EciBg30';
 import Krone from './Krone';
 import CoreRouter from './CoreRouter';
 import FanModule from './FanModule';
+import ChassisSwitch from './ChassisSwitch';
+import FiberODF from './FiberODF';
 
 function RackUnit({ unit, totalU }) {
   const { startU, sizeU, type, name } = unit;
@@ -312,6 +314,13 @@ function RackUnit({ unit, totalU }) {
             </group>
           );
         }
+        if (sizeU >= 8 || lowerName.includes('blackdiamond')) {
+          return (
+            <group position={[0, 0, RACK_DEPTH * 0.45]}>
+              <ChassisSwitch sizeU={sizeU} color={unit.color || '#FFFF00'} />
+            </group>
+          );
+        }
         const isAmtex = lowerName.includes('amtex');
         const isTelect = lowerName.includes('telect');
         return (
@@ -419,42 +428,57 @@ function RackUnit({ unit, totalU }) {
             ) : (
               // 24 RJ45 Ports for Default Switch (Anatel/Cisco)
               <group position={[0, 0, 0.001]}>
-                {[1, -1].map((row, rIdx) => (
-                  <group key={`row-${row}`} position={[0, row * 0.006, 0]}>
-                    {Array.from({ length: 12 }).map((_, i) => (
-                      <group key={`port-${rIdx}-${i}`} position={[0.02 + i * 0.014, 0, 0]}>
-                        <mesh position={[0, 0, 0.001]}>
-                          <boxGeometry args={[0.011, 0.009, 0.004]} />
-                          <meshStandardMaterial color="#111" roughness={0.8} metalness={0.3} />
-                        </mesh>
-                        <mesh position={[0, -0.001, 0.003]}>
-                          <boxGeometry args={[0.008, 0.006, 0.002]} />
-                          <meshBasicMaterial color="#000" />
-                        </mesh>
-                        <mesh position={[0, 0.002, 0.004]}>
-                          <boxGeometry args={[0.005, 0.001, 0.001]} />
-                          <meshStandardMaterial color="#DAA520" metalness={1} roughness={0.2} />
-                        </mesh>
-                        <group position={[-0.004, 0.004, 0.003]}>
-                          <mesh>
-                            <boxGeometry args={[0.002, 0.002, 0.001]} />
-                            <meshStandardMaterial
-                              ref={el => trafficRefs.current[rIdx * 12 + i] = el}
-                              color="#00ffcc"
-                              emissive="#00ffcc"
-                              emissiveIntensity={1}
-                            />
-                          </mesh>
+                {Array.from({ length: sizeU }).map((_, uIdx) => {
+                  if (sizeU >= 8 && Math.abs(uIdx - (sizeU / 2)) < 1.5) return null;
+                  
+                  return (
+                    <group key={`u-${uIdx}`} position={[0, (sizeU / 2 - uIdx - 0.5) * U_HEIGHT, 0]}>
+                      {[1, -1].map((row, rIdx) => (
+                        <group key={`row-${row}`} position={[0, row * 0.006, 0]}>
+                          {Array.from({ length: 12 }).map((_, i) => (
+                            <group key={`port-${uIdx}-${rIdx}-${i}`} position={[0.02 + i * 0.014, 0, 0]}>
+                              <mesh position={[0, 0, 0.001]}>
+                                <boxGeometry args={[0.011, 0.009, 0.004]} />
+                                <meshStandardMaterial color="#111" roughness={0.8} metalness={0.3} />
+                              </mesh>
+                              <mesh position={[0, -0.001, 0.003]}>
+                                <boxGeometry args={[0.008, 0.006, 0.002]} />
+                                <meshBasicMaterial color="#000" />
+                              </mesh>
+                              <mesh position={[0, 0.002, 0.004]}>
+                                <boxGeometry args={[0.005, 0.001, 0.001]} />
+                                <meshStandardMaterial color="#DAA520" metalness={1} roughness={0.2} />
+                              </mesh>
+                              <group position={[-0.004, 0.004, 0.003]}>
+                                <mesh>
+                                  <boxGeometry args={[0.002, 0.002, 0.001]} />
+                                  <meshStandardMaterial
+                                    ref={el => trafficRefs.current[(uIdx * 24) + rIdx * 12 + i] = el}
+                                    color="#00ffcc"
+                                    emissive="#00ffcc"
+                                    emissiveIntensity={1}
+                                  />
+                                </mesh>
+                              </group>
+                            </group>
+                          ))}
                         </group>
-                      </group>
-                    ))}
-                  </group>
-                ))}
+                      ))}
+                    </group>
+                  );
+                })}
               </group>
             )}
           </group>
         );
       case 'patch_panel':
+        if (name && name.toLowerCase().includes('odf')) {
+          return (
+            <group position={[0, 0, RACK_DEPTH * 0.45]}>
+              <FiberODF sizeU={sizeU} label={name} color={unit.color} />
+            </group>
+          );
+        }
         if (name && name.toLowerCase().includes('krone')) {
           return (
             <group position={[0, 0, RACK_DEPTH * 0.45]}>
@@ -472,7 +496,7 @@ function RackUnit({ unit, totalU }) {
         if (name && name.toLowerCase().includes('fms')) {
           return (
             <group position={[0, 0, RACK_DEPTH * 0.45]}>
-              <TelecomFMS sizeU={sizeU} label={name} />
+              <TelecomFMS sizeU={sizeU} label={name} color={unit.color} />
             </group>
           );
         }
@@ -511,7 +535,7 @@ function RackUnit({ unit, totalU }) {
       case 'dcdb':
         return (
           <group position={[0, 0, RACK_DEPTH * 0.45]}>
-            <DCDB sizeU={sizeU} label={name} />
+            <DCDB sizeU={sizeU} label={name} color={unit.color} />
           </group>
         );
       case 'nokia':
@@ -565,7 +589,7 @@ function RackUnit({ unit, totalU }) {
         <group>
           <mesh position={[0, 0, isRecessed ? -0.05 : 0]}>
             <boxGeometry args={[INNER_WIDTH, height - 0.005, isRecessed ? RACK_DEPTH * 0.8 : RACK_DEPTH * 0.9]} />
-            <meshStandardMaterial color={type === 'blank' || type === 'empty' || type === 'dcdb' ? color : '#1a1a1a'} roughness={unit.color === '#FFFF00' ? 0.9 : 0.6} metalness={unit.color === '#FFFF00' ? 0.1 : 0.4} />
+            <meshStandardMaterial color={['blank', 'empty', 'dcdb', 'generic'].includes(type) ? color : '#1a1a1a'} roughness={unit.color === '#FFFF00' ? 0.9 : 0.6} metalness={unit.color === '#FFFF00' ? 0.1 : 0.4} />
           </mesh>
           {/* Wireframe Highlight Box on Hover */}
           {hovered && (
@@ -618,26 +642,31 @@ function RackUnit({ unit, totalU }) {
           >
             {uLabel}
           </Text>
-          {!(type === 'router' || type === 'nokia' || type === 'epdu' || type === 'fan_module' || (name && (name.toLowerCase() === 'psm' || name.toLowerCase().includes('storage') || name.toLowerCase().includes('nokia') || name.toLowerCase().includes('fms') || name.toLowerCase().includes('ncs') || name.toLowerCase().includes('dcdb') || name.toLowerCase().includes('eci') || name.toLowerCase().includes('krone')))) && (
+          {!(type === 'router' || type === 'nokia' || type === 'epdu' || type === 'fan_module' || type === 'dcdb' || (name && (name.toLowerCase() === 'psm' || name.toLowerCase().includes('storage') || name.toLowerCase().includes('nokia') || name.toLowerCase().includes('fms') || name.toLowerCase().includes('odf') || name.toLowerCase().includes('ncs') || name.toLowerCase().includes('dcdb') || name.toLowerCase().includes('eci') || name.toLowerCase().includes('krone')))) && (
             <Text
               position={
                 type === 'switch' 
                 ? (
-                    (name || '').toLowerCase().includes('amtex') ? [0, height * 0.25, 0.006]
+                    sizeU >= 8 ? [0, 0, 0.035]
+                    : (name || '').toLowerCase().includes('amtex') ? [0, height * 0.25, 0.006]
                     : (name || '').toLowerCase().includes('telect') ? [0, 0, 0.006]
                     : [-INNER_WIDTH * 0.47, 0, 0.006]
                   )
-                : (type === 'compute' ? (sizeU > 4 ? [0, height * 0.22, 0.006] : [-INNER_WIDTH * 0.15, 0, 0.006]) : [0, height * 0.15, 0.006])
+                : (type === 'compute' ? (sizeU > 4 ? [0, height * 0.22, 0.006] : [0, 0, 0.006]) : (type === 'generic' ? [0, 0, 0.006] : [0, height * 0.15, 0.006]))
             }
             fontSize={
               hovered 
-                ? (type === 'empty' ? 0.033 : (type === 'switch' ? Math.min(Math.max(0.016, height * 0.25), 0.028) : (sizeU > 4 ? 0.025 : Math.min(Math.max(0.025, height * 0.3), 0.045))))
-                : (type === 'empty' ? 0.028 : (type === 'switch' ? Math.min(Math.max(0.014, height * 0.18), 0.022) : (sizeU > 4 ? 0.020 : Math.min(Math.max(0.020, height * 0.2), 0.035))))
+                ? (type === 'empty' ? 0.033 : (type === 'switch' ? Math.min(Math.max(0.024, height * 0.3), 0.035) : (sizeU > 4 ? 0.025 : Math.min(Math.max(0.025, height * 0.3), 0.045))))
+                : (type === 'empty' ? 0.028 : (type === 'switch' ? Math.min(Math.max(0.022, height * 0.25), 0.03) : (sizeU > 4 ? 0.020 : Math.min(Math.max(0.020, height * 0.2), 0.035))))
             }
-            color={type === 'empty' ? '#aaaaaa' : (isLightColor ? '#000000' : (type === 'cable_management' ? '#888888' : '#ffffff'))}
+            color={
+              type === 'empty' ? '#aaaaaa' 
+              : (type === 'switch' && sizeU >= 8) ? '#ffffff' 
+              : (isLightColor ? '#000000' : (type === 'cable_management' ? '#888888' : '#ffffff'))
+            }
             anchorX={
               type === 'switch' 
-                ? ((name || '').toLowerCase().includes('amtex') || (name || '').toLowerCase().includes('telect') ? "center" : "left") 
+                ? (sizeU >= 8 || (name || '').toLowerCase().includes('amtex') || (name || '').toLowerCase().includes('telect') ? "center" : "left") 
                 : "center"
             }
             anchorY="middle"

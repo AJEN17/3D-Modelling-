@@ -1,0 +1,25 @@
+{
+  "id": "sdp-19",
+  "name": "MUMLAK4FR3R12 SDP19/CSMT/AIR11 IN/VAS",
+  "owner": "SDP",
+  "totalU": 42,
+  "units": [
+    { "startU": 39, "sizeU": 4, "type": "blank", "name": "Blank panel" },
+    { "startU": 37, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER CSNMT-00\nOCC2A-TD. OCC2B-TD" },
+    { "startU": 35, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 33, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP TAPEDRIVE" },
+    { "startU": 31, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 29, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER\nAIR11" },
+    { "startU": 27, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 25, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP TAPEDRIVE\nSDP19B-A" },
+    { "startU": 23, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 21, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER\nSDP19B" },
+    { "startU": 19, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 17, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER SDP19A\nOCC2A-TD OCC2B-TD" },
+    { "startU": 9, "sizeU": 8, "type": "blank", "name": "Blank panel" },
+    { "startU": 7, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-4" },
+    { "startU": 5, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-3" },
+    { "startU": 3, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-2" },
+    { "startU": 1, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-1" }
+  ]
+}

@@ -1,14 +1,14 @@
 import React from 'react';
-import { RoundedBox, Text3D, Center } from '@react-three/drei';
+import { RoundedBox, Text3D, Center, Text } from '@react-three/drei';
 import { U_HEIGHT, INNER_WIDTH } from './constants';
-export default function DCDB({ sizeU = 2, label = 'DCDB' }) {
+export default function DCDB({ sizeU = 2, label = 'DCDB', color = '#a0a0a0' }) {
   const height = sizeU * U_HEIGHT;
   
   return (
     <group position={[0, 0, 0.002]}>
-      {/* Main Light Grey Faceplate (darkened to prevent glare) */}
+      {/* Main Faceplate */}
       <RoundedBox args={[INNER_WIDTH * 0.98, height * 0.95, 0.004]} radius={0.001} smoothness={4}>
-        <meshPhysicalMaterial color="#a0a0a0" roughness={0.8} metalness={0.2} />
+        <meshPhysicalMaterial color={color || "#a0a0a0"} roughness={0.8} metalness={0.2} />
       </RoundedBox>
       {/* Ear Brackets */}
       {[-1, 1].map(side => (
@@ -26,17 +26,20 @@ export default function DCDB({ sizeU = 2, label = 'DCDB' }) {
         </group>
       ))}
       {/* Label Text */}
-      <group position={[0, sizeU > 2 ? height * 0.25 : height * 0.35, 0.003]}>
-        <Center position={[0, 0, 0]}>
-          <Text3D
-            font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
-            size={Math.min(0.06, 0.01 + (sizeU * 0.005))}
-            height={0.002}
-          >
-            {label}
-            <meshBasicMaterial color="#000" />
-          </Text3D>
-        </Center>
+      <group position={[0, sizeU > 2 ? height * 0.25 : height * 0.35, 0.006]}>
+        <Text
+          position={[0, 0, 0]}
+          fontSize={sizeU > 2 ? 0.035 : 0.025}
+          color="#000000"
+          anchorX="center"
+          anchorY="middle"
+          textAlign="center"
+          maxWidth={INNER_WIDTH * 0.9}
+          lineHeight={1.1}
+          fontWeight="bold"
+        >
+          {label}
+        </Text>
       </group>
       {/* Digital Voltage Display (Blank) */}
       <group position={[-INNER_WIDTH * 0.3, 0, 0.003]}>

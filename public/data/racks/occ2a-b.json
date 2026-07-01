@@ -1,0 +1,19 @@
+{
+  "id": "occ2a-b",
+  "name": "MUMLAK4FR3R13 OCC2A-B IN/VAS",
+  "owner": "OCC",
+  "totalU": 42,
+  "units": [
+    { "startU": 24, "sizeU": 19, "type": "blank", "name": "Blank panel" },
+    { "startU": 22, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP STORAGE TAPE\nOCC2A-TD. OCC2B-TD" },
+    { "startU": 20, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 18, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER\nOCC2B" },
+    { "startU": 16, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 14, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER\nOCC2A-TD" },
+    { "startU": 9, "sizeU": 5, "type": "blank", "name": "Blank panel" },
+    { "startU": 7, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-4" },
+    { "startU": 5, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-3" },
+    { "startU": 3, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-2" },
+    { "startU": 1, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-1" }
+  ]
+}

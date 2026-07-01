@@ -1,28 +1,85 @@
 {
   "id": "epdu-ccn11",
   "name": "MUMLAK4FR2R2 EPDU2 IN/VAS",
-  "owner": "Ericssion",
   "totalU": 32,
   "units": [
     {
-      "startU": 19,
-      "sizeU": 14,
-      "type": "epdu",
-      "name": "Ericssion\nEPDU\nPOWER OFF",
-      "color": "#808080"
-    },
-    {
-      "startU": 16,
+      "startU": 30,
       "sizeU": 3,
       "type": "blank",
       "name": "Blank panel"
     },
     {
+      "startU": 26,
+      "sizeU": 4,
+      "type": "compute",
+      "color": "#92D050",
+      "name": "HP SERVER"
+    },
+    {
+      "startU": 20,
+      "sizeU": 6,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 16,
+      "sizeU": 4,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "KEYGOE 3003"
+    },
+    {
+      "startU": 12,
+      "sizeU": 4,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 11,
+      "sizeU": 1,
+      "type": "compute",
+      "color": "#92D050",
+      "name": "HUAWEI SERVER"
+    },
+    {
+      "startU": 10,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 6,
+      "sizeU": 4,
+      "type": "compute",
+      "color": "#92D050",
+      "name": "HP SERVER"
+    },
+    {
+      "startU": 5,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 4,
+      "sizeU": 1,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "SWITCH"
+    },
+    {
+      "startU": 3,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
       "startU": 2,
-      "sizeU": 14,
-      "type": "epdu",
-      "name": "Ericssion\nEPDU\nPOWER OFF",
-      "color": "#808080"
+      "sizeU": 1,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "SWITCH"
     },
     {
       "startU": 1,

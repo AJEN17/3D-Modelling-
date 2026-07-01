@@ -1,0 +1,27 @@
+{
+  "id": "ssr-rack-2",
+  "name": "SSR RACK 02",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 30,
+      "sizeU": 13,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 5,
+      "sizeU": 25,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "SSR RACK 02"
+    },
+    {
+      "startU": 1,
+      "sizeU": 4,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

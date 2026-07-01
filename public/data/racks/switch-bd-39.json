@@ -1,0 +1,39 @@
+{
+  "id": "switch-bd-39",
+  "name": "MUMLAK4FR6R11 PACO MPBN CORE",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 33,
+      "sizeU": 10,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 30,
+      "sizeU": 3,
+      "type": "compute",
+      "color": "#92D050",
+      "name": "SUN ORACLE SPARC ENT M3000\nMUMMLDERAD02"
+    },
+    {
+      "startU": 24,
+      "sizeU": 6,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 6,
+      "sizeU": 18,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "BlackDiamond 8810\nMUMMLDELS02"
+    },
+    {
+      "startU": 1,
+      "sizeU": 5,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

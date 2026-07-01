@@ -1,0 +1,27 @@
+{
+  "id": "mc-bsc-02",
+  "name": "MCBSC 02",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 31,
+      "sizeU": 12,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 3,
+      "sizeU": 28,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "MCBSC 02"
+    },
+    {
+      "startU": 1,
+      "sizeU": 2,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

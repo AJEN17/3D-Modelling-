@@ -1,0 +1,131 @@
+{
+  "id": "sdh-3",
+  "name": "SDH - 3 Transmission",
+  "owner": "Durgesh Pingle",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 42,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 41,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 39,
+      "sizeU": 2,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 38,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 34,
+      "sizeU": 4,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 33,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 30,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 29,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 25,
+      "sizeU": 4,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 24,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 21,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 20,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 17,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 16,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 13,
+      "sizeU": 3,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 12,
+      "sizeU": 1,
+      "type": "patch_panel",
+      "color": "#8EA9DB",
+      "name": "FMS"
+    },
+    {
+      "startU": 11,
+      "sizeU": 1,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 10,
+      "sizeU": 1,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "XDM 1000"
+    },
+    {
+      "startU": 1,
+      "sizeU": 9,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "sdp-20",
+  "name": "MUMLAK4FR3R14 SDP20 IN/VAS",
+  "owner": "SDP",
+  "totalU": 42,
+  "units": [
+    { "startU": 33, "sizeU": 10, "type": "blank", "name": "Blank panel" },
+    { "startU": 31, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP STORAGE\nMUSDP20 TAPEDRIVE" },
+    { "startU": 29, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 27, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER\nSDP20-B" },
+    { "startU": 25, "sizeU": 2, "type": "blank", "name": "Blank panel" },
+    { "startU": 23, "sizeU": 2, "type": "compute", "color": "#00B050", "name": "HP SERVER\nSDP20-A" },
+    { "startU": 9, "sizeU": 14, "type": "blank", "name": "Blank panel" },
+    { "startU": 7, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-4" },
+    { "startU": 5, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-3" },
+    { "startU": 3, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-2" },
+    { "startU": 1, "sizeU": 2, "type": "dcdb", "color": "#FFC000", "name": "ETON\nPDU-1" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "vmgw-35",
+  "name": "VMGW 35 CORE",
+  "owner": "Anish Mansuri",
+  "totalU": 32,
+  "units": [
+    {
+      "startU": 21,
+      "sizeU": 12,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "SUBRACK 1"
+    },
+    {
+      "startU": 9,
+      "sizeU": 12,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "SUBRACK 2"
+    },
+    {
+      "startU": 1,
+      "sizeU": 8,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "SUBRACK 3"
+    }
+  ]
+}

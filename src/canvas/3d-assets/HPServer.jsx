@@ -94,19 +94,6 @@ export default function HPServer({ sizeU = 2, label = 'HP SERVER', color = '#cc0
           </mesh>
         </group>
 
-        {/* Label underneath */}
-        <group position={[0, -height * 0.25, 0.001]}>
-          <Center position={[0, 0, 0]}>
-            <Text3D
-              font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
-              size={0.005}
-              height={0.001}
-            >
-              {label}
-              <meshBasicMaterial color="#fff" />
-            </Text3D>
-          </Center>
-        </group>
       </group>
 
       {/* Recessed Drive Bays (Center/Right) */}

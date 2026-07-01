@@ -79,22 +79,6 @@ export default function Storage4U({ sizeU = 4, label = 'STORAGE' }) {
           <planeGeometry args={[0.045, 0.015]} />
           <meshBasicMaterial color="#1a8aff" opacity={0.4} transparent toneMapped={false} />
         </mesh>
-        {/* Large Visible Name Label (Rotated 90 degrees) */}
-        <group position={[0, -height * 0.1, 0.001]} rotation={[0, 0, Math.PI / 2]}>
-          <Center position={[0, 0, 0]}>
-            <Text3D
-              font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
-              size={0.012}
-              height={0.002}
-              bevelEnabled
-              bevelSize={0.0005}
-              bevelThickness={0.0005}
-            >
-              {label.split('\n')[0]} {/* First line */}
-              <meshStandardMaterial color="#fff" metalness={0.5} roughness={0.2} />
-            </Text3D>
-          </Center>
-        </group>
       </group>
       {/* Massive Storage Array Grid (Center/Right) */}
       <group position={[INNER_WIDTH * 0.06, 0, 0.004]}>

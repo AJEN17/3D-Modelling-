@@ -7,6 +7,23 @@ import BuildingView from './BuildingView';
 import DetailedRack from '../canvas/3d-assets/DetailedRack';
 import buildings from '../data/buildings.json';
 import useAppStore from '../store/useAppStore';
+const getComponentTypeLabel = (unit) => {
+  if (!unit || !unit.color) {
+    if (unit?.type === 'blank' || unit?.type === 'empty') return 'BLANK PANEL';
+    return unit?.type?.toUpperCase() === 'COMPUTE' ? 'SERVER' : (unit?.type?.toUpperCase() || 'UNKNOWN');
+  }
+  const c = unit.color.toUpperCase();
+  if (c === '#FFFF00') return 'SWITCH';
+  if (c === '#00B050' || c === '#92D050' || c === '#8CC63F') return 'SERVERS';
+  if (c === '#FFFFFF') return 'DCDB';
+  if (c === '#FFC000' || c === '#FFB500') return 'PSM/PSU/ALARMS SYS';
+  if (c === '#808080' || c === '#A6A6A6' || c === '#B4B4B4' || c === '#CCCCCC') return 'ROUTER';
+  if (c === '#8DA3D4' || c === '#8FA1B7' || c === '#8FAADC') return 'FMS';
+  if (c === '#E46C0A' || c === '#F7CA18' || c === '#F8CBAD') return "INTERNAL ROUTER'";
+  if (c === '#FF0000') return 'Under Offloading';
+  return unit.type.toUpperCase() === 'COMPUTE' ? 'SERVER' : unit.type.toUpperCase();
+};
+
 
 export default function UIOverlay() {
   const location = useLocation();
@@ -494,7 +511,7 @@ export default function UIOverlay() {
                     <div>
                       <div style={{ fontSize: '11px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>Type</div>
                       <div style={{ fontSize: '14px', marginTop: '4px', display: 'inline-block', padding: '4px 8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px' }}>
-                        {activeRackUnit.type.toUpperCase() === 'COMPUTE' ? 'SERVER' : activeRackUnit.type.toUpperCase()}
+                        {getComponentTypeLabel(activeRackUnit)}
                       </div>
                     </div>
                     <div style={{ display: 'flex', gap: '24px', marginTop: '8px' }}>

@@ -1,0 +1,20 @@
+{
+  "id": "cisco-rack-7",
+  "name": "MUMLAK4FR4R7 CISCO CUPS7 CORE",
+  "totalU": 42,
+  "units": [
+    {
+      "startU": 38,
+      "sizeU": 5,
+      "type": "dcdb",
+      "name": "DCDB",
+      "color": "#ffffff"
+    },
+    {
+      "startU": 1,
+      "sizeU": 37,
+      "type": "blank",
+      "name": "Blank panel"
+    }
+  ]
+}

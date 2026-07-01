@@ -1,0 +1,21 @@
+{
+  "id": "mpbn-rack-1",
+  "name": "MPBN RACK1 CORE",
+  "owner": "Anish Mansuri",
+  "totalU": 32,
+  "units": [
+    {
+      "startU": 9,
+      "sizeU": 24,
+      "type": "blank",
+      "name": "Blank panel"
+    },
+    {
+      "startU": 1,
+      "sizeU": 8,
+      "type": "switch",
+      "color": "#FFFF00",
+      "name": "BLACKDIAMOND 8808"
+    }
+  ]
+}
