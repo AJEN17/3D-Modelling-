@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: Storage4U
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
@@ -49,8 +56,7 @@ export default function Storage4U({ sizeU = 4, label = 'STORAGE' }) {
       {/* Ear Brackets (Heavy Duty for 4U) */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.001]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.9, 0.008]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.9, 0.008)}>
             <meshPhysicalMaterial color="#111" roughness={0.5} metalness={0.9} />
           </mesh>
           {/* 6 screws per ear for 4U weight */}
@@ -65,18 +71,15 @@ export default function Storage4U({ sizeU = 4, label = 'STORAGE' }) {
       {/* Control & LCD Panel (Far Left) */}
       <group position={[-INNER_WIDTH * 0.38, 0, 0.004]}>
         {/* Recessed Bezel */}
-        <mesh>
-          <boxGeometry args={[0.06, height * 0.85, 0.002]} />
+        <mesh dispose={null} geometry={getBoxGeometry(0.06, height * 0.85, 0.002)}>
           <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
         </mesh>
         
         {/* Glowing LCD Screen */}
-        <mesh position={[0, height * 0.25, 0.001]}>
-          <planeGeometry args={[0.05, 0.02]} />
+        <mesh position={[0, height * 0.25, 0.001]} dispose={null} geometry={getPlaneGeometry(0.05, 0.02)}>
           <meshBasicMaterial color="#001833" />
         </mesh>
-        <mesh position={[0, height * 0.25, 0.0011]}>
-          <planeGeometry args={[0.045, 0.015]} />
+        <mesh position={[0, height * 0.25, 0.0011]} dispose={null} geometry={getPlaneGeometry(0.045, 0.015)}>
           <meshBasicMaterial color="#1a8aff" opacity={0.4} transparent toneMapped={false} />
         </mesh>
       </group>
@@ -87,23 +90,19 @@ export default function Storage4U({ sizeU = 4, label = 'STORAGE' }) {
             {Array.from({ length: numCols }).map((_, cIdx) => (
               <group key={`bay-${rIdx}-${cIdx}`} position={[-INNER_WIDTH * 0.3 + cIdx * baySpacingX, 0, 0]}>
                 {/* 3.5" Recessed bay cavity */}
-                <mesh position={[0, 0, -0.002]}>
-                  <boxGeometry args={[bayWidth * 0.9, bayHeight * 0.9, 0.005]} />
+                <mesh position={[0, 0, -0.002]} dispose={null} geometry={getBoxGeometry(bayWidth * 0.9, bayHeight * 0.9, 0.005)}>
                   <meshStandardMaterial color="#000" />
                 </mesh>
                 {/* Drive carrier/tray (Chunky metallic) */}
-                <mesh>
-                  <boxGeometry args={[bayWidth * 0.85, bayHeight * 0.85, 0.003]} />
+                <mesh dispose={null} geometry={getBoxGeometry(bayWidth * 0.85, bayHeight * 0.85, 0.003)}>
                   <meshPhysicalMaterial color="#222" roughness={0.4} metalness={0.9} />
                 </mesh>
                 {/* Release Latch */}
-                <mesh position={[bayWidth * 0.3, 0, 0.002]}>
-                  <boxGeometry args={[0.005, bayHeight * 0.8, 0.002]} />
+                <mesh position={[bayWidth * 0.3, 0, 0.002]} dispose={null} geometry={getBoxGeometry(0.005, bayHeight * 0.8, 0.002)}>
                   <meshStandardMaterial color="#cc0000" metalness={0.7} />
                 </mesh>
                 {/* Drive activity LED Strip (Matrix effect target) */}
-                <mesh position={[-bayWidth * 0.3, -bayHeight * 0.3, 0.003]}>
-                  <boxGeometry args={[0.008, 0.002, 0.001]} />
+                <mesh position={[-bayWidth * 0.3, -bayHeight * 0.3, 0.003]} dispose={null} geometry={getBoxGeometry(0.008, 0.002, 0.001)}>
                   <meshStandardMaterial 
                     ref={el => driveLedsRef.current[rIdx * numCols + cIdx] = el}
                     color="#00ff00" 

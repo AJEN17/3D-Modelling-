@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: DetailedRack
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef, useState, useMemo } from 'react';
 import { Text, RoundedBox } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
@@ -134,8 +141,7 @@ function RackUnit({ unit, totalU }) {
               </RoundedBox>
               {[-1, 1].map(side => (
                 <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.001]}>
-                  <mesh>
-                    <boxGeometry args={[0.012, height * 0.95, 0.004]} />
+                  <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.95, 0.004)}>
                     <meshPhysicalMaterial color="#222" roughness={0.4} metalness={0.8} />
                   </mesh>
                   {Array.from({ length: sizeU * 2 }).map((_, i) => (
@@ -158,8 +164,7 @@ function RackUnit({ unit, totalU }) {
                       <meshStandardMaterial color="#555" metalness={0.8} />
                     </mesh>
                     {[-1, 1, 0].map((v, j) => (
-                      <mesh key={`grill-${j}`} rotation={[0, 0, v * Math.PI / 3]}>
-                        <boxGeometry args={[0.05, 0.002, 0.002]} />
+                      <mesh key={`grill-${j}`} rotation={[0, 0, v * Math.PI / 3]} dispose={null} geometry={getBoxGeometry(0.05, 0.002, 0.002)}>
                         <meshStandardMaterial color="#555" metalness={0.8} />
                       </mesh>
                     ))}
@@ -167,18 +172,15 @@ function RackUnit({ unit, totalU }) {
                 ))}
               </group>
               <group position={[0, -height * 0.15, 0.003]}>
-                <mesh position={[0, 0, -0.001]}>
-                  <boxGeometry args={[INNER_WIDTH * 0.85, bladeHeight + 0.01, 0.002]} />
+                <mesh position={[0, 0, -0.001]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, bladeHeight + 0.01, 0.002)}>
                   <meshBasicMaterial color="#000" />
                 </mesh>
                 {Array.from({ length: numBlades }).map((_, i) => (
                   <group key={`blade-${i}`} position={[-INNER_WIDTH * 0.4 + i * bladeWidth + bladeWidth/2, 0, 0]}>
-                    <mesh>
-                      <boxGeometry args={[bladeWidth * 0.9, bladeHeight, 0.004]} />
+                    <mesh dispose={null} geometry={getBoxGeometry(bladeWidth * 0.9, bladeHeight, 0.004)}>
                       <meshPhysicalMaterial color="#222" roughness={0.5} metalness={0.7} />
                     </mesh>
-                    <mesh position={[0, bladeHeight * 0.4, 0.003]}>
-                      <boxGeometry args={[bladeWidth * 0.6, 0.01, 0.003]} />
+                    <mesh position={[0, bladeHeight * 0.4, 0.003]} dispose={null} geometry={getBoxGeometry(bladeWidth * 0.6, 0.01, 0.003)}>
                       <meshStandardMaterial color="#444" metalness={0.9} />
                     </mesh>
                     <mesh position={[0, bladeHeight * 0.3, 0.003]}>
@@ -209,8 +211,7 @@ function RackUnit({ unit, totalU }) {
               </RoundedBox>
               {[-1, 1].map(side => (
                 <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.001]}>
-                  <mesh>
-                    <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+                  <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
                     <meshPhysicalMaterial color="#222" roughness={0.4} metalness={0.8} />
                   </mesh>
                   {[-1, 1].map(vert => (
@@ -224,36 +225,29 @@ function RackUnit({ unit, totalU }) {
               <group position={[INNER_WIDTH * 0.2, 0, 0.001]}>
                 {Array.from({ length: numBays }).map((_, i) => (
                   <group key={`bay-${i}`} position={[i * baySpacing, -0.002, 0]}>
-                    <mesh position={[0, 0, 0]}>
-                      <boxGeometry args={[bayWidth * 0.9, bayHeight, 0.004]} />
+                    <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(bayWidth * 0.9, bayHeight, 0.004)}>
                       <meshStandardMaterial color="#050505" roughness={0.9} />
                     </mesh>
-                    <mesh position={[0, 0, 0.002]}>
-                      <boxGeometry args={[bayWidth * 0.85, bayHeight * 0.95, 0.002]} />
+                    <mesh position={[0, 0, 0.002]} dispose={null} geometry={getBoxGeometry(bayWidth * 0.85, bayHeight * 0.95, 0.002)}>
                       <meshPhysicalMaterial color="#1a1a1a" roughness={0.6} metalness={0.7} />
                     </mesh>
-                    <mesh position={[0, bayHeight * 0.42, 0.003]}>
-                      <boxGeometry args={[bayWidth * 0.6, 0.003, 0.002]} />
+                    <mesh position={[0, bayHeight * 0.42, 0.003]} dispose={null} geometry={getBoxGeometry(bayWidth * 0.6, 0.003, 0.002)}>
                       <meshStandardMaterial color="#333" metalness={0.9} roughness={0.3} />
                     </mesh>
-                    <mesh position={[-bayWidth * 0.35, bayHeight * 0.42, 0.004]}>
-                      <boxGeometry args={[0.002, 0.002, 0.001]} />
+                    <mesh position={[-bayWidth * 0.35, bayHeight * 0.42, 0.004]} dispose={null} geometry={getBoxGeometry(0.002, 0.002, 0.001)}>
                       <meshStandardMaterial color="#00ff00" emissive="#00ff00" emissiveIntensity={0.5} toneMapped={false} />
                     </mesh>
                   </group>
                 ))}
               </group>
               <group position={[-INNER_WIDTH * 0.38, 0, 0.003]}>
-                <mesh position={[0, 0, 0]}>
-                  <boxGeometry args={[0.008, 0.004, 0.003]} />
+                <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(0.008, 0.004, 0.003)}>
                   <meshStandardMaterial color="#222" roughness={0.8} />
                 </mesh>
-                <mesh position={[0, 0, 0.001]}>
-                  <boxGeometry args={[0.006, 0.002, 0.002]} />
+                <mesh position={[0, 0, 0.001]} dispose={null} geometry={getBoxGeometry(0.006, 0.002, 0.002)}>
                   <meshBasicMaterial color="#eee" />
                 </mesh>
-                <mesh position={[0.015, -0.002, 0]}>
-                  <boxGeometry args={[0.01, 0.005, 0.003]} />
+                <mesh position={[0.015, -0.002, 0]} dispose={null} geometry={getBoxGeometry(0.01, 0.005, 0.003)}>
                   <meshStandardMaterial color="#0044aa" roughness={0.6} metalness={0.4} />
                 </mesh>
               </group>
@@ -268,16 +262,13 @@ function RackUnit({ unit, totalU }) {
                 </mesh>
               </group>
               <group position={[INNER_WIDTH * 0.35, 0, 0.003]}>
-                <mesh>
-                  <boxGeometry args={[0.04, 0.012, 0.002]} />
+                <mesh dispose={null} geometry={getBoxGeometry(0.04, 0.012, 0.002)}>
                   <meshStandardMaterial color="#0a0a0a" roughness={0.3} metalness={0.5} />
                 </mesh>
-                <mesh position={[0, 0, 0.0015]}>
-                  <planeGeometry args={[0.035, 0.009]} />
+                <mesh position={[0, 0, 0.0015]} dispose={null} geometry={getPlaneGeometry(0.035, 0.009)}>
                   <meshBasicMaterial color="#001833" />
                 </mesh>
-                <mesh position={[0, 0, 0.002]}>
-                  <planeGeometry args={[0.03, 0.005]} />
+                <mesh position={[0, 0, 0.002]} dispose={null} geometry={getPlaneGeometry(0.03, 0.005)}>
                   <meshBasicMaterial color="#1a8aff" opacity={0.3} transparent />
                 </mesh>
               </group>
@@ -335,8 +326,7 @@ function RackUnit({ unit, totalU }) {
             </RoundedBox>
             {[-1, 1].map(side => (
               <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.001]}>
-                <mesh>
-                  <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+                <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
                   <meshPhysicalMaterial color="#222" roughness={0.4} metalness={0.8} />
                 </mesh>
                 {[-1, 1].map(vert => (
@@ -353,36 +343,29 @@ function RackUnit({ unit, totalU }) {
               <group position={[0, 0, 0.002]}>
                 {Array.from({ length: 16 }).map((_, i) => (
                   <group key={`bay-${i}`} position={[-INNER_WIDTH * 0.25 + i * ((INNER_WIDTH * 0.55) / 16), -0.005, 0]}>
-                    <mesh position={[0, 0, -0.002]}>
-                      <boxGeometry args={[0.022 * 0.9, height * 0.7, 0.004]} />
+                    <mesh position={[0, 0, -0.002]} dispose={null} geometry={getBoxGeometry(0.022 * 0.9, height * 0.7, 0.004)}>
                       <meshStandardMaterial color="#050505" roughness={0.9} />
                     </mesh>
-                    <mesh>
-                      <boxGeometry args={[0.022 * 0.85, height * 0.7 * 0.95, 0.002]} />
+                    <mesh dispose={null} geometry={getBoxGeometry(0.022 * 0.85, height * 0.7 * 0.95, 0.002)}>
                       <meshPhysicalMaterial color="#1a1a1a" roughness={0.6} metalness={0.7} />
                     </mesh>
-                    <mesh position={[0, (height * 0.7) * 0.42, 0.002]}>
-                      <boxGeometry args={[0.022 * 0.6, 0.003, 0.002]} />
+                    <mesh position={[0, (height * 0.7) * 0.42, 0.002]} dispose={null} geometry={getBoxGeometry(0.022 * 0.6, 0.003, 0.002)}>
                       <meshStandardMaterial color="#333" metalness={0.9} roughness={0.3} />
                     </mesh>
-                    <mesh position={[-0.022 * 0.35, (height * 0.7) * 0.42, 0.003]}>
-                      <boxGeometry args={[0.002, 0.002, 0.001]} />
+                    <mesh position={[-0.022 * 0.35, (height * 0.7) * 0.42, 0.003]} dispose={null} geometry={getBoxGeometry(0.002, 0.002, 0.001)}>
                       <meshStandardMaterial color="#00ff00" emissive="#00ff00" emissiveIntensity={0.5} toneMapped={false} />
                     </mesh>
                   </group>
                 ))}
                 {/* LCD Info Panel */}
                 <group position={[INNER_WIDTH * 0.35, height * 0.15, 0.004]}>
-                  <mesh>
-                    <boxGeometry args={[0.06, 0.02, 0.002]} />
+                  <mesh dispose={null} geometry={getBoxGeometry(0.06, 0.02, 0.002)}>
                     <meshStandardMaterial color="#0a0a0a" roughness={0.3} metalness={0.5} />
                   </mesh>
-                  <mesh position={[0, 0, 0.0015]}>
-                    <planeGeometry args={[0.05, 0.015]} />
+                  <mesh position={[0, 0, 0.0015]} dispose={null} geometry={getPlaneGeometry(0.05, 0.015)}>
                     <meshBasicMaterial color="#001833" />
                   </mesh>
-                  <mesh position={[0, 0, 0.002]}>
-                    <planeGeometry args={[0.04, 0.01]} />
+                  <mesh position={[0, 0, 0.002]} dispose={null} geometry={getPlaneGeometry(0.04, 0.01)}>
                     <meshBasicMaterial color="#1a8aff" opacity={0.3} transparent />
                   </mesh>
                 </group>
@@ -399,16 +382,13 @@ function RackUnit({ unit, totalU }) {
                 </group>
                 {/* Front I/O */}
                 <group position={[-INNER_WIDTH * 0.35, -height * 0.25, 0.003]}>
-                  <mesh position={[0, 0, 0]}>
-                    <boxGeometry args={[0.008, 0.004, 0.003]} />
+                  <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(0.008, 0.004, 0.003)}>
                     <meshStandardMaterial color="#222" roughness={0.8} />
                   </mesh>
-                  <mesh position={[0, 0, 0.001]}>
-                    <boxGeometry args={[0.006, 0.002, 0.002]} />
+                  <mesh position={[0, 0, 0.001]} dispose={null} geometry={getBoxGeometry(0.006, 0.002, 0.002)}>
                     <meshBasicMaterial color="#eee" />
                   </mesh>
-                  <mesh position={[0.015, 0, 0]}>
-                    <boxGeometry args={[0.01, 0.005, 0.003]} />
+                  <mesh position={[0.015, 0, 0]} dispose={null} geometry={getBoxGeometry(0.01, 0.005, 0.003)}>
                     <meshStandardMaterial color="#0044aa" roughness={0.6} metalness={0.4} />
                   </mesh>
                 </group>
@@ -437,21 +417,17 @@ function RackUnit({ unit, totalU }) {
                         <group key={`row-${row}`} position={[0, row * 0.006, 0]}>
                           {Array.from({ length: 12 }).map((_, i) => (
                             <group key={`port-${uIdx}-${rIdx}-${i}`} position={[0.02 + i * 0.014, 0, 0]}>
-                              <mesh position={[0, 0, 0.001]}>
-                                <boxGeometry args={[0.011, 0.009, 0.004]} />
+                              <mesh position={[0, 0, 0.001]} dispose={null} geometry={getBoxGeometry(0.011, 0.009, 0.004)}>
                                 <meshStandardMaterial color="#111" roughness={0.8} metalness={0.3} />
                               </mesh>
-                              <mesh position={[0, -0.001, 0.003]}>
-                                <boxGeometry args={[0.008, 0.006, 0.002]} />
+                              <mesh position={[0, -0.001, 0.003]} dispose={null} geometry={getBoxGeometry(0.008, 0.006, 0.002)}>
                                 <meshBasicMaterial color="#000" />
                               </mesh>
-                              <mesh position={[0, 0.002, 0.004]}>
-                                <boxGeometry args={[0.005, 0.001, 0.001]} />
+                              <mesh position={[0, 0.002, 0.004]} dispose={null} geometry={getBoxGeometry(0.005, 0.001, 0.001)}>
                                 <meshStandardMaterial color="#DAA520" metalness={1} roughness={0.2} />
                               </mesh>
                               <group position={[-0.004, 0.004, 0.003]}>
-                                <mesh>
-                                  <boxGeometry args={[0.002, 0.002, 0.001]} />
+                                <mesh dispose={null} geometry={getBoxGeometry(0.002, 0.002, 0.001)}>
                                   <meshStandardMaterial
                                     ref={el => trafficRefs.current[(uIdx * 24) + rIdx * 12 + i] = el}
                                     color="#00ffcc"
@@ -511,13 +487,11 @@ function RackUnit({ unit, totalU }) {
         return (
           <group position={[0, 0, RACK_DEPTH * 0.45 + 0.001]}>
             {/* Brushed metal look for storage */}
-            <mesh position={[0, 0, 0]}>
-              <planeGeometry args={[INNER_WIDTH * 0.95, height * 0.9]} />
+            <mesh position={[0, 0, 0]} dispose={null} geometry={getPlaneGeometry(INNER_WIDTH * 0.95, height * 0.9)}>
               <meshPhysicalMaterial color={unit.color || "#555"} roughness={0.7} metalness={0.6} />
             </mesh>
             {/* Horizontal dark groove representing drive bays */}
-            <mesh position={[0, 0, 0.001]}>
-              <planeGeometry args={[INNER_WIDTH * 0.85, height * 0.1]} />
+            <mesh position={[0, 0, 0.001]} dispose={null} geometry={getPlaneGeometry(INNER_WIDTH * 0.85, height * 0.1)}>
               <meshBasicMaterial color="#111" />
             </mesh>
           </group>
@@ -526,8 +500,7 @@ function RackUnit({ unit, totalU }) {
         return (
           <group position={[0, 0, RACK_DEPTH * 0.45 - 0.039]}>
             {/* Deep recessed black void for cables */}
-            <mesh position={[0, 0, 0]}>
-               <boxGeometry args={[INNER_WIDTH * 0.85, height * 0.6, 0.002]} />
+            <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, height * 0.6, 0.002)}>
                <meshBasicMaterial color="#000000" />
             </mesh>
           </group>
@@ -579,22 +552,19 @@ function RackUnit({ unit, totalU }) {
         // Render individual 1U blanking plates so they are countable
         <group position={[0, 0, isRecessed ? -0.05 : 0]}>
           {Array.from({ length: sizeU }).map((_, i) => (
-            <mesh key={i} position={[0, -height / 2 + U_HEIGHT / 2 + i * U_HEIGHT, 0]}>
-              <boxGeometry args={[INNER_WIDTH, U_HEIGHT - 0.005, isRecessed ? RACK_DEPTH * 0.8 : RACK_DEPTH * 0.9]} />
+            <mesh key={i} position={[0, -height / 2 + U_HEIGHT / 2 + i * U_HEIGHT, 0]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH, U_HEIGHT - 0.005, isRecessed ? RACK_DEPTH * 0.8 : RACK_DEPTH * 0.9)}>
               <meshStandardMaterial color={color} roughness={0.6} metalness={0.4} />
             </mesh>
           ))}
         </group>
       ) : (
         <group>
-          <mesh position={[0, 0, isRecessed ? -0.05 : 0]}>
-            <boxGeometry args={[INNER_WIDTH, height - 0.005, isRecessed ? RACK_DEPTH * 0.8 : RACK_DEPTH * 0.9]} />
+          <mesh position={[0, 0, isRecessed ? -0.05 : 0]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH, height - 0.005, isRecessed ? RACK_DEPTH * 0.8 : RACK_DEPTH * 0.9)}>
             <meshStandardMaterial color={['blank', 'empty', 'dcdb', 'generic'].includes(type) ? color : '#1a1a1a'} roughness={unit.color === '#FFFF00' ? 0.9 : 0.6} metalness={unit.color === '#FFFF00' ? 0.1 : 0.4} />
           </mesh>
           {/* Wireframe Highlight Box on Hover */}
           {hovered && (
-            <mesh position={[0, 0, isRecessed ? -0.05 : 0]}>
-              <boxGeometry args={[INNER_WIDTH + 0.005, height, RACK_DEPTH * 0.9 + 0.005]} />
+            <mesh position={[0, 0, isRecessed ? -0.05 : 0]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH + 0.005, height, RACK_DEPTH * 0.9 + 0.005)}>
               <meshBasicMaterial color="#ffffff" wireframe />
             </mesh>
           )}
@@ -721,32 +691,27 @@ export default function DetailedRack({ rackData }) {
     <group>
       {/* Rack Frame Outer Casings */}
       {/* Left Pillar */}
-      <mesh position={[-RACK_WIDTH / 2 + 0.02, 0, 0]}>
-        <boxGeometry args={[0.04, rackTotalHeight, RACK_DEPTH]} />
+      <mesh position={[-RACK_WIDTH / 2 + 0.02, 0, 0]} dispose={null} geometry={getBoxGeometry(0.04, rackTotalHeight, RACK_DEPTH)}>
         <meshStandardMaterial color="#222222" metalness={0.8} roughness={0.2} />
       </mesh>
 
       {/* Right Pillar */}
-      <mesh position={[RACK_WIDTH / 2 - 0.02, 0, 0]}>
-        <boxGeometry args={[0.04, rackTotalHeight, RACK_DEPTH]} />
+      <mesh position={[RACK_WIDTH / 2 - 0.02, 0, 0]} dispose={null} geometry={getBoxGeometry(0.04, rackTotalHeight, RACK_DEPTH)}>
         <meshStandardMaterial color="#222222" metalness={0.8} roughness={0.2} />
       </mesh>
 
       {/* Top Cap */}
-      <mesh position={[0, rackTotalHeight / 2 + 0.02, 0]}>
-        <boxGeometry args={[RACK_WIDTH, 0.04, RACK_DEPTH]} />
+      <mesh position={[0, rackTotalHeight / 2 + 0.02, 0]} dispose={null} geometry={getBoxGeometry(RACK_WIDTH, 0.04, RACK_DEPTH)}>
         <meshStandardMaterial color="#222222" metalness={0.8} roughness={0.2} />
       </mesh>
 
       {/* Bottom Base */}
-      <mesh position={[0, -rackTotalHeight / 2 - 0.05, 0]}>
-        <boxGeometry args={[RACK_WIDTH, 0.1, RACK_DEPTH]} />
+      <mesh position={[0, -rackTotalHeight / 2 - 0.05, 0]} dispose={null} geometry={getBoxGeometry(RACK_WIDTH, 0.1, RACK_DEPTH)}>
         <meshStandardMaterial color="#111111" metalness={0.8} roughness={0.2} />
       </mesh>
 
       {/* Back Perforated Door */}
-      <mesh position={[0, 0, -RACK_DEPTH / 2 + 0.01]}>
-        <planeGeometry args={[RACK_WIDTH - 0.08, rackTotalHeight]} />
+      <mesh position={[0, 0, -RACK_DEPTH / 2 + 0.01]} dispose={null} geometry={getPlaneGeometry(RACK_WIDTH - 0.08, rackTotalHeight)}>
         <meshStandardMaterial 
           color="#151515" 
           metalness={0.6}

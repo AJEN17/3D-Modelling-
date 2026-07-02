@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: PSM1U
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
@@ -37,8 +44,7 @@ export default function PSM1U({ sizeU = 1, label = 'PSM' }) {
       {/* Ear Brackets (Black Heavy Duty) */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.002]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.006]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.006)}>
             <meshPhysicalMaterial color="#111" roughness={0.7} metalness={0.9} />
           </mesh>
           {[-1, 1].map(vert => (
@@ -51,27 +57,23 @@ export default function PSM1U({ sizeU = 1, label = 'PSM' }) {
       ))}
       {/* Deep Recessed Cooling Grill (Center) */}
       <group position={[0, 0, 0.001]}>
-        <mesh position={[0, 0, 0]}>
-          <boxGeometry args={[0.2, height * 0.7, 0.006]} />
+        <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(0.2, height * 0.7, 0.006)}>
           <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
         </mesh>
         {/* Horizontal Grill Bars */}
         {[-3, -1, 1, 3].map(vert => (
-          <mesh key={vert} position={[0, vert * height * 0.1, 0.003]}>
-            <boxGeometry args={[0.19, 0.003, 0.003]} />
+          <mesh key={vert} position={[0, vert * height * 0.1, 0.003]} dispose={null} geometry={getBoxGeometry(0.19, 0.003, 0.003)}>
             <meshStandardMaterial color="#333" metalness={0.8} />
           </mesh>
         ))}
       </group>
       {/* Power Meter LCD (Left) */}
       <group position={[-INNER_WIDTH * 0.25, 0, 0.004]}>
-        <mesh>
-          <boxGeometry args={[0.05, 0.02, 0.002]} />
+        <mesh dispose={null} geometry={getBoxGeometry(0.05, 0.02, 0.002)}>
           <meshStandardMaterial color="#000" />
         </mesh>
         {/* The glowing digital readout */}
-        <mesh position={[0, 0, 0.0015]}>
-          <planeGeometry args={[0.045, 0.015]} />
+        <mesh position={[0, 0, 0.0015]} dispose={null} geometry={getPlaneGeometry(0.045, 0.015)}>
           <meshStandardMaterial 
             ref={pwrMeterRef}
             color="#00ffcc" 
@@ -84,7 +86,7 @@ export default function PSM1U({ sizeU = 1, label = 'PSM' }) {
         <group position={[0, height * 0.25, 0.001]}>
           <Center position={[0, 0, 0]}>
             <Text3D
-              font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+              font="./fonts/helvetiker_regular.typeface.json"
               size={0.003}
               height={0.001}
             >
@@ -98,14 +100,12 @@ export default function PSM1U({ sizeU = 1, label = 'PSM' }) {
       <group position={[INNER_WIDTH * 0.3, 0, 0.005]}>
         {/* Handle bases */}
         {[-1, 1].map(vert => (
-          <mesh key={vert} position={[0, vert * height * 0.25, 0]}>
-            <boxGeometry args={[0.015, 0.005, 0.015]} />
+          <mesh key={vert} position={[0, vert * height * 0.25, 0]} dispose={null} geometry={getBoxGeometry(0.015, 0.005, 0.015)}>
             <meshStandardMaterial color="#222" metalness={0.9} />
           </mesh>
         ))}
         {/* Handle Bar */}
-        <mesh position={[0, 0, 0.007]}>
-          <cylinderGeometry args={[0.003, 0.003, height * 0.55, 12]} />
+        <mesh position={[0, 0, 0.007]} dispose={null} geometry={getCylinderGeometry(0.003, 0.003, height * 0.55, 12)}>
           <meshStandardMaterial color="#888" roughness={0.3} metalness={1} />
         </mesh>
       </group>
@@ -126,7 +126,7 @@ export default function PSM1U({ sizeU = 1, label = 'PSM' }) {
       <group position={[-INNER_WIDTH * 0.38, 0, 0.006]}>
         <Center position={[0, 0, 0]}>
           <Text3D
-            font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+            font="./fonts/helvetiker_regular.typeface.json"
             size={0.012}
             height={0.002}
             bevelEnabled

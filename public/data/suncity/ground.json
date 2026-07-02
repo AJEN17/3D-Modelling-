@@ -313,7 +313,7 @@
                 3.5
             ],
             "rotation": -0.0,
-            "imageUrl": "/images/suncity-ground-ims-4.jpg"
+            "imageUrl": "./images/suncity-ground-ims-4.jpg"
         },
         {
             "id": "ims-rack-3",
@@ -328,7 +328,7 @@
                 3.51
             ],
             "rotation": -0.0,
-            "imageUrl": "/images/suncity-ground-ims-3.jpg"
+            "imageUrl": "./images/suncity-ground-ims-3.jpg"
         },
         {
             "id": "nokia-ccr2",
@@ -455,7 +455,7 @@
                 3.51
             ],
             "rotation": -0.0,
-            "imageUrl": "/images/suncity-ground-ims-2.jpg"
+            "imageUrl": "./images/suncity-ground-ims-2.jpg"
         },
         {
             "id": "ims-rack-1",
@@ -470,7 +470,7 @@
                 3.51
             ],
             "rotation": -0.0,
-            "imageUrl": "/images/suncity-ground-ims-1.jpg"
+            "imageUrl": "./images/suncity-ground-ims-1.jpg"
         },
         {
             "id": "eci-nms",

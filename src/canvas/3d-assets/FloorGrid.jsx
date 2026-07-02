@@ -1,4 +1,10 @@
-import { useMemo, useEffect, useRef } from 'react';
+/**
+ * Floor Grid 
+ * ----------
+ * Renders the 600x600mm architectural grid floor. This gives visual grounding
+ * to the data center floor and matches the physical tiles found in raised-floor environments.
+ */
+import React, { useMemo, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 function WallSegment({ p1, p2, thickness = 0.15, color = "#111111" }) {

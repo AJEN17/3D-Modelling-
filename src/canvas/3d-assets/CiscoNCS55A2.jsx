@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: CiscoNCS55A2
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
@@ -47,8 +54,7 @@ export default function CiscoNCS55A2({ sizeU = 2, label = 'NCS 55A2' }) {
       {/* Rack Mounting Ears */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.004]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.004]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.004)}>
             <meshPhysicalMaterial color="#1a1a1a" roughness={0.8} metalness={0.9} />
           </mesh>
           {[-1, 0, 1].map(vert => (
@@ -62,32 +68,27 @@ export default function CiscoNCS55A2({ sizeU = 2, label = 'NCS 55A2' }) {
 
       {/* Heavy Duty Intake Grill (Left Side) */}
       <group position={[-INNER_WIDTH * 0.25, 0, 0.006]}>
-        <mesh position={[0, 0, 0]}>
-           <boxGeometry args={[INNER_WIDTH * 0.4, height * 0.75, 0.002]} />
+        <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.4, height * 0.75, 0.002)}>
            <meshStandardMaterial color="#050505" />
         </mesh>
         {/* Horizontal slatted grill lines */}
         {Array.from({ length: 12 }).map((_, i) => (
-          <mesh key={`grill-${i}`} position={[0, -height * 0.32 + i * (height * 0.64 / 11), 0.0015]}>
-             <boxGeometry args={[INNER_WIDTH * 0.38, 0.003, 0.002]} />
+          <mesh key={`grill-${i}`} position={[0, -height * 0.32 + i * (height * 0.64 / 11), 0.0015]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.38, 0.003, 0.002)}>
              <meshStandardMaterial color="#444" metalness={0.8} />
           </mesh>
         ))}
         {/* Orange Accent Line indicating NCS series - Matches the user's diagram color */}
-        <mesh position={[0, -height * 0.38, 0.0025]}>
-          <boxGeometry args={[INNER_WIDTH * 0.4, 0.004, 0.002]} />
+        <mesh position={[0, -height * 0.38, 0.0025]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.4, 0.004, 0.002)}>
           <meshStandardMaterial color="#C55A11" />
         </mesh>
       </group>
 
       {/* LCD / Status Panel */}
       <group position={[0, height * 0.2, 0.006]}>
-        <mesh>
-          <boxGeometry args={[0.08, 0.02, 0.002]} />
+        <mesh dispose={null} geometry={getBoxGeometry(0.08, 0.02, 0.002)}>
           <meshStandardMaterial color="#000" />
         </mesh>
-        <mesh position={[0, 0, 0.001]}>
-          <planeGeometry args={[0.07, 0.015]} />
+        <mesh position={[0, 0, 0.001]} dispose={null} geometry={getPlaneGeometry(0.07, 0.015)}>
           <meshBasicMaterial color="#0a2233" />
         </mesh>
       </group>
@@ -96,7 +97,7 @@ export default function CiscoNCS55A2({ sizeU = 2, label = 'NCS 55A2' }) {
       <group position={[-INNER_WIDTH * 0.25, 0, 0.008]}>
          <Center position={[0, 0.01, 0]}>
             <Text3D
-              font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+              font="./fonts/helvetiker_regular.typeface.json"
               size={0.012}
               height={0.002}
             >
@@ -106,7 +107,7 @@ export default function CiscoNCS55A2({ sizeU = 2, label = 'NCS 55A2' }) {
          </Center>
          <Center position={[0, -0.015, 0]}>
             <Text3D
-              font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+              font="./fonts/helvetiker_regular.typeface.json"
               size={0.009}
               height={0.001}
             >
@@ -119,8 +120,7 @@ export default function CiscoNCS55A2({ sizeU = 2, label = 'NCS 55A2' }) {
       {/* QSFP Port Array (Right Side) */}
       <group position={[INNER_WIDTH * 0.02, 0, 0.006]}>
         {/* Port housing block */}
-        <mesh position={[INNER_WIDTH * 0.21, 0, 0.0005]}>
-          <boxGeometry args={[INNER_WIDTH * 0.45, height * 0.75, 0.002]} />
+        <mesh position={[INNER_WIDTH * 0.21, 0, 0.0005]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.45, height * 0.75, 0.002)}>
           <meshStandardMaterial color="#111" />
         </mesh>
         
@@ -131,25 +131,21 @@ export default function CiscoNCS55A2({ sizeU = 2, label = 'NCS 55A2' }) {
                return (
                  <group key={`port-${cIdx}`} position={[cIdx * portSpacingX, 0, 0]}>
                     {/* Metal QSFP Cage */}
-                    <mesh position={[0, 0, 0.0015]}>
-                      <boxGeometry args={[0.018, 0.012, 0.004]} />
+                    <mesh position={[0, 0, 0.0015]} dispose={null} geometry={getBoxGeometry(0.018, 0.012, 0.004)}>
                       <meshStandardMaterial color="#ccc" metalness={0.9} roughness={0.3} />
                     </mesh>
                     {/* Dark cavity */}
-                    <mesh position={[0, 0, 0.003]}>
-                      <boxGeometry args={[0.014, 0.008, 0.002]} />
+                    <mesh position={[0, 0, 0.003]} dispose={null} geometry={getBoxGeometry(0.014, 0.008, 0.002)}>
                       <meshBasicMaterial color="#000" />
                     </mesh>
                     {/* Pull Tab / Connector */}
                     {portStates[idx] && (
-                      <mesh position={[0, 0, 0.005]}>
-                        <boxGeometry args={[0.012, 0.006, 0.008]} />
+                      <mesh position={[0, 0, 0.005]} dispose={null} geometry={getBoxGeometry(0.012, 0.006, 0.008)}>
                         <meshStandardMaterial color="#1a1a1a" roughness={0.9} />
                       </mesh>
                     )}
                     {/* Status LED */}
-                    <mesh position={[0, -0.008, 0.0035]}>
-                      <boxGeometry args={[0.004, 0.002, 0.001]} />
+                    <mesh position={[0, -0.008, 0.0035]} dispose={null} geometry={getBoxGeometry(0.004, 0.002, 0.001)}>
                       <meshStandardMaterial 
                         ref={el => ledRefs.current[idx] = el}
                         color="#00ffaa"

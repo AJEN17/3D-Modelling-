@@ -1,5 +1,13 @@
-import React, { useState, useRef } from 'react';
-import { Html, OrbitControls, useTexture } from '@react-three/drei';
+/**
+ * Global Map Scene
+ * ----------------
+ * Renders the top-level 3D geographic map.
+ * This scene uses an orthographic map texture of the region. Users can click on 
+ * 3D 'pins' to select a specific building (like Suncity or Lakha) which updates 
+ * the Zustand store and routes the app to the specific Building/Floor view.
+ */
+import React, { useState, useRef, useEffect } from 'react';
+import { Html, OrbitControls, useTexture, BakeShadows } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +18,7 @@ import useAppStore from '../../store/useAppStore';
 function MapPin({ data }) {
   const navigate = useNavigate();
   const setActiveBuilding = useAppStore(state => state.setActiveBuilding);
-  const preloadBuildingData = useAppStore(state => state.preloadBuildingData);
+
   const [hovered, setHovered] = useState(false);
   const pinRef = useRef();
 
@@ -46,7 +54,6 @@ function MapPin({ data }) {
           e.stopPropagation(); 
           setHovered(true); 
           document.body.style.cursor = 'pointer'; 
-          preloadBuildingData(data.id);
         }}
         onPointerOut={() => { setHovered(false); document.body.style.cursor = 'auto'; }}
       >
@@ -133,10 +140,10 @@ function MapPin({ data }) {
 
 export default function MapScene() {
   // Loading the newly cropped file to bypass the browser's cache
-  const mapTexture = useTexture('/newmumbaimap_cropped.png');
+  const mapTexture = useTexture('./newmumbaimap_cropped.png');
   const { camera } = useThree();
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Fix the thin white border edge-bleeding issue
     if (mapTexture) {
       /* eslint-disable react-hooks/immutability */
@@ -150,7 +157,7 @@ export default function MapScene() {
     }
   }, [mapTexture]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Set camera to a slightly angled isometric view so pins are easier to click
     camera.position.set(0, 26, 16);
   }, [camera]);
@@ -160,7 +167,9 @@ export default function MapScene() {
       {/* Set the precise background color of the 3D scene to perfectly match the image */}
       <color attach="background" args={['#d4d2d3']} />
 
+      <BakeShadows />
       <OrbitControls
+        makeDefault
         target={[0, 0, 0]}
         minDistance={5}
         maxDistance={40}

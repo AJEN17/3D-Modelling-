@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: TelecomFMS
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text, Center } from '@react-three/drei';
@@ -32,8 +39,7 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS', color = 
       {/* Mounting Ears */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.002]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
             <meshPhysicalMaterial color="#222" roughness={0.7} metalness={0.9} />
           </mesh>
           {[-1, 1].map(vert => (
@@ -47,17 +53,14 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS', color = 
 
       {/* Front Panel details */}
       {/* Horizontal Groove for aesthetic */}
-      <mesh position={[0, height * 0.35, 0.004]}>
-        <boxGeometry args={[INNER_WIDTH * 0.8, 0.002, 0.001]} />
+      <mesh position={[0, height * 0.35, 0.004]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.8, 0.002, 0.001)}>
         <meshStandardMaterial color="#111" />
       </mesh>
 
-      <mesh position={[0, height * 0.4, 0.004]}>
-        <boxGeometry args={[INNER_WIDTH * 0.9, 0.002, 0.002]} />
+      <mesh position={[0, height * 0.4, 0.004]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.9, 0.002, 0.002)}>
         <meshStandardMaterial color="#222" />
       </mesh>
-      <mesh position={[0, -height * 0.4, 0.004]}>
-        <boxGeometry args={[INNER_WIDTH * 0.9, 0.002, 0.002]} />
+      <mesh position={[0, -height * 0.4, 0.004]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.9, 0.002, 0.002)}>
         <meshStandardMaterial color="#222" />
       </mesh>
 
@@ -84,18 +87,15 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS', color = 
       {[-1, 1].map(side => (
         <group key={`spool-${side}`} position={[side * INNER_WIDTH * 0.35, height * 0.15, 0.004]}>
           {/* Cutout / Recessed area */}
-          <mesh position={[0, 0, 0]}>
-            <boxGeometry args={[0.08, height * 0.4, 0.002]} />
+          <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(0.08, height * 0.4, 0.002)}>
             <meshStandardMaterial color="#111" />
           </mesh>
           {/* Spool (Orange) */}
-          <mesh position={[0, 0, 0.001]} rotation={[Math.PI/2, 0, 0]}>
-            <cylinderGeometry args={[0.02, 0.02, 0.006, 16]} />
+          <mesh position={[0, 0, 0.001]} rotation={[Math.PI/2, 0, 0]} dispose={null} geometry={getCylinderGeometry(0.02, 0.02, 0.006, 16)}>
             <meshStandardMaterial color="#ffaa00" emissive="#cc6600" emissiveIntensity={0.5} roughness={0.4} />
           </mesh>
           {/* Spool Cap (Silver/Grey) */}
-          <mesh position={[0, 0, 0.004]} rotation={[Math.PI/2, 0, 0]}>
-            <cylinderGeometry args={[0.025, 0.025, 0.002, 16]} />
+          <mesh position={[0, 0, 0.004]} rotation={[Math.PI/2, 0, 0]} dispose={null} geometry={getCylinderGeometry(0.025, 0.025, 0.002, 16)}>
             <meshStandardMaterial color="#888" metalness={0.6} />
           </mesh>
         </group>
@@ -104,15 +104,13 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS', color = 
       {/* High-Density Duplex LC Fiber Ports Array */}
       {/* Recessed panel for ports (Moved slightly down for better spacing) */}
       <group position={[0, -height * 0.28, 0.004]}>
-        <mesh position={[0, 0, 0]}>
-          <boxGeometry args={[INNER_WIDTH * 0.85, 0.02, 0.001]} />
+        <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, 0.02, 0.001)}>
           <meshStandardMaterial color="#111" />
         </mesh>
         {Array.from({ length: numPorts }).map((_, i) => (
           <group key={`port-${i}`} position={[startX + i * portSpacing, 0, 0]}>
             {/* Duplex Port Housing */}
-            <mesh position={[0, 0, 0]}>
-              <boxGeometry args={[0.012, 0.01, 0.002]} />
+            <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(0.012, 0.01, 0.002)}>
               <meshStandardMaterial color="#222" />
             </mesh>
             {/* Left/Right Fiber cavities */}
@@ -121,12 +119,10 @@ export default function TelecomFMS({ sizeU = 2, label = 'INTERNAL FMS', color = 
               const laserColor = isGreen ? "#00ff00" : "#ff0000";
               return (
                 <group key={`cavity-${pIdx}`} position={[pSide * 0.003, 0, 0.001]}>
-                  <mesh>
-                    <boxGeometry args={[0.004, 0.004, 0.001]} />
+                  <mesh dispose={null} geometry={getBoxGeometry(0.004, 0.004, 0.001)}>
                     <meshBasicMaterial color="#000" />
                   </mesh>
-                  <mesh position={[0, 0, 0.001]}>
-                    <boxGeometry args={[0.002, 0.002, 0.001]} />
+                  <mesh position={[0, 0, 0.001]} dispose={null} geometry={getBoxGeometry(0.002, 0.002, 0.001)}>
                     <meshStandardMaterial 
                       ref={el => laserRefs.current[i * 2 + pIdx] = el}
                       color={laserColor} 

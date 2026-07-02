@@ -1452,7 +1452,7 @@
                 7.31
             ],
             "rotation": 0.0,
-            "imageUrl": "/images/ims-5.jpg"
+            "imageUrl": "./images/ims-5.jpg"
         },
         {
             "id": "volte-ims-4",
@@ -1467,7 +1467,7 @@
                 6.78
             ],
             "rotation": 0.0,
-            "imageUrl": "/images/ims-4.jpg"
+            "imageUrl": "./images/ims-4.jpg"
         },
         {
             "id": "volte-ims-3",
@@ -1482,7 +1482,7 @@
                 6.3
             ],
             "rotation": 0.0,
-            "imageUrl": "/images/ims-3.jpg"
+            "imageUrl": "./images/ims-3.jpg"
         },
         {
             "id": "volte-ims-2-1",
@@ -1497,7 +1497,7 @@
                 5.8
             ],
             "rotation": 0.0,
-            "imageUrl": "/images/ims-2.jpg"
+            "imageUrl": "./images/ims-2.jpg"
         },
         {
             "id": "volte-ims-1",
@@ -1512,7 +1512,7 @@
                 5.27
             ],
             "rotation": 0.0,
-            "imageUrl": "/images/ims-1.jpg"
+            "imageUrl": "./images/ims-1.jpg"
         },
         {
             "id": "volte-ims-6",
@@ -1527,7 +1527,7 @@
                 7.83
             ],
             "rotation": 0.0,
-            "imageUrl": "/images/ims-6.jpg"
+            "imageUrl": "./images/ims-6.jpg"
         }
     ]
 }

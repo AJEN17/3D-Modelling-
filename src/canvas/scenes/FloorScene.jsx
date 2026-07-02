@@ -1,9 +1,20 @@
+/**
+ * Floor Rendering Scene
+ * ---------------------
+ * This is the core 3D scene of the application. It dynamically fetches a JSON file 
+ * (representing a data center floor blueprint) and renders it.
+ * 
+ * It handles:
+ * - The procedural 600x600 floor grid (`FloorGrid`)
+ * - The batching and instancing of thousands of servers/equipment (`InstancedEquipmentGroup`)
+ * - Lighting, shadows, and the angled isometric camera view
+ */
 import React, { useEffect } from 'react';
-import { OrbitControls, Environment, Text, Billboard } from '@react-three/drei';
+import { OrbitControls, Environment, Text, Billboard, BakeShadows } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useLocation } from 'react-router-dom';
 import FloorGrid from '../3d-assets/FloorGrid';
-import Equipment from '../3d-assets/Equipment';
+import InstancedEquipmentGroup from '../3d-assets/InstancedEquipmentGroup';
 import useAppStore from '../../store/useAppStore';
 
 export default function FloorScene() {
@@ -25,7 +36,7 @@ export default function FloorScene() {
     }
   }, [buildingId, currentFloorId, floorplanData, fetchFloorData]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Restore angled isometric view for the floor
     camera.position.set(20, 25, 20);
   }, [camera]);
@@ -36,7 +47,9 @@ export default function FloorScene() {
 
   return (
     <group>
+      <BakeShadows />
       <OrbitControls 
+        makeDefault
         enablePan={true}
         enableZoom={true}
         enableRotate={true}
@@ -55,9 +68,20 @@ export default function FloorScene() {
 
       <FloorGrid roomData={floorplanData.room} walls={floorplanData.walls} />
       
-      {floorplanData.components.map((component) => (
-        <Equipment key={component.id} data={component} />
-      ))}
+      {(() => {
+        // Group components by geometry signature
+        const groups = {};
+        floorplanData.components.forEach(c => {
+          const key = c.type === 'cylinder' 
+            ? `cyl_${c.radius}_${c.height}`
+            : `box_${c.width}_${c.height}_${c.depth}`;
+          if (!groups[key]) groups[key] = [];
+          groups[key].push(c);
+        });
+        return Object.entries(groups).map(([key, items]) => (
+          <InstancedEquipmentGroup key={`group-${key}`} items={items} />
+        ));
+      })()}
 
       {/* Floating Room Title */}
       <Billboard position={[floorplanData.room.width / 2, 6.0, floorplanData.room.depth / 2]}>

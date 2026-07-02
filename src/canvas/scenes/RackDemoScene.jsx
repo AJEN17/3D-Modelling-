@@ -1,5 +1,12 @@
+/**
+ * Individual Rack Scene
+ * ---------------------
+ * A detailed, up-close view of a single server rack. This scene parses a highly detailed
+ * JSON array (e.g. `cisco-rack-1.json`) containing the exact RU (Rack Unit) positions 
+ * of individual servers, switches, and patch panels, and renders them accurately.
+ */
 import React, { useEffect, useState } from 'react';
-import { OrbitControls, Environment } from '@react-three/drei';
+import { OrbitControls, Environment, BakeShadows } from '@react-three/drei';
 import DetailedRack from '../3d-assets/DetailedRack';
 
 export default function RackDemoScene() {
@@ -7,23 +14,22 @@ export default function RackDemoScene() {
 
   useEffect(() => {
     // Fetch the demo rack data
-    fetch('/data/racks/demo_rack.json')
+    fetch('./data/racks/demo_rack.json')
       .then((res) => res.json())
-      .then((data) => setRackData(data))
-      .catch((err) => console.error("Failed to load demo rack:", err));
+      .then((data) => setRackData(data));
   }, []);
 
   if (!rackData) return null;
 
   return (
     <group>
+      <BakeShadows />
       <OrbitControls 
-        enablePan={true}
-        enableZoom={true}
-        enableRotate={true}
-        minDistance={1}
-        maxDistance={10}
-        target={[0, 0, 0]}
+        makeDefault
+        target={[0, 1, 0]}
+        minDistance={2}
+        maxDistance={15}
+        maxPolarAngle={Math.PI / 2 + 0.1}
       />
       <ambientLight intensity={0.6} />
       <directionalLight position={[5, 10, 5]} intensity={1.5} castShadow />

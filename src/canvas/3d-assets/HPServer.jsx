@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: HPServer
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
@@ -40,8 +47,7 @@ export default function HPServer({ sizeU = 2, label = 'HP SERVER', color = '#cc0
       {/* Ear Brackets */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.001]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
             <meshPhysicalMaterial color="#222" roughness={0.4} metalness={0.8} />
           </mesh>
           {[-1, 1].map(vert => (
@@ -55,24 +61,20 @@ export default function HPServer({ sizeU = 2, label = 'HP SERVER', color = '#cc0
 
       {/* Front I/O Panel (Left) */}
       <group position={[-INNER_WIDTH * 0.4, 0, 0.003]}>
-        <mesh position={[0, 0, 0]}>
-          <boxGeometry args={[0.04, height * 0.7, 0.002]} />
+        <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(0.04, height * 0.7, 0.002)}>
           <meshStandardMaterial color="#111" />
         </mesh>
         
         {/* VGA port */}
-        <mesh position={[0, height * 0.15, 0.001]}>
-          <boxGeometry args={[0.012, 0.006, 0.003]} />
+        <mesh position={[0, height * 0.15, 0.001]} dispose={null} geometry={getBoxGeometry(0.012, 0.006, 0.003)}>
           <meshStandardMaterial color="#0044aa" roughness={0.6} metalness={0.4} />
         </mesh>
 
         {/* USB ports */}
-        <mesh position={[0, -height * 0.1, 0.001]}>
-          <boxGeometry args={[0.008, 0.004, 0.003]} />
+        <mesh position={[0, -height * 0.1, 0.001]} dispose={null} geometry={getBoxGeometry(0.008, 0.004, 0.003)}>
           <meshStandardMaterial color="#222" />
         </mesh>
-        <mesh position={[0, -height * 0.15, 0.001]}>
-          <boxGeometry args={[0.008, 0.004, 0.003]} />
+        <mesh position={[0, -height * 0.15, 0.001]} dispose={null} geometry={getBoxGeometry(0.008, 0.004, 0.003)}>
           <meshStandardMaterial color="#222" />
         </mesh>
 
@@ -101,23 +103,19 @@ export default function HPServer({ sizeU = 2, label = 'HP SERVER', color = '#cc0
         {Array.from({ length: numBays }).map((_, i) => (
           <group key={`bay-${i}`} position={[-INNER_WIDTH * 0.25 + i * baySpacing, 0, 0]}>
             {/* Recessed bay cavity */}
-            <mesh position={[0, 0, -0.002]}>
-              <boxGeometry args={[bayWidth * 0.9, bayHeight, 0.004]} />
+            <mesh position={[0, 0, -0.002]} dispose={null} geometry={getBoxGeometry(bayWidth * 0.9, bayHeight, 0.004)}>
               <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
             </mesh>
             {/* Drive carrier/tray */}
-            <mesh>
-              <boxGeometry args={[bayWidth * 0.85, bayHeight * 0.95, 0.002]} />
+            <mesh dispose={null} geometry={getBoxGeometry(bayWidth * 0.85, bayHeight * 0.95, 0.002)}>
               <meshPhysicalMaterial color="#2a2a2a" roughness={0.6} metalness={0.7} />
             </mesh>
             {/* Handle/latch at top */}
-            <mesh position={[0, bayHeight * 0.42, 0.002]}>
-              <boxGeometry args={[bayWidth * 0.6, 0.003, 0.002]} />
+            <mesh position={[0, bayHeight * 0.42, 0.002]} dispose={null} geometry={getBoxGeometry(bayWidth * 0.6, 0.003, 0.002)}>
               <meshStandardMaterial color="#cc0000" metalness={0.9} roughness={0.3} />
             </mesh>
             {/* Drive activity LED */}
-            <mesh position={[-bayWidth * 0.35, bayHeight * 0.42, 0.003]}>
-              <boxGeometry args={[0.002, 0.002, 0.001]} />
+            <mesh position={[-bayWidth * 0.35, bayHeight * 0.42, 0.003]} dispose={null} geometry={getBoxGeometry(0.002, 0.002, 0.001)}>
               <meshStandardMaterial 
                 ref={el => driveLedsRef.current[i] = el}
                 color="#0f0" 

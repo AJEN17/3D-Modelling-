@@ -1,3 +1,10 @@
+/**
+ * 3D Error Boundary
+ * -----------------
+ * A React Error Boundary designed specifically to wrap the WebGL `<Canvas>`.
+ * If a 3D model fails to load, or a texture is missing, this catches the crash
+ * and displays a fallback UI instead of taking down the entire application.
+ */
 import React from 'react';
 
 class ErrorBoundary extends React.Component {

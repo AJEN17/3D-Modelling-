@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: EciBg30
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
@@ -34,8 +41,7 @@ export default function EciBg30({ sizeU = 1, label = 'ECI BG30\nMUMB_SLDSL_T01_C
       {/* Ear Brackets */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.001]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
             <meshPhysicalMaterial color="#222" roughness={0.4} metalness={0.8} />
           </mesh>
           {[-1, 1].map(vert => (
@@ -50,7 +56,7 @@ export default function EciBg30({ sizeU = 1, label = 'ECI BG30\nMUMB_SLDSL_T01_C
       <group position={[-INNER_WIDTH * 0.25, 0, 0.003]}>
         <Center position={[0, 0, 0]}>
           <Text3D
-            font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+            font="./fonts/helvetiker_regular.typeface.json"
             size={0.015}
             height={0.002}
           >
@@ -67,13 +73,11 @@ export default function EciBg30({ sizeU = 1, label = 'ECI BG30\nMUMB_SLDSL_T01_C
             {Array.from({ length: 8 }).map((_, i) => (
               <group key={`sfp-${i}`} position={[-0.1 + i * 0.025, 0, 0]}>
                 {/* SFP cage/housing */}
-                <mesh position={[0, 0, 0]}>
-                  <boxGeometry args={[0.014, 0.01, 0.004]} />
+                <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(0.014, 0.01, 0.004)}>
                   <meshStandardMaterial color="#888" metalness={0.9} roughness={0.3} />
                 </mesh>
                 {/* Dust cap (Black or blue) */}
-                <mesh position={[0, 0, 0.002]}>
-                  <boxGeometry args={[0.01, 0.006, 0.003]} />
+                <mesh position={[0, 0, 0.002]} dispose={null} geometry={getBoxGeometry(0.01, 0.006, 0.003)}>
                   <meshStandardMaterial color="#111" />
                 </mesh>
                 {/* Fiber activity LED */}

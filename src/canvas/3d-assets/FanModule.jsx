@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: FanModule
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Center, Text3D, RoundedBox } from '@react-three/drei';
@@ -42,8 +49,7 @@ export default function FanModule({ sizeU = 3, label = 'FAN MODULE', color = '#3
       {/* Rack mounting ears */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.012]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
             <meshPhysicalMaterial color="#222" roughness={0.4} metalness={0.8} />
           </mesh>
           {[-1, 0, 1].map(vert => (
@@ -56,8 +62,7 @@ export default function FanModule({ sizeU = 3, label = 'FAN MODULE', color = '#3
       ))}
 
       {/* Main Front Plate with Cutouts for Fans */}
-      <mesh position={[0, 0, 0.015]}>
-        <boxGeometry args={[INNER_WIDTH * 0.85, height * 0.85, 0.002]} />
+      <mesh position={[0, 0, 0.015]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, height * 0.85, 0.002)}>
         <meshStandardMaterial color="#2a2a2a" metalness={0.6} roughness={0.8} />
       </mesh>
 
@@ -68,21 +73,18 @@ export default function FanModule({ sizeU = 3, label = 'FAN MODULE', color = '#3
           return (
             <group key={`fan-${i}`} position={[xPos, 0, 0]}>
               {/* Fan Cavity */}
-              <mesh position={[0, 0, -0.002]} rotation={[Math.PI/2, 0, 0]}>
-                <cylinderGeometry args={[height * 0.35, height * 0.35, 0.01, 32]} />
+              <mesh position={[0, 0, -0.002]} rotation={[Math.PI/2, 0, 0]} dispose={null} geometry={getCylinderGeometry(height * 0.35, height * 0.35, 0.01, 32)}>
                 <meshStandardMaterial color="#050505" />
               </mesh>
               
               {/* Spinning Fan Blades */}
               <group ref={el => fanRefs.current[i] = el} position={[0, 0, 0]}>
-                <mesh rotation={[Math.PI/2, 0, 0]}>
-                  <cylinderGeometry args={[0.008, 0.008, 0.004, 16]} />
+                <mesh rotation={[Math.PI/2, 0, 0]} dispose={null} geometry={getCylinderGeometry(0.008, 0.008, 0.004, 16)}>
                   <meshStandardMaterial color="#111" metalness={0.9} roughness={0.2} />
                 </mesh>
                 {Array.from({ length: 7 }).map((_, bIdx) => (
                   <group key={`blade-${bIdx}`} rotation={[0, 0, (bIdx * Math.PI * 2) / 7]}>
-                    <mesh position={[height * 0.15, 0, 0]}>
-                      <boxGeometry args={[height * 0.3, 0.01, 0.001]} />
+                    <mesh position={[height * 0.15, 0, 0]} dispose={null} geometry={getBoxGeometry(height * 0.3, 0.01, 0.001)}>
                       <meshStandardMaterial color="#222" metalness={0.5} roughness={0.5} />
                     </mesh>
                   </group>
@@ -111,8 +113,7 @@ export default function FanModule({ sizeU = 3, label = 'FAN MODULE', color = '#3
 
       {/* Label and Status LEDs */}
       <group position={[0, -height * 0.45, 0.017]}>
-        <mesh position={[0, 0.01, 0]}>
-          <boxGeometry args={[INNER_WIDTH * 0.4, 0.02, 0.002]} />
+        <mesh position={[0, 0.01, 0]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.4, 0.02, 0.002)}>
           <meshStandardMaterial color="#111" />
         </mesh>
         
@@ -131,7 +132,7 @@ export default function FanModule({ sizeU = 3, label = 'FAN MODULE', color = '#3
 
         <Center position={[0, 0.035, 0]}>
           <Text3D
-            font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+            font="./fonts/helvetiker_regular.typeface.json"
             size={0.012}
             height={0.002}
             bevelEnabled

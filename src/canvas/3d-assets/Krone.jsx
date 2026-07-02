@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: Krone
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React from 'react';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
 import { U_HEIGHT, INNER_WIDTH } from './constants';
@@ -13,8 +20,7 @@ export default function Krone({ sizeU = 2, label = 'KRONE' }) {
       {/* Ear Brackets */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.001]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
             <meshPhysicalMaterial color="#bbb" roughness={0.6} metalness={0.4} />
           </mesh>
           {[-1, 1].map(vert => (
@@ -29,7 +35,7 @@ export default function Krone({ sizeU = 2, label = 'KRONE' }) {
       <group position={[0, height * 0.38, 0.003]}>
         <Center position={[0, 0, 0]}>
           <Text3D
-            font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+            font="./fonts/helvetiker_regular.typeface.json"
             size={0.008}
             height={0.001}
           >
@@ -47,14 +53,12 @@ export default function Krone({ sizeU = 2, label = 'KRONE' }) {
             {Array.from({ length: 6 }).map((_, bIdx) => (
               <group key={`kblock-${bIdx}`} position={[-INNER_WIDTH * 0.35 + bIdx * 0.068, 0, 0]}>
                 {/* White plastic block base */}
-                <mesh position={[0, 0, 0.002]}>
-                  <boxGeometry args={[0.06, 0.012, 0.008]} />
+                <mesh position={[0, 0, 0.002]} dispose={null} geometry={getBoxGeometry(0.06, 0.012, 0.008)}>
                   <meshStandardMaterial color="#f5f5f5" roughness={0.9} />
                 </mesh>
                 {/* Silver IDC metal contacts (tiny slits) */}
                 {Array.from({ length: 8 }).map((_, cIdx) => (
-                  <mesh key={`contact-${cIdx}`} position={[-0.025 + cIdx * 0.007, 0, 0.006]}>
-                    <boxGeometry args={[0.001, 0.01, 0.002]} />
+                  <mesh key={`contact-${cIdx}`} position={[-0.025 + cIdx * 0.007, 0, 0.006]} dispose={null} geometry={getBoxGeometry(0.001, 0.01, 0.002)}>
                     {/* Adjusted metalness and roughness to not be very shiny */}
                     <meshStandardMaterial color="#888" metalness={0.4} roughness={0.7} />
                   </mesh>

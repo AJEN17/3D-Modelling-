@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: CoreRouter
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
@@ -38,8 +45,7 @@ export default function CoreRouter({ sizeU = 4, label = 'CORE ROUTER', color = '
       {/* Ear Brackets */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.005]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.85, 0.005]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.85, 0.005)}>
             <meshPhysicalMaterial color="#111" roughness={0.4} metalness={0.8} />
           </mesh>
           {[-1, 0, 1].map(vert => (
@@ -53,8 +59,7 @@ export default function CoreRouter({ sizeU = 4, label = 'CORE ROUTER', color = '
 
       {/* Supervisor Engine / Control Panel (Left Side) */}
       <group position={[-INNER_WIDTH * 0.35, height * 0.2, 0.008]}>
-        <mesh>
-          <boxGeometry args={[0.08, 0.04, 0.004]} />
+        <mesh dispose={null} geometry={getBoxGeometry(0.08, 0.04, 0.004)}>
           <meshStandardMaterial color="#1a1c23" metalness={0.8} roughness={0.4} />
         </mesh>
         {/* Status LEDs */}
@@ -73,7 +78,7 @@ export default function CoreRouter({ sizeU = 4, label = 'CORE ROUTER', color = '
             {label.split('\n').map((line, index) => (
               <Center key={index} position={[0, -index * (sizeU > 8 ? 0.05 : 0.025), 0]}>
                 <Text3D
-                  font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+                  font="./fonts/helvetiker_regular.typeface.json"
                   size={sizeU > 8 ? 0.028 : 0.015}
                   height={sizeU > 8 ? 0.004 : 0.002}
                 >
@@ -88,8 +93,7 @@ export default function CoreRouter({ sizeU = 4, label = 'CORE ROUTER', color = '
 
       {/* Massive Fan Trays (Bottom Left) */}
       <group position={[-INNER_WIDTH * 0.35, -height * 0.25, 0.008]}>
-        <mesh>
-          <boxGeometry args={[0.08, height * 0.45, 0.002]} />
+        <mesh dispose={null} geometry={getBoxGeometry(0.08, height * 0.45, 0.002)}>
           <meshStandardMaterial color="#151515" />
         </mesh>
         {/* Fan grills dynamically scaled */}
@@ -101,8 +105,7 @@ export default function CoreRouter({ sizeU = 4, label = 'CORE ROUTER', color = '
             </mesh>
             {/* Grill bars */}
             {[-0.005, 0, 0.005].map((bar, i) => (
-              <mesh key={`bar-${i}`} position={[bar, 0, 0.001]}>
-                <boxGeometry args={[0.001, 0.02, 0.001]} />
+              <mesh key={`bar-${i}`} position={[bar, 0, 0.001]} dispose={null} geometry={getBoxGeometry(0.001, 0.02, 0.001)}>
                 <meshStandardMaterial color="#444" metalness={0.9} />
               </mesh>
             ))}
@@ -115,21 +118,18 @@ export default function CoreRouter({ sizeU = 4, label = 'CORE ROUTER', color = '
         {Array.from({ length: Math.max(6, Math.floor(sizeU * 1.2)) }).map((_, rIdx, arr) => (
           <group key={`blade-${rIdx}`} position={[0, (rIdx - arr.length / 2 + 0.5) * 0.016, 0]}>
             {/* Blade faceplate */}
-            <mesh>
-              <boxGeometry args={[INNER_WIDTH * 0.7, 0.01, 0.002]} />
+            <mesh dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.7, 0.01, 0.002)}>
               <meshStandardMaterial color="#303540" metalness={0.7} roughness={0.5} />
             </mesh>
             {/* Blade handle */}
-            <mesh position={[-INNER_WIDTH * 0.33, 0, 0.002]}>
-              <boxGeometry args={[0.004, 0.008, 0.006]} />
+            <mesh position={[-INNER_WIDTH * 0.33, 0, 0.002]} dispose={null} geometry={getBoxGeometry(0.004, 0.008, 0.006)}>
               <meshStandardMaterial color="#555" />
             </mesh>
             {/* High density QSFP/SFP Ports on each blade */}
             {Array.from({ length: 12 }).map((_, pIdx) => (
               <group key={`port-${pIdx}`} position={[-INNER_WIDTH * 0.28 + pIdx * 0.025, 0, 0.001]}>
                 {/* Port housing */}
-                <mesh>
-                  <boxGeometry args={[0.018, 0.008, 0.003]} />
+                <mesh dispose={null} geometry={getBoxGeometry(0.018, 0.008, 0.003)}>
                   <meshStandardMaterial color="#111" metalness={0.8} />
                 </mesh>
                 {/* Yellow/Orange fiber cable plugging in */}

@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: ChassisSwitch
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React from 'react';
 import { RoundedBox } from '@react-three/drei';
 import { U_HEIGHT, INNER_WIDTH } from './constants';
@@ -21,8 +28,7 @@ export default function ChassisSwitch({ sizeU = 18, color = '#FFFF00' }) {
       {/* Side Vents (Simplified, no complex fan blades) */}
       {[-1, 1].map(side => (
         <group key={`vent-${side}`} position={[side * (INNER_WIDTH * 0.44), 0, 0.02]}>
-          <mesh>
-            <boxGeometry args={[0.015, height * 0.9, 0.005]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.015, height * 0.9, 0.005)}>
             <meshStandardMaterial color="#111" />
           </mesh>
         </group>
@@ -37,8 +43,7 @@ export default function ChassisSwitch({ sizeU = 18, color = '#FFFF00' }) {
           return (
             <group key={`card-${cIdx}`} position={[0, (numLineCards / 2 - cIdx - 0.5) * slotHeight, 0]}>
               {/* Line Card Base */}
-              <mesh>
-                <boxGeometry args={[INNER_WIDTH * 0.8, slotHeight * 0.9, 0.004]} />
+              <mesh dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.8, slotHeight * 0.9, 0.004)}>
                 <meshStandardMaterial color={isSupervisor ? "#1a1a1a" : "#2a2a2a"} metalness={0.5} />
               </mesh>
 
@@ -46,8 +51,7 @@ export default function ChassisSwitch({ sizeU = 18, color = '#FFFF00' }) {
                 /* Supervisor Engine Layout (Clean center bezel for external text) */
                 <group position={[0, 0, 0.002]}>
                   {/* Clean flat plate where the external text label will sit */}
-                  <mesh>
-                    <boxGeometry args={[INNER_WIDTH * 0.65, slotHeight * 0.8, 0.004]} />
+                  <mesh dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.65, slotHeight * 0.8, 0.004)}>
                     <meshStandardMaterial color="#111" />
                   </mesh>
                 </group>
@@ -59,13 +63,11 @@ export default function ChassisSwitch({ sizeU = 18, color = '#FFFF00' }) {
                       {Array.from({ length: portsPerCard / 2 }).map((_, pIdx) => (
                         <group key={`port-${pIdx}`} position={[-INNER_WIDTH * 0.35 + pIdx * ((INNER_WIDTH * 0.7) / (portsPerCard/2 - 1 || 1)), 0, 0]}>
                           {/* SFP Port Cavity */}
-                          <mesh>
-                            <boxGeometry args={[0.02, 0.012, 0.004]} />
+                          <mesh dispose={null} geometry={getBoxGeometry(0.02, 0.012, 0.004)}>
                             <meshStandardMaterial color="#000" />
                           </mesh>
                           {/* Static Activity LED (No blinking animation to keep it simple) */}
-                          <mesh position={[0, -0.008, 0.002]}>
-                            <planeGeometry args={[0.006, 0.002]} />
+                          <mesh position={[0, -0.008, 0.002]} dispose={null} geometry={getPlaneGeometry(0.006, 0.002)}>
                             <meshStandardMaterial color="#00aa44" emissive="#00aa44" emissiveIntensity={0.5} toneMapped={false} />
                           </mesh>
                         </group>

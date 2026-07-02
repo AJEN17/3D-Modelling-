@@ -1,3 +1,14 @@
+/**
+ * Zustand Global State Store
+ * --------------------------
+ * This file manages the entire application's state. It is used across both the React UI
+ * (for menus, breadcrumbs, search) and the WebGL Canvas (for 3D rendering data).
+ * 
+ * Key responsibilities:
+ * - Tracking the currently active building and floor.
+ * - Caching fetched floorplan JSON data so we don't re-fetch on navigation.
+ * - Managing UI modals (active rack data, active image).
+ */
 import { create } from 'zustand';
 
 const useAppStore = create((set, get) => ({
@@ -18,10 +29,7 @@ const useAppStore = create((set, get) => ({
   setShowAllLabels: (val) => set({ showAllLabels: val }),
   clearFetchError: () => set({ fetchError: null }),
   
-  preloadBuildingData: async () => {
-    // Deprecated. Kept for MapScene hover legacy behavior.
-  },
-  
+
   fetchFloorData: async (buildingId, floorId) => {
     const key = `${buildingId}-${floorId}`;
     const { preloadedData } = get();
@@ -32,22 +40,22 @@ const useAppStore = create((set, get) => ({
     try {
       let url = '';
       if (buildingId === 'suncity') {
-         if (floorId === 'suncity-gf') url = '/data/suncity/ground.json';
-         if (floorId === 'suncity-ff') url = '/data/suncity/first.json';
-         if (floorId === 'suncity-sf') url = '/data/suncity/secondswitch.json';
-         if (floorId === 'suncity-trc') url = '/data/suncity/secondtrc.json';
+         if (floorId === 'suncity-gf') url = './data/suncity/ground.json';
+         if (floorId === 'suncity-ff') url = './data/suncity/first.json';
+         if (floorId === 'suncity-sf') url = './data/suncity/secondswitch.json';
+         if (floorId === 'suncity-trc') url = './data/suncity/secondtrc.json';
       } else if (buildingId === 'sundale') {
-         if (floorId === 'sundale-gf') url = '/data/sundale/ground.json';
-         if (floorId === 'sundale-ff') url = '/data/sundale/first.json';
-         if (floorId === 'sundale-sf') url = '/data/sundale/second.json';
+         if (floorId === 'sundale-gf') url = './data/sundale/ground.json';
+         if (floorId === 'sundale-ff') url = './data/sundale/first.json';
+         if (floorId === 'sundale-sf') url = './data/sundale/second.json';
       } else if (buildingId === 'lakha') {
-         if (floorId === 'lakha-gf') url = '/data/lakha/groundfloor.json';
-         if (floorId === 'lakha-power') url = '/data/lakha/powerroom.json';
-         if (floorId === 'lakha-power-bms') url = '/data/lakha/power-bms-room.json';
-         if (floorId === 'lakha-basement') url = '/data/lakha/basementbattery.json';
-         if (floorId === 'lakha-switch') url = '/data/lakha/switchroom.json';
-         if (floorId === 'lakha-data') url = '/data/lakha/dataroom.json';
-         if (floorId === 'lakha-vas') url = '/data/lakha/vasroom.json';
+         if (floorId === 'lakha-gf') url = './data/lakha/groundfloor.json';
+         if (floorId === 'lakha-power') url = './data/lakha/powerroom.json';
+         if (floorId === 'lakha-power-bms') url = './data/lakha/power-bms-room.json';
+         if (floorId === 'lakha-basement') url = './data/lakha/basementbattery.json';
+         if (floorId === 'lakha-switch') url = './data/lakha/switchroom.json';
+         if (floorId === 'lakha-data') url = './data/lakha/dataroom.json';
+         if (floorId === 'lakha-vas') url = './data/lakha/vasroom.json';
       }
       
       if (!url) throw new Error(`URL mapping not found for ${key}`);

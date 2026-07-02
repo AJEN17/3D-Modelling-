@@ -290,7 +290,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/epdu-1.json"
+            "rackDataUrl": "./data/racks/epdu-1.json"
         },
         {
             "id": "comp-12",
@@ -381,7 +381,7 @@
             ],
             "rotation": 0,
             "color": "#00B0F0",
-            "rackDataUrl": "/data/racks/sdh-27.json"
+            "rackDataUrl": "./data/racks/sdh-27.json"
         },
         {
             "id": "comp-18",
@@ -397,7 +397,7 @@
             ],
             "rotation": 0,
             "color": "#00B0F0",
-            "rackDataUrl": "/data/racks/sdh-28.json"
+            "rackDataUrl": "./data/racks/sdh-28.json"
         },
         {
             "id": "comp-25",
@@ -413,7 +413,7 @@
             ],
             "rotation": 0,
             "color": "#00B0F0",
-            "rackDataUrl": "/data/racks/tx-mu.json"
+            "rackDataUrl": "./data/racks/tx-mu.json"
         },
         {
             "id": "comp-26",
@@ -429,7 +429,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/dns-1.json"
+            "rackDataUrl": "./data/racks/dns-1.json"
         },
         {
             "id": "comp-27",
@@ -445,7 +445,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/dns-2.json"
+            "rackDataUrl": "./data/racks/dns-2.json"
         },
         {
             "id": "comp-28",
@@ -461,7 +461,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/mpbn-router-1.json"
+            "rackDataUrl": "./data/racks/mpbn-router-1.json"
         },
         {
             "id": "comp-29",
@@ -477,7 +477,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/mpbn-router-2.json"
+            "rackDataUrl": "./data/racks/mpbn-router-2.json"
         },
         {
             "id": "comp-32",
@@ -493,7 +493,7 @@
             ],
             "rotation": 0,
             "color": "#E6B8B7",
-            "rackDataUrl": "/data/racks/extrim-switch-32.json"
+            "rackDataUrl": "./data/racks/extrim-switch-32.json"
         },
         {
             "id": "comp-33",
@@ -599,7 +599,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/switch-bd-39.json"
+            "rackDataUrl": "./data/racks/switch-bd-39.json"
         },
         {
             "id": "comp-40",
@@ -615,7 +615,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/switch-bd-40.json"
+            "rackDataUrl": "./data/racks/switch-bd-40.json"
         },
         {
             "id": "comp-41",
@@ -661,7 +661,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/epdu-ccn11.json"
+            "rackDataUrl": "./data/racks/epdu-ccn11.json"
         },
         {
             "id": "comp-44",
@@ -677,7 +677,7 @@
             ],
             "rotation": 0,
             "color": "#E6B8B7",
-            "rackDataUrl": "/data/racks/ccn-11.json"
+            "rackDataUrl": "./data/racks/ccn-11.json"
         },
         {
             "id": "comp-45",
@@ -708,7 +708,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/cisco-rack-1.json"
+            "rackDataUrl": "./data/racks/cisco-rack-1.json"
         },
         {
             "id": "comp-47",
@@ -724,7 +724,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/cisco-rack-2.json"
+            "rackDataUrl": "./data/racks/cisco-rack-2.json"
         },
         {
             "id": "comp-48",
@@ -740,7 +740,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/cisco-rack-3.json"
+            "rackDataUrl": "./data/racks/cisco-rack-3.json"
         },
         {
             "id": "comp-49",
@@ -756,7 +756,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/cisco-rack-4.json"
+            "rackDataUrl": "./data/racks/cisco-rack-4.json"
         },
         {
             "id": "comp-50",
@@ -772,7 +772,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/cisco-rack-5.json"
+            "rackDataUrl": "./data/racks/cisco-rack-5.json"
         },
         {
             "id": "comp-51",
@@ -788,7 +788,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/cisco-rack-6.json"
+            "rackDataUrl": "./data/racks/cisco-rack-6.json"
         },
         {
             "id": "comp-52",
@@ -804,7 +804,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/cisco-rack-7.json"
+            "rackDataUrl": "./data/racks/cisco-rack-7.json"
         },
         {
             "id": "comp-53",
@@ -850,7 +850,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/facebook-rack-1.json"
+            "rackDataUrl": "./data/racks/facebook-rack-1.json"
         },
         {
             "id": "comp-56",
@@ -866,7 +866,7 @@
             ],
             "rotation": 0,
             "color": "#FFFF00",
-            "rackDataUrl": "/data/racks/facebook-rack-2.json"
+            "rackDataUrl": "./data/racks/facebook-rack-2.json"
         },
         {
             "id": "comp-59",

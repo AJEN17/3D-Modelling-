@@ -1,3 +1,15 @@
+/**
+ * Global UI Overlay Component
+ * ---------------------------
+ * This component is rendered as an HTML overlay *on top* of the WebGL canvas.
+ * It provides standard 2D web interactions:
+ * - Breadcrumb navigation
+ * - Global search bar
+ * - Equipment data popups (Rack Modals)
+ * - Equipment image lightboxes (Image Modals)
+ * 
+ * It listens to the `useAppStore` to know when to show or hide these modals.
+ */
 import { useEffect, Suspense } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';

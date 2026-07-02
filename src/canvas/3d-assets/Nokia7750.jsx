@@ -1,3 +1,10 @@
+/**
+ * 3D Asset: Nokia7750
+ * -------------------
+ * This component renders a specific piece of equipment (Server, Switch, Patch Panel, etc.)
+ * in 3D space. It is typically instantiated inside a DetailedRack.
+ */
+import { getBoxGeometry, getCylinderGeometry, getPlaneGeometry } from '../utils/geometryCache';
 import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RoundedBox, Text3D, Center } from '@react-three/drei';
@@ -49,8 +56,7 @@ export default function Nokia7750({ sizeU = 14, label = 'NOKIA 7750 SR-12\nMBMUM
       {/* Massive Rack Mounting Ears (Full Height) - Moved forward to prevent Z-fighting */}
       {[-1, 1].map(side => (
         <group key={`ear-${side}`} position={[side * (INNER_WIDTH * 0.47), 0, 0.006]}>
-          <mesh>
-            <boxGeometry args={[0.012, height * 0.96, 0.004]} />
+          <mesh dispose={null} geometry={getBoxGeometry(0.012, height * 0.96, 0.004)}>
             <meshPhysicalMaterial color="#333" roughness={0.7} metalness={0.9} />
           </mesh>
           {/* Dense screw mounting for a heavy 14U chassis */}
@@ -65,14 +71,12 @@ export default function Nokia7750({ sizeU = 14, label = 'NOKIA 7750 SR-12\nMBMUM
       {/* Top Air Intake Grill (3U) */}
       <group position={[0, topGrillY, 0.006]}>
         {/* Recessed Fan bay */}
-        <mesh>
-          <boxGeometry args={[INNER_WIDTH * 0.85, topGrillHeight * 0.9, 0.004]} />
+        <mesh dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, topGrillHeight * 0.9, 0.004)}>
           <meshStandardMaterial color="#111" roughness={0.9} />
         </mesh>
         {/* Horizontal Vents */}
         {Array.from({ length: 6 }).map((_, i) => (
-          <mesh key={`vent-t-${i}`} position={[0, -topGrillHeight * 0.35 + i * (topGrillHeight * 0.14), 0.003]}>
-            <boxGeometry args={[INNER_WIDTH * 0.85, 0.004, 0.002]} />
+          <mesh key={`vent-t-${i}`} position={[0, -topGrillHeight * 0.35 + i * (topGrillHeight * 0.14), 0.003]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, 0.004, 0.002)}>
             <meshStandardMaterial color="#555" metalness={0.8} />
           </mesh>
         ))}
@@ -80,24 +84,21 @@ export default function Nokia7750({ sizeU = 14, label = 'NOKIA 7750 SR-12\nMBMUM
       {/* Bottom Power & Cooling (3U) */}
       <group position={[0, bottomGrillY, 0.006]}>
         {/* Recessed Fan bay */}
-        <mesh>
-          <boxGeometry args={[INNER_WIDTH * 0.85, bottomGrillHeight * 0.9, 0.004]} />
+        <mesh dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, bottomGrillHeight * 0.9, 0.004)}>
           <meshStandardMaterial color="#111" roughness={0.9} />
         </mesh>
         
         {/* Vents (Moved UP slightly to avoid label bezel) */}
         <group position={[0, 0.02, 0]}>
           {Array.from({ length: 5 }).map((_, i) => (
-            <mesh key={`vent-b-${i}`} position={[0, -bottomGrillHeight * 0.25 + i * (bottomGrillHeight * 0.14), 0.003]}>
-              <boxGeometry args={[INNER_WIDTH * 0.85, 0.004, 0.002]} />
+            <mesh key={`vent-b-${i}`} position={[0, -bottomGrillHeight * 0.25 + i * (bottomGrillHeight * 0.14), 0.003]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, 0.004, 0.002)}>
               <meshStandardMaterial color="#555" metalness={0.8} />
             </mesh>
           ))}
         </group>
         
         {/* Solid Bezel Plate for Label (Moved DOWN slightly) */}
-        <mesh position={[0, -0.04, 0.005]}>
-          <boxGeometry args={[INNER_WIDTH * 0.6, Math.max(0.04, lines.length * 0.02), 0.002]} />
+        <mesh position={[0, -0.04, 0.005]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.6, Math.max(0.04, lines.length * 0.02), 0.002)}>
           <meshStandardMaterial color="#333" metalness={0.7} />
         </mesh>
         {/* Dynamic multi-line Text Label */}
@@ -106,7 +107,7 @@ export default function Nokia7750({ sizeU = 14, label = 'NOKIA 7750 SR-12\nMBMUM
             {lines.map((line, index) => (
               <Center key={index} position={[0, -index * 0.016, 0]}>
                 <Text3D
-                  font="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_regular.typeface.json"
+                  font="./fonts/helvetiker_regular.typeface.json"
                   size={index === 0 ? 0.012 : 0.008}
                   height={0.002}
                   bevelEnabled
@@ -124,28 +125,24 @@ export default function Nokia7750({ sizeU = 14, label = 'NOKIA 7750 SR-12\nMBMUM
       {/* The 12 Vertical Line Cards (Center 8U) */}
       <group position={[0, 0, 0.006]}>
         {/* Recessed card cage background */}
-        <mesh position={[0, 0, -0.002]}>
-          <boxGeometry args={[INNER_WIDTH * 0.85, cardHeight, 0.002]} />
+        <mesh position={[0, 0, -0.002]} dispose={null} geometry={getBoxGeometry(INNER_WIDTH * 0.85, cardHeight, 0.002)}>
           <meshStandardMaterial color="#000" />
         </mesh>
         {Array.from({ length: numLineCards }).map((_, cIdx) => (
           <group key={`card-${cIdx}`} position={[-INNER_WIDTH * 0.4 + cardWidth / 2 + cIdx * cardWidth + 0.01, 0, 0]}>
             {/* Card Faceplate */}
-            <mesh>
-              <boxGeometry args={[cardWidth * 0.9, cardHeight * 0.98, 0.002]} />
+            <mesh dispose={null} geometry={getBoxGeometry(cardWidth * 0.9, cardHeight * 0.98, 0.002)}>
               <meshStandardMaterial color="#7a7c80" roughness={0.4} metalness={0.9} />
             </mesh>
             
             {/* Card Release Levers (Top & Bottom) */}
             {[-1, 1].map(vert => (
-              <mesh key={`lever-${vert}`} position={[0, vert * cardHeight * 0.45, 0.004]}>
-                <boxGeometry args={[cardWidth * 0.6, 0.025, 0.006]} />
+              <mesh key={`lever-${vert}`} position={[0, vert * cardHeight * 0.45, 0.004]} dispose={null} geometry={getBoxGeometry(cardWidth * 0.6, 0.025, 0.006)}>
                 <meshStandardMaterial color="#222" metalness={0.8} />
               </mesh>
             ))}
             {/* SFP Port Cages (Silver metallic housing) */}
-            <mesh position={[0, 0, 0.002]}>
-              <boxGeometry args={[cardWidth * 0.6, cardHeight * 0.85, 0.004]} />
+            <mesh position={[0, 0, 0.002]} dispose={null} geometry={getBoxGeometry(cardWidth * 0.6, cardHeight * 0.85, 0.004)}>
               <meshStandardMaterial color="#ccc" metalness={1} roughness={0.2} />
             </mesh>
             {/* Fiber Optic Ports (Vertical Array) */}
@@ -156,13 +153,11 @@ export default function Nokia7750({ sizeU = 14, label = 'NOKIA 7750 SR-12\nMBMUM
                 return (
                   <group key={`port-${pIdx}`} position={[0, cardHeight * 0.4 - pIdx * (cardHeight * 0.8 / portsPerCard), 0]}>
                     {/* SFP Port Cavity */}
-                    <mesh position={[0, 0, 0]}>
-                      <boxGeometry args={[cardWidth * 0.4, cardWidth * 0.35, 0.002]} />
+                    <mesh position={[0, 0, 0]} dispose={null} geometry={getBoxGeometry(cardWidth * 0.4, cardWidth * 0.35, 0.002)}>
                       <meshStandardMaterial color="#000" />
                     </mesh>
                     {/* Laser Diode Bleed (Deep inside port) */}
-                    <mesh position={[0, 0, 0.001]}>
-                      <boxGeometry args={[0.002, 0.002, 0.001]} />
+                    <mesh position={[0, 0, 0.001]} dispose={null} geometry={getBoxGeometry(0.002, 0.002, 0.001)}>
                       <meshStandardMaterial 
                         ref={el => laserRefs.current[globalPortIdx] = el}
                         color={pColor} 

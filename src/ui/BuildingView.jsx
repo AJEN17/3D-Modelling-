@@ -1,3 +1,10 @@
+/**
+ * Building & Floor Selection Sidebar
+ * ----------------------------------
+ * This component renders the left-hand sidebar containing the navigation menu.
+ * It reads the static 'buildings.json' data to display available floors,
+ * and updates the URL (via React Router) which then triggers the 3D scene to reload.
+ */
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import buildings from '../data/buildings.json';
